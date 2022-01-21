@@ -83,10 +83,13 @@ define([
                         break;
                     case "usage": this.state.usageFeatures = selection;
                         break;
+                    case "tenancy": this.state.usaageTenancy = selection;
+                        break;
                     case "none":
                         this.state.usageFeatures = undefined;
                         this.state.floorFeatures = undefined;
                         this.state.areaFeatures = undefined;
+                        this.state.tenancyFeatures = undefined;
                 }
 
                 this.menu.setFilterState(this.state);
@@ -101,6 +104,7 @@ define([
                 filterstate.usageFeatures = undefined;
                 filterstate.floorFeatures = undefined;
                 filterstate.areaFeatures = undefined;
+                filterstate.tenancyFeatures = undefined;
 
                 callback(filterstate);
 
@@ -111,54 +115,69 @@ define([
                 if (state.name === "none") {
                     domCtr.destroy(dom.byId("filter-floors"));
                     domCtr.destroy(dom.byId("filter-usage"));
+                    domCtr.destroy(dom.byId("filter-tenancy"));
                     domCtr.destroy(dom.byId("filterAreaMin"));
                     domCtr.destroy(dom.byId("AreaMaxText"));
                     domCtr.destroy(dom.byId("AreaMinText"));
 
                     this.createFilterFloorUI(this.container);
                     this.createFilterUsageUI(this.container);
+                    this.createFilterTenancyUI(this.container);
                     this.createFilterAreaUI(this.container);
 
                 } else {
 
                     if (state.floorFeatures !== undefined) {
                         if (state.usageFeatures !== undefined) {
+                            if (state.tenancyFeatures !== undefined) {
+                                if (state.areaFeatures !== undefined) {
+                                    return;
+                                }
+                                else {
+                                    domCtr.destroy(dom.byId("filterAreaMin"));
+                                    domCtr.destroy(dom.byId("AreaMaxText"));
+                                    domCtr.destroy(dom.byId("AreaMinText"));
+
+                                    this.createFilterAreaUI(this.container);
+                                }
+                           }
+                           else if (state.areaFeatures !== undefined) {
+                               domCtr.destroy(dom.byId("filter-tenancy"));
+                               this.createFilterTenancyUI(this.container);
+                           }
+                           else {
+                               domCtr.destroy(dom.byId("filter-tenancy"));
+                               domCtr.destroy(dom.byId("filterAreaMin"));
+                               domCtr.destroy(dom.byId("AreaMaxText"));
+                               domCtr.destroy(dom.byId("AreaMinText"));
+
+                               this.createFilterTenancyUI(this.container);
+                               this.createFilterAreaUI(this.container);
+                           }
+                        } else if (state.tenancyFeatures !== undefined) {
                             if (state.areaFeatures !== undefined) {
-                                return;
-                            }
-                            else {
+                                domCtr.destroy(dom.byId("filter-usage"));
+                                this.createFilterUsageUI(this.container);
+                            } else {
+                                domCtr.destroy(dom.byId("filter-usage"));
                                 domCtr.destroy(dom.byId("filterAreaMin"));
                                 domCtr.destroy(dom.byId("AreaMaxText"));
                                 domCtr.destroy(dom.byId("AreaMinText"));
-
+                                this.createFilterUsageUI(this.container);
                                 this.createFilterAreaUI(this.container);
                             }
-                        }
-                        else if (state.areaFeatures !== undefined) {
-                            domCtr.destroy(dom.byId("filter-usage"));
-                            this.createFilterUsageUI(this.container);
-                        }
-                        else {
-                            domCtr.destroy(dom.byId("filter-usage"));
-                            domCtr.destroy(dom.byId("filterAreaMin"));
-                            domCtr.destroy(dom.byId("AreaMaxText"));
-                            domCtr.destroy(dom.byId("AreaMinText"));
-
-                            this.createFilterUsageUI(this.container);
-                            this.createFilterAreaUI(this.container);
-                        }
-                    } else if (state.usageFeatures !== undefined) {
-                        if (state.areaFeatures !== undefined) {
-                            domCtr.destroy(dom.byId("filter-floors"));
-                            this.createFilterFloorUI(this.container);
-                        } else {
-                            domCtr.destroy(dom.byId("filter-floors"));
-                            domCtr.destroy(dom.byId("filterAreaMin"));
-                            domCtr.destroy(dom.byId("AreaMaxText"));
-                            domCtr.destroy(dom.byId("AreaMinText"));
-                            this.createFilterFloorUI(this.container);
-                            this.createFilterAreaUI(this.container);
-                        }
+                       } else if (state.usageFeatures !== undefined) {
+                          if (state.areaFeatures !== undefined) {
+                              domCtr.destroy(dom.byId("filter-floors"));
+                              this.createFilterFloorUI(this.container);
+                          } else {
+                              domCtr.destroy(dom.byId("filter-floors"));
+                              domCtr.destroy(dom.byId("filterAreaMin"));
+                              domCtr.destroy(dom.byId("AreaMaxText"));
+                              domCtr.destroy(dom.byId("AreaMinText"));
+                              this.createFilterFloorUI(this.container);
+                              this.createFilterAreaUI(this.container);
+                          }
 
                     } else if (state.areaFeatures !== undefined && state.usageFeatures !== undefined) {
                         domCtr.destroy(dom.byId("filter-floors"));
@@ -186,6 +205,7 @@ define([
 
                 this.createFilterFloorUI(this.container);
                 this.createFilterUsageUI(this.container);
+                this.createFilterTenancyUI(this.container);
                 this.createFilterAreaUI(this.container);
 
                 on(this.reset, "click", function (evt) {
@@ -226,6 +246,23 @@ define([
                     }.bind(this));
 
                     this.onChangeUsage = this.dropdownChangeUsage(this.usageSelector, this.settings.usagename, "usage");
+
+                }.bind(this));
+
+            },
+             
+            createFilterTenancyUI: function (container) {
+                this.TenancyFilterContainer = domCtr.create("div", { className: "FilterLabel", id: "filter-tenancy" }, container);
+
+                queryTools.distinctValues(this.settings.layer1, this.settings.tenancyname, this.settings.OIDname, function (distinctValues) {
+                    distinctValues.sort();
+                    distinctValues.unshift("Select Tenancy");
+
+                    this.setDropdown("Usage", distinctValues, this.TenancyFilterContainer, function (tenancySelector) {
+                        this.tenancySelector = tenancySelector;
+                    }.bind(this));
+
+                    this.onChangeTenancy = this.dropdownChangeTenancy(this.tenancySelector, this.settings.tenancyname, "tenancy");
 
                 }.bind(this));
 
@@ -357,6 +394,13 @@ define([
 
                 on(nameSelector, "change", function () {
                     this.updateFilterFeatures(nameSelector, fieldname, "usage");
+                }.bind(this));
+            },
+             
+            dropdownChangeTenancy: function (nameSelector, fieldname, state) {
+
+                on(nameSelector, "change", function () {
+                    this.updateFilterFeatures(nameSelector, fieldname, "tenancy");
                 }.bind(this));
             },
 
