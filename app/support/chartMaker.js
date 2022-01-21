@@ -138,6 +138,23 @@ define([
                             view.environment.lighting.directShadowsEnabled = false;
                             view.environment.lighting.ambientOcclusionEnabled = false;
                         }
+                     
+                         if (dataItem.pulled) {
+                            chart.pullSlice(dataItem, 0);
+ 
+                            settings.layer1.renderer = applyRenderer.createRenderer(settings.values, settings.color, settings.tenancyname);
+                            
+                            view.environment.lighting.directShadowsEnabled = true;
+                            view.environment.lighting.ambientOcclusionEnabled = true;
+
+                        } else {
+                            chart.pullSlice(dataItem, 1);
+
+                            settings.layer1.renderer = applyRenderer.createRenderer(selectedvalues, selectedcolor, settings.tenanyname);
+                            
+                            view.environment.lighting.directShadowsEnabled = false;
+                            view.environment.lighting.ambientOcclusionEnabled = false;
+                        }
 
                     }.bind(this),
                     "export": {
