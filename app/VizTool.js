@@ -95,7 +95,7 @@ define([
                 this.title = domCtr.create("div", { className: "titleViz", id: "titleViz", innerHTML: "Visualisation by" }, container);
                 this.label1 = domCtr.create("div", { className: "labelViz", id: "viz-white", innerHTML: "none" }, container);
                 this.label2 = domCtr.create("div", { className: "labelViz", id: "viz-usage", innerHTML: "usage" }, container);
-                this.label4 = domCtr.create("div", { className: "labelViz", id: "viz-usage", innerHTML: "tenancy" }, container);
+                this.label4 = domCtr.create("div", { className: "labelViz", id: "viz-tenancy", innerHTML: "tenancy" }, container);
                 this.label3 = domCtr.create("div", { className: "labelViz", id: "viz-area", innerHTML: "area" }, container);
 
                 this.statsDiv = domCtr.create("div", { id: "statsDiv", className: "statsDiv" }, container);
@@ -118,6 +118,7 @@ define([
                 if (viz === "white") {
                     domStyle.set(dom.byId("viz-white"), { "opacity": 1, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
                     domCtr.destroy(dom.byId("reload"));
                 }
@@ -125,12 +126,14 @@ define([
                 if (viz === "usage") {
                     domStyle.set(dom.byId("viz-usage"), { "opacity": 1, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
                     domCtr.destroy(dom.byId("reload"));
                 }
                
                 if (viz === "tenancy") {
-                    domStyle.set(dom.byId("viz-usage"), { "opacity": 1, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 1, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
                     domCtr.destroy(dom.byId("reload"));
@@ -139,6 +142,7 @@ define([
                 if (viz === "area") {
                     domStyle.set(dom.byId("viz-area"), { "opacity": 1, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
                     this.reload = domCtr.create("div", { id: "reload" }, this.container);
                     domCtr.create("img", { className: "reload", src: "img/reload.png", style: "width:25px;height:25px" }, this.reload);
