@@ -70,7 +70,7 @@ define([
         // application settings
         var settings_demo = {
             name: "Liffey Campus",
-            url: "http://cwireland.maps.arcgis.com",           // portal URL for config
+            url: "https://cwireland.maps.arcgis.com",           // portal URL for config
             webscene: "8f915c0b39154b24ac425ee0b642bd4d",   // portal item ID of the webscene
             usagename: "Lease",                             // usage attribute (string)
             floorname: "Floor",                           // floor attribute (int)
@@ -122,7 +122,7 @@ define([
                 esriConfig.portalUrl = this.settings.url;
 
                 // fix CORS issues by adding portal url to cors enabled servers list
-                esriConfig.request.corsEnabledServers.push("http://cwireland.maps.arcgis.com");
+                esriConfig.request.corsEnabledServers.push("https://cwireland.maps.arcgis.com");
 
                 // load scene with portal ID
                 this.scene = new WebScene({
