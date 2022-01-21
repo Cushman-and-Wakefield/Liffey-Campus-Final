@@ -47,9 +47,13 @@ define([
                 }
                 for (var k = 0; k < selection.length; k++) {
                     var selectionusage = selection[k].attributes[settings.usagename];
+                    var selectiontenancy = selection[k].attributes[settings.tenancyname];
                     var selectionarea = selection[k].attributes[settings.areaname];
                     for (var m = 0; m < chartData.length; m++) {
                         if (selectionusage === chartData[m].usage) {
+                            chartData[m].area += selectionarea;
+                        }
+                        else if (selectiontenancy === chartData[m].tenancy) {
                             chartData[m].area += selectionarea;
                         }
                     }
