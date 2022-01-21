@@ -69,14 +69,14 @@ define([
 
         // application settings
         var settings_demo = {
-            name: "Demo",
-            url: "http://zurich.maps.arcgis.com",           // portal URL for config
-            webscene: "0af10b5e35ed4a5bbe095aa76b14b786",   // portal item ID of the webscene
-            usagename: "usage",                             // usage attribute (string)
-            floorname: "floorID",                           // floor attribute (int)
+            name: "Liffey Campus",
+            url: "http://cwireland.maps.arcgis.com",           // portal URL for config
+            webscene: "8f915c0b39154b24ac425ee0b642bd4d",   // portal item ID of the webscene
+            usagename: "Lease",                             // usage attribute (string)
+            floorname: "Floor",                           // floor attribute (int)
             OIDname: "OBJECTID",                            // objectid
-            buildingIDname: "buildingID",                   // building attribute (int)
-            areaname: "unitarea",                           // area attribute (float)
+            buildingIDname: "BuildId",                   // building attribute (int)
+            areaname: "RentTotal",                           // area attribute (float)
             color: [                                        // color ramp for unique value renderer
                     [178, 171, 210, 1],                     
                     [253, 174, 97, 1],
@@ -122,7 +122,7 @@ define([
                 esriConfig.portalUrl = this.settings.url;
 
                 // fix CORS issues by adding portal url to cors enabled servers list
-                esriConfig.request.corsEnabledServers.push("http://zurich.maps.arcgis.com");
+                esriConfig.request.corsEnabledServers.push("http://cwireland.maps.arcgis.com");
 
                 // load scene with portal ID
                 this.scene = new WebScene({
@@ -223,7 +223,7 @@ define([
 
             getSettingsFromUser: function (settings) {
                 if (settings === "demo"){
-                    dom.byId("headerTitle").innerHTML = "c-through Demo";
+                    dom.byId("headerTitle").innerHTML = "Liffey Campus";
                     return settings_demo;
                 }
             }
