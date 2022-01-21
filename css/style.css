@@ -212,7 +212,7 @@ html, body {
 
 #viewDiv {
   margin-top: 50px;
-  width: calc(100% - 450px);
+  width: calc(100% - 600px);
   height: calc(100% - 50px);
 }
 
