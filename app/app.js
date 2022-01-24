@@ -76,7 +76,7 @@ define([
             tenancyname: "Tenant",
             floorname: "Floor",                           // floor attribute (int)
             OIDname: "OBJECTID",                            // objectid
-            buildingIDname: "BuildID",                   // building attribute (int)
+            buildingIDname: "Building",                   // building attribute (int)
             areaname: "sq m",                           // area attribute (float)
             color: [                                        // color ramp for unique value renderer
                     [228, 0, 43, 1],                     
@@ -154,7 +154,7 @@ define([
                 });
 
                 // create home button that leads back to welcome page
-                var home = domCtr.create("div", { className: "button", id: "homeButton", innerHTML: "Home" }, header);
+                var home = domCtr.create("div", { className: "button", id: "homeButton", innerHTML: "Back" }, header);
 
                 on(home, "click", function () {
                     var URI = window.location.href;
