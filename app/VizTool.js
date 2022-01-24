@@ -287,7 +287,7 @@ define([
                     }.bind(this));
                 }
                 if (vizName === "tenancy") {
-                    settings.layer1.renderer = applyRenderer.createRenderer(settings.values, settings.color, settings.tenancyname);
+                    settings.layer1.renderer = applyRenderer.createRenderer(settings.values_ten, settings.color, settings.tenancyname);
 
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
@@ -352,7 +352,7 @@ define([
                     }
                  
                     if (vizName === "tenancy") {
-                        settings.layer1.renderer = applyRenderer.createRenderer(settings.values, settings.color, settings.tenancyname);
+                        settings.layer1.renderer = applyRenderer.createRenderer(settings.values_ten, settings.color, settings.tenancyname);
 
                         domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
