@@ -76,7 +76,7 @@ define([
             tenancyname: "Lease Type",
             floorname: "Floor",                           // floor attribute (int)
             OIDname: "OBJECTID",                            // objectid
-            buildingIDname: "BuildID",                   // building attribute (int)
+            buildingIDname: "BuildId",                   // building attribute (int)
             areaname: "RentTotal",                           // area attribute (float)
             color: [                                        // color ramp for unique value renderer
                     [228, 0, 43, 1],                     
