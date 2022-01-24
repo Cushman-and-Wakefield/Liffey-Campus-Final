@@ -254,11 +254,11 @@ define([
             createFilterTenancyUI: function (container) {
                 this.TenancyFilterContainer = domCtr.create("div", { className: "FilterLabel", id: "filter-tenancy" }, container);
 
-                queryTools.distinctValues_ten(this.settings.layer1, this.settings.tenancyname, this.settings.OIDname, function (distinctValues_ten) {
-                    distinctValues_ten.sort();
-                    distinctValues_ten.unshift("Select Tenancy");
+                queryTools.distinctValues(this.settings.layer1, this.settings.tenancyname, this.settings.OIDname, function (distinctValues) {
+                    distinctValues.sort();
+                    distinctValues.unshift("Select Tenancy");
 
-                    this.setDropdown("Usage", distinctValues_ten, this.TenancyFilterContainer, function (tenancySelector) {
+                    this.setDropdown("Usage", distinctValues, this.TenancyFilterContainer, function (tenancySelector) {
                         this.tenancySelector = tenancySelector;
                     }.bind(this));
 
