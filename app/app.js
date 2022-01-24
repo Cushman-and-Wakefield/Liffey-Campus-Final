@@ -154,7 +154,7 @@ define([
                 });
 
                 // create home button that leads back to welcome page
-                var home = domCtr.create("div", { className: "button", id: "homeButton", innerHTML: "Back" }, header);
+                var home = domCtr.create("div", { className: "button", id: "homeButton", innerHTML: "Home" }, header);
 
                 on(home, "click", function () {
                     var URI = window.location.href;
@@ -218,6 +218,12 @@ define([
                         });
                     }.bind(this));
 
+                    // retrieve distinct values of tenancy attribute from feature service to create UI (filter dropdowns)
+                    queryTools.distinctValues_ten(this.settings.layer1, this.settings.tenancyname, this.settings.OIDname, function (distinctValues_ten) {
+
+                        distinctValues_ten.sort();
+                        this.settings.values_ten = distinctValues_ten
+                    }.bind(this));   
                 }.bind(this)).catch(function (err) {
                     console.error(err);
                 });
