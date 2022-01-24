@@ -222,7 +222,7 @@ define([
                                 combinedFilteredFeatures: undefined
                             }
                         });
-                    }.bind(this));
+                    }}.bind(this));
 
                 }.bind(this)).catch(function (err) {
                     console.error(err);
