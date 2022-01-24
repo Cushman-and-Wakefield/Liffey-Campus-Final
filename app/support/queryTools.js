@@ -72,7 +72,7 @@ define([
 
                 var query = layer.createQuery();
 
-                var values = [];
+                var values_ten = [];
                 
                 query.returnGeometry = false;
                 query.returnDistinctValues = true;
@@ -87,18 +87,18 @@ define([
                     var selection = results.features;
 
                     for (var i = 0; i < selection.length; i++) {
-                        values.push(selection[i].attributes[fieldname]);
+                        values_ten.push(selection[i].attributes[fieldname]);
                     }
 
-                    values.sort(function (a, b) { return a - b; });
+                    values_ten.sort(function (a, b) { return a - b; });
 
-                    for (var j = 0; j < values.length; j++) {
-                        if (values[j] === null || values[j] === undefined) {
-                            values.splice(j, 1);
+                    for (var j = 0; j < values_ten.length; j++) {
+                        if (values_ten[j] === null || values_ten[j] === undefined) {
+                            values_ten.splice(j, 1);
                         }
                     }
 
-                    callback(values);
+                    callback(values_ten);
 
                 }.bind(this)).catch(function (err) {
                     console.error(err);
