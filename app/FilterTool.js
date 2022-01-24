@@ -83,7 +83,7 @@ define([
                         break;
                     case "usage": this.state.usageFeatures = selection;
                         break;
-                    case "tenancy": this.state.usaageTenancy = selection;
+                    case "tenancy": this.state.tenancyFeatures = selection;
                         break;
                     case "none":
                         this.state.usageFeatures = undefined;
