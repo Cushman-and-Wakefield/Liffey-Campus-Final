@@ -47,13 +47,9 @@ define([
                 }
                 for (var k = 0; k < selection.length; k++) {
                     var selectionusage = selection[k].attributes[settings.usagename];
-                    var selectiontenancy = selection[k].attributes[settings.tenancyname];
                     var selectionarea = selection[k].attributes[settings.areaname];
                     for (var m = 0; m < chartData.length; m++) {
                         if (selectionusage === chartData[m].usage) {
-                            chartData[m].area += selectionarea;
-                        }
-                        else if (selectiontenancy === chartData[m].tenancy) {
                             chartData[m].area += selectionarea;
                         }
                     }
@@ -65,6 +61,37 @@ define([
 
                 return chartData;
             },
+         
+         
+            createChartData_ten: function (selection, settings) {
+
+                   var color = this.rgbToHex(settings.color);
+
+                   var chartData_ten = [];
+
+                   for (var j = 0; j < settings.values.length; j++) {
+                       chartData_ten.push({
+                           tenancy: settings.values[j],
+                           area: 0,
+                           color: color[j]
+                       });
+                   }
+                   for (var k = 0; k < selection.length; k++) {
+                       var selectiontenancy = selection[k].attributes[settings.tenancyname];
+                       var selectionarea = selection[k].attributes[settings.areaname];
+                       for (var m = 0; m < chartData_ten.length; m++) {
+                           if (selectiontenancy === chartData_ten[m].tenancy) {
+                               chartData_ten[m].area += selectionarea;
+                           }
+                       }
+                   }
+
+                   for (var i = 0; i < chartData_ten.length; i++) {
+                       chartData_ten[i].area = Math.round(chartData_ten[i].area);
+                   }
+
+                   return chartData_ten;
+               },
 
 
             createChart: function (view, data, settings, state, callback) {
