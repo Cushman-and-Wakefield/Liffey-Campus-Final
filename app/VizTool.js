@@ -202,7 +202,7 @@ define([
                         // for usage renderer
                         var initUsage = chartMaker.createChartData(currentResult, settings);
                         // for tenancy renderer
-                        var initTenancy = chartMaker.createChartData(currentResult, settings);
+                        var initTenancy = chartMaker.createChartData_ten(currentResult, settings);
                         // for area renderer
                         var initArea = barMaker.createChartData(currentResult, settings, 10);
 
@@ -292,7 +292,7 @@ define([
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
-                    chartMaker.createChart(this.view, initCharts.tenancy, settings, "city", function (state) {
+                    chartMaker.createChart_ten(this.view, initCharts.tenancy, settings, "city", function (state) {
                         this.menu.setLoadingState("loaded");
                     }.bind(this));
                 }
@@ -357,7 +357,7 @@ define([
                         domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
-                        var chartData = chartMaker.createChartData(selection, settings);
+                        var chartData = chartMaker.createChartData_ten(selection, settings);
                         chartMaker.createChart(view, chartData, settings, "building", function (state) {
                             menu.setLoadingState(state);
                         });
