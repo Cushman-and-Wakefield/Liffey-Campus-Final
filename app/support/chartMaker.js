@@ -69,9 +69,9 @@ define([
 
                    var chartData_ten = [];
 
-                   for (var j = 0; j < settings.values_ten.length; j++) {
+                   for (var j = 0; j < settings.values.length; j++) {
                        chartData_ten.push({
-                           tenancy: settings.values_ten[j],
+                           tenancy: settings.values[j],
                            area: 0,
                            color: color[j]
                        });
@@ -205,27 +205,27 @@ define([
                     },
                     "clickSlice": function (dataItem, event) {
 
-                        var value_ten = dataItem.title;
+                        var value = dataItem.title;
 
                         var fields = [];
-                        for (var i = 0; i < settings.values_ten.length; i++) {
+                        for (var i = 0; i < settings.values.length; i++) {
                             fields.push({
-                                values_ten: settings.values_ten[i],
+                                values: settings.values[i],
                                 color: [135, 135, 135, 0.2]
                             });
                         }
 
                         for (var j = 0; j < fields.length; j++) {
-                            if (fields[j].values_ten === value_ten) {
+                            if (fields[j].values === value) {
                                 fields[j].color = color[j];
                             }
                         }
 
-                        var selectedvalues_ten = [];
+                        var selectedvalues = [];
                         var selectedcolor = [];
 
                         for (var k = 0; k < fields.length; k++) {
-                            selectedvalues_ten.push(fields[k].values_ten);
+                            selectedvalues.push(fields[k].values);
                             selectedcolor.push(fields[k].color);
                         }
 
@@ -233,7 +233,7 @@ define([
                         if (dataItem.pulled) {
                             chart.pullSlice(dataItem, 0);
  
-                            settings.layer1.renderer = applyRenderer.createRenderer(settings.values_ten, settings.color, settings.tenancyname);
+                            settings.layer1.renderer = applyRenderer.createRenderer(settings.values, settings.color, settings.tenancyname);
                             
                             view.environment.lighting.directShadowsEnabled = true;
                             view.environment.lighting.ambientOcclusionEnabled = true;
@@ -241,7 +241,7 @@ define([
                         } else {
                             chart.pullSlice(dataItem, 1);
 
-                            settings.layer1.renderer = applyRenderer.createRenderer(selectedvalues_ten, selectedcolor, settings.tenancyname);
+                            settings.layer1.renderer = applyRenderer.createRenderer(selectedvalues, selectedcolor, settings.tenancyname);
                             
                             view.environment.lighting.directShadowsEnabled = false;
                             view.environment.lighting.ambientOcclusionEnabled = false;
