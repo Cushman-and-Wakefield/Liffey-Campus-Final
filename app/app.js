@@ -196,7 +196,7 @@ define([
                     queryTools.distinctValues_ten(this.settings.layer1, this.settings.tenancyname, this.settings.OIDname, function (distinctValues_ten) {
 
                         distinctValues_ten.sort();
-                        this.settings.values = distinctValues_ten;
+                        this.settings.values_ten = distinctValues_ten;
 
                         // initiliaze tools menu with state
                         this.menu = new ToolsMenu({
