@@ -67,6 +67,45 @@ define([
 
 
             },
+         
+            distinctValues_ten: function (layer, fieldname, OIDname, callback) {
+
+                var query = layer.createQuery();
+
+                var values = [];
+                
+                query.returnGeometry = false;
+                query.returnDistinctValues = true;
+                query.outFields = [fieldname];
+
+                layer.load().then(function () {
+
+                    return layer.queryFeatures(query);
+
+                }).then(function (results) {
+
+                    var selection = results.features;
+
+                    for (var i = 0; i < selection.length; i++) {
+                        values.push(selection[i].attributes[fieldname]);
+                    }
+
+                    values.sort(function (a, b) { return a - b; });
+
+                    for (var j = 0; j < values.length; j++) {
+                        if (values[j] === null || values[j] === undefined) {
+                            values.splice(j, 1);
+                        }
+                    }
+
+                    callback(values);
+
+                }.bind(this)).catch(function (err) {
+                    console.error(err);
+                });
+
+
+            },
 
             pagedQuery: function (layer, query, currentOffset, currentResult, index, callback) {
 
