@@ -93,10 +93,10 @@ define([
 
             createUI: function (container) {
                 this.title = domCtr.create("div", { className: "titleViz", id: "titleViz", innerHTML: "Visualisation by" }, container);
-                this.label1 = domCtr.create("div", { className: "labelViz", id: "viz-white", innerHTML: "none" }, container);
-                this.label2 = domCtr.create("div", { className: "labelViz", id: "viz-usage", innerHTML: "usage" }, container);
-                this.label4 = domCtr.create("div", { className: "labelViz", id: "viz-tenancy", innerHTML: "tenancy" }, container);
-                this.label3 = domCtr.create("div", { className: "labelViz", id: "viz-area", innerHTML: "area" }, container);
+                this.label1 = domCtr.create("div", { className: "labelViz", id: "viz-white", innerHTML: "None" }, container);
+                this.label2 = domCtr.create("div", { className: "labelViz", id: "viz-usage", innerHTML: "Usage" }, container);
+                this.label4 = domCtr.create("div", { className: "labelViz", id: "viz-tenancy", innerHTML: "Tenancy" }, container);
+                this.label3 = domCtr.create("div", { className: "labelViz", id: "viz-area", innerHTML: "Area" }, container);
 
                 this.statsDiv = domCtr.create("div", { id: "statsDiv", className: "statsDiv" }, container);
                 this.chartDiv = domCtr.create("div", { id: "chartDiv", className: "chartDiv" }, container);
@@ -292,7 +292,7 @@ define([
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
-                    chartMaker.createChart_ten(this.view, initCharts.tenancy, settings, "city", function (state) {
+                    chartMaker.createChart(this.view, initCharts.tenancy, settings, "city", function (state) {
                         this.menu.setLoadingState("loaded");
                     }.bind(this));
                 }
