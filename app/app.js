@@ -73,7 +73,7 @@ define([
             url: "https://cwireland.maps.arcgis.com",           // portal URL for config
             webscene: "9d3f9ad5b5a0468aab7224abb1591441",   // portal item ID of the webscene
             usagename: "Lease",                             // usage attribute (string)
-            tenancyname: "Lease-Type",
+            tenancyname: "Lease Type",
             floorname: "Floor",                           // floor attribute (int)
             OIDname: "OBJECTID",                            // objectid
             buildingIDname: "BuildID",                   // building attribute (int)
