@@ -374,7 +374,7 @@ html, body {
     padding-top: 15px;
     padding-bottom: 15px;
     padding-right: 15px;
-    width: 550px;
+    width: 600px;
     height: 250px;
   }
 
@@ -422,6 +422,11 @@ html, body {
 #filter-usage {
   top: 50px;
   left: 230px
+}
+
+#filter-tenancy {
+  top: 50px;
+  left: 460px
 }
 
 #filterAreaMin{
