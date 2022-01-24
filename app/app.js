@@ -217,6 +217,38 @@ define([
                             }
                         });
                     }.bind(this));
+                 
+                    // retrieve distinct values of tenancy attribute from feature service to create UI (filter dropdowns)
+                    queryTools.distinctValues(this.settings.layer1, this.settings.tenancyname, this.settings.OIDname, function (distinctValues) {
+
+                        distinctValues.sort();
+                        this.settings.values = distinctValues;
+
+                        // initiliaze tools menu with state
+                        this.menu = new ToolsMenu({
+                            config: this.settings,
+                            map: this.scene,
+                            view: this.view,
+                            state: {
+                                highlight: {
+                                    name: "city",
+                                    features: undefined
+                                },
+                                viz: {
+                                    name: "white"
+                                },
+                                filter: {
+                                    name: "none",
+                                    usageFeatures: undefined,
+                                    areaFeatures: undefined,
+                                    floorFeatures: undefined,
+                                    tenancyFeatures: undefined,
+                                    vacancyFeatures: undefined
+                                },
+                                combinedFilteredFeatures: undefined
+                            }
+                        });
+                    }.bind(this));
 
                 }.bind(this)).catch(function (err) {
                     console.error(err);
