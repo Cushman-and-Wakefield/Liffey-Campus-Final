@@ -225,7 +225,7 @@ define([
                         // for area renderer
                         var initArea = barMaker.createChartData(currentResult, settings, 10);
                         // for lease expiry renderer
-                        var initLeaseexpiry = barMaker.createChartData(currentResult, settings, 10);
+                        var initLeaseexpiry = barMaker.createChartData_exp(currentResult, settings, 10);
 
                         var initCharts = {
                             stats: initStats,
@@ -335,7 +335,7 @@ define([
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
-                    barMaker.createChart(initData, initCharts.leaseexpiry, settings, "city", this.view, function (state) {
+                    barMaker.createChart_exp(initData, initCharts.leaseexpiry, settings, "city", this.view, function (state) {
                         this.menu.setLoadingState("loaded");
                     }.bind(this));
                 }
@@ -423,8 +423,8 @@ define([
                         domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
-                        var barData = barMaker.createChartData(selection, settings, 6);
-                        barMaker.createChart(selection, barData, settings, "building", view, function (state) {
+                        var barData = barMaker.createChartData_exp(selection, settings, 6);
+                        barMaker.createChart_exp(selection, barData, settings, "building", view, function (state) {
                             menu.setLoadingState(state);
                         });
 
