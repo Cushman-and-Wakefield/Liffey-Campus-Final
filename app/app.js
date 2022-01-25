@@ -74,7 +74,7 @@ define([
             webscene: "b4aa4b98c7ef480aaeb946c932246b8d",   // portal item ID of the webscene
             usagename: "Use_",                             // usage attribute (string)
             tenancyname: "Tenant",                          // tenant names (string)
-            floorname: "Floor_1",                           // floor attribute (int)
+            floorname: "Floor",                           // floor attribute (int)
             statusname: "Status",                           // status attribute like let, vacant etc. (string)
             leaseexpiryname: "Lease_Expiry",                // lease expiry attribute (string)
             OIDname: "OBJECTID",                            // objectid
