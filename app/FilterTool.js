@@ -85,11 +85,14 @@ define([
                         break;
                     case "tenancy": this.state.tenancyFeatures = selection;
                         break;
+                    case "status": this.state.statusFeatures = selection;
+                       break;
                     case "none":
                         this.state.usageFeatures = undefined;
                         this.state.floorFeatures = undefined;
                         this.state.areaFeatures = undefined;
                         this.state.tenancyFeatures = undefined;
+                        this.state.statusFeatures = undefined;
                 }
 
                 this.menu.setFilterState(this.state);
@@ -105,6 +108,7 @@ define([
                 filterstate.floorFeatures = undefined;
                 filterstate.areaFeatures = undefined;
                 filterstate.tenancyFeatures = undefined;
+                filterstate.statusFeatures = undefined;
 
                 callback(filterstate);
 
@@ -115,6 +119,8 @@ define([
                 if (state.name === "none") {
                     domCtr.destroy(dom.byId("filter-floors"));
                     domCtr.destroy(dom.byId("filter-usage"));
+                    domCtr.destroy(dom.byId("filter-tenancy"));
+                    domCtr.destroy(dom.byId("filter-status"));
                     domCtr.destroy(dom.byId("filterAreaMin"));
                     domCtr.destroy(dom.byId("AreaMaxText"));
                     domCtr.destroy(dom.byId("AreaMinText"));
@@ -122,6 +128,8 @@ define([
                     this.createFilterFloorUI(this.container);
                     this.createFilterUsageUI(this.container);
                     this.createFilterAreaUI(this.container);
+                    this.createFilterTenancyUI(this.container);
+                    this.createFilterStatusUI(this.container);
 
                 } else {
 
@@ -191,6 +199,7 @@ define([
                 this.createFilterFloorUI(this.container);
                 this.createFilterUsageUI(this.container);
                 this.createFilterTenancyUI(this.container);
+                this.createFilterStatusUI(this.container);
                 this.createFilterAreaUI(this.container);
 
                 on(this.reset, "click", function (evt) {
@@ -243,11 +252,28 @@ define([
                     distinctValues.sort();
                     distinctValues.unshift("Select Tenancy");
 
-                    this.setDropdown("Usage", distinctValues, this.TenancyFilterContainer, function (tenancySelector) {
+                    this.setDropdown("Tenancy", distinctValues, this.TenancyFilterContainer, function (tenancySelector) {
                         this.tenancySelector = tenancySelector;
                     }.bind(this));
 
                     this.onChangeTenancy = this.dropdownChangeTenancy(this.tenancySelector, this.settings.tenancyname, "tenancy");
+
+                }.bind(this));
+
+            },
+         
+            createFilterStatusUI: function (container) {
+                this.StatusFilterContainer = domCtr.create("div", { className: "FilterLabel", id: "filter-status" }, container);
+
+                queryTools.distinctValues(this.settings.layer1, this.settings.statusname, this.settings.OIDname, function (distinctValues) {
+                    distinctValues.sort();
+                    distinctValues.unshift("Select Status");
+
+                    this.setDropdown("Status", distinctValues, this.StatusFilterContainer, function (statusSelector) {
+                        this.statusSelector = statusSelector;
+                    }.bind(this));
+
+                    this.onChangeStatus = this.dropdownChangeStatus(this.statusSelector, this.settings.statusname, "status");
 
                 }.bind(this));
 
@@ -386,6 +412,13 @@ define([
 
                 on(nameSelector, "change", function () {
                     this.updateFilterFeatures(nameSelector, fieldname, "tenancy");
+                }.bind(this));
+            },
+         
+            dropdownChangeStatus: function (nameSelector, fieldname, state) {
+
+                on(nameSelector, "change", function () {
+                    this.updateFilterFeatures(nameSelector, fieldname, "status");
                 }.bind(this));
             },
 
