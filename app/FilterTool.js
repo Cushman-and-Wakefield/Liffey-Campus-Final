@@ -87,12 +87,15 @@ define([
                         break;
                     case "status": this.state.statusFeatures = selection;
                        break;
+                   case "leaseexpiry": this.state.leaseexpiryFeatures = selection;
+                       break;
                     case "none":
                         this.state.usageFeatures = undefined;
                         this.state.floorFeatures = undefined;
                         this.state.areaFeatures = undefined;
                         this.state.tenancyFeatures = undefined;
                         this.state.statusFeatures = undefined;
+                        this.state.leaseexpiryFeatures = undefined;
                 }
 
                 this.menu.setFilterState(this.state);
@@ -109,6 +112,7 @@ define([
                 filterstate.areaFeatures = undefined;
                 filterstate.tenancyFeatures = undefined;
                 filterstate.statusFeatures = undefined;
+                filterstate.leaseexpiryFeatures = undefined;
 
                 callback(filterstate);
 
@@ -197,6 +201,7 @@ define([
                 this.createFilterTenancyUI(this.container);
                 this.createFilterStatusUI(this.container);
                 this.createFilterAreaUI(this.container);
+                this.createFilterLeaseexpiryUI(this.container);
 
                 on(this.reset, "click", function (evt) {
 
@@ -270,6 +275,24 @@ define([
                     }.bind(this));
 
                     this.onChangeStatus = this.dropdownChangeStatus(this.statusSelector, this.settings.statusname, "status");
+
+                }.bind(this));
+
+            },
+         
+         
+            createFilterLeaseexpiryUI: function (container) {
+                this.LeaseexpiryFilterContainer = domCtr.create("div", { className: "FilterLabel", id: "filter-leaseexpiry" }, container);
+
+                queryTools.distinctValues_exp(this.settings.layer1, this.settings.leaseexpiryname, this.settings.OIDname, function (distinctValues_exp) {
+                    distinctValues_exp.sort();
+                    distinctValues_exp.unshift("Select Lease");
+
+                    this.setDropdown("Leaseexpiry", distinctValues_exp, this.LeaseexpiryFilterContainer, function (leaseexpirySelector) {
+                        this.leaseexpirySelector = leaseexpirySelector;
+                    }.bind(this));
+
+                    this.onChangeLeaseexpiry = this.dropdownChangeLeaseexpiry(this.leaseexpirySelector, this.settings.leaseexpiryname, "leaseexpiry");
 
                 }.bind(this));
 
@@ -415,6 +438,13 @@ define([
 
                 on(nameSelector, "change", function () {
                     this.updateFilterFeatures(nameSelector, fieldname, "status");
+                }.bind(this));
+            },
+         
+            dropdownChangeLeaseexpiry: function (nameSelector, fieldname, state) {
+
+                on(nameSelector, "change", function () {
+                    this.updateFilterFeatures(nameSelector, fieldname, "leaseexpiry");
                 }.bind(this));
             },
 
