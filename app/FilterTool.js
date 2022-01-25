@@ -284,11 +284,11 @@ define([
             createFilterLeaseexpiryUI: function (container) {
                 this.LeaseexpiryFilterContainer = domCtr.create("div", { className: "FilterLabel", id: "filter-leaseexpiry" }, container);
 
-                queryTools.distinctValues(this.settings.layer1, this.settings.leaseexpiryname, this.settings.OIDname, function (distinctValues) {
-                    distinctValues.sort();
-                    distinctValues.unshift("Select Lease");
+                queryTools.distinctValues_exp(this.settings.layer1, this.settings.leaseexpiryname, this.settings.OIDname, function (distinctValues_exp) {
+                    distinctValues_exp.sort();
+                    distinctValues_exp.unshift("Select Lease");
 
-                    this.setDropdown("Leaseexpiry", distinctValues, this.LeaseexpiryFilterContainer, function (leaseexpirySelector) {
+                    this.setDropdown("Leaseexpiry", distinctValues_exp, this.LeaseexpiryFilterContainer, function (leaseexpirySelector) {
                         this.leaseexpirySelector = leaseexpirySelector;
                     }.bind(this));
 
