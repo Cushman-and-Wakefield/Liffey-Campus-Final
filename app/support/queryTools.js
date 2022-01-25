@@ -124,19 +124,19 @@ define([
                 }).then(function (results) {
                     
                 
-                    splitDate: function (date){
+                    /*splitDate: function (date){
                       var result = date.split(' ');
-                      return result;
+                      return result;*/
                     }
                     var selection = results.features;
 
                     for (var i = 0; i < selection.length; i++) {
                         values_exp.push(selection[i].attributes[fieldname]);
                     }
-                    var year = []
+                    /*var year = []
                     for (var k = 0; k < values_exp.length; k++) {
                        year = splitDate(values_exp[k]);
-                       values_exp[k] = year[2]; 
+                       values_exp[k] = year[2]; */
                    }
 
                     values_exp.sort(function (a, b) { return a - b; });
