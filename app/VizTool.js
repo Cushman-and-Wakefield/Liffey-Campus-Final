@@ -191,7 +191,7 @@ define([
                     var query = settings.layer1.createQuery();
 
                     query.returnGeometry = false;
-                    query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.floorname, settings.buildingIDname];
+                    query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.floorname, settings.statusname, settings.buildingIDname];
 
                     settings.layer1.queryFeatures(query).then(function (result) {
                         var currentResult = result.features;
@@ -317,7 +317,7 @@ define([
                 var query = settings.layer1.createQuery();
 
                 query.returnGeometry = false;
-                query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.floorname, settings.buildingIDname];
+                query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.floorname, settings.statusname, settings.buildingIDname];
 
                 settings.layer1.queryFeatures(query).then(function (result) {
 
