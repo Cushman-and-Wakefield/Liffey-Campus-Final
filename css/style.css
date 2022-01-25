@@ -345,6 +345,12 @@ html, body {
   left: 440px;
 }
 
+#viz-leaseexpiry {
+  left: 20px;
+  top: 60px;
+}
+
+
 .titleFilter{
   position: relative;
   padding-left: 5px;
@@ -456,7 +462,7 @@ html, body {
 #chartDiv {
   position: absolute;
   background: white;
-  top: 100px;
+  top: 160px;
   align-items: center;
   margin-top: 15px;
   margin-left: 15px;
@@ -501,10 +507,10 @@ html, body {
 #statsDiv {
   position: absolute;
   background: white;
-  top: 100px;
+  top: 160px;
   align-items: center;
   margin-top: 30px;
-  margin-left: 5px;
+  margin-left: 20px;
   height: 400px;
   width: 500px;
   font-size: 14px;
