@@ -119,8 +119,6 @@ define([
                 if (state.name === "none") {
                     domCtr.destroy(dom.byId("filter-floors"));
                     domCtr.destroy(dom.byId("filter-usage"));
-                    domCtr.destroy(dom.byId("filter-tenancy"));
-                    domCtr.destroy(dom.byId("filter-status"));
                     domCtr.destroy(dom.byId("filterAreaMin"));
                     domCtr.destroy(dom.byId("AreaMaxText"));
                     domCtr.destroy(dom.byId("AreaMinText"));
@@ -128,8 +126,6 @@ define([
                     this.createFilterFloorUI(this.container);
                     this.createFilterUsageUI(this.container);
                     this.createFilterAreaUI(this.container);
-                    this.createFilterTenancyUI(this.container);
-                    this.createFilterStatusUI(this.container);
 
                 } else {
 
