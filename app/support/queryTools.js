@@ -126,8 +126,8 @@ define([
                 
                     /*splitDate: function (date){
                       var result = date.split(' ');
-                      return result;*/
-                    }
+                      return result;
+                    }*/
                     var selection = results.features;
 
                     for (var i = 0; i < selection.length; i++) {
@@ -136,8 +136,8 @@ define([
                     /*var year = []
                     for (var k = 0; k < values_exp.length; k++) {
                        year = splitDate(values_exp[k]);
-                       values_exp[k] = year[2]; */
-                   }
+                       values_exp[k] = year[2]; 
+                   }*/
 
                     values_exp.sort(function (a, b) { return a - b; });
 
