@@ -137,7 +137,8 @@ define([
                  
                    for (var k = 0, k < selection.length; k++) {
                        var year = splitDate(values_exp[k])
-                       values_exp[k] = year };
+                       values_exp[k] = year; 
+                   }
 
                     values_exp.sort(function (a, b) { return a - b; });
 
