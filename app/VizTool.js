@@ -96,6 +96,7 @@ define([
                 this.label1 = domCtr.create("div", { className: "labelViz", id: "viz-white", innerHTML: "None" }, container);
                 this.label2 = domCtr.create("div", { className: "labelViz", id: "viz-usage", innerHTML: "Usage" }, container);
                 this.label4 = domCtr.create("div", { className: "labelViz", id: "viz-tenancy", innerHTML: "Tenancy" }, container);
+                this.label5 = domCtr.create("div", { className: "labelViz", id: "viz-leaseexpiry", innerHTML: "Lease Expiry" }, container);
                 this.label3 = domCtr.create("div", { className: "labelViz", id: "viz-area", innerHTML: "Area" }, container);
 
                 this.statsDiv = domCtr.create("div", { id: "statsDiv", className: "statsDiv" }, container);
@@ -119,6 +120,7 @@ define([
                     domStyle.set(dom.byId("viz-white"), { "opacity": 1, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
                     domCtr.destroy(dom.byId("reload"));
                 }
@@ -127,12 +129,23 @@ define([
                     domStyle.set(dom.byId("viz-usage"), { "opacity": 1, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
                     domCtr.destroy(dom.byId("reload"));
                 }
                
                 if (viz === "tenancy") {
                     domStyle.set(dom.byId("viz-tenancy"), { "opacity": 1, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
+                    domCtr.destroy(dom.byId("reload"));
+                }
+             
+                if (viz === "leaseexpiry") {
+                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 1, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
@@ -143,6 +156,7 @@ define([
                     domStyle.set(dom.byId("viz-area"), { "opacity": 1, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
                     this.reload = domCtr.create("div", { id: "reload" }, this.container);
                     domCtr.create("img", { className: "reload", src: "img/reload.png", style: "width:25px;height:25px" }, this.reload);
@@ -177,6 +191,11 @@ define([
                on(this.label4, "click", function (evt) {
                     this.updateVizState({ name: "tenancy" });
                 }.bind(this));
+             
+               on(this.label5, "click", function (evt) {
+                    this.updateVizState({ name: "leaseexpiry" });
+                }.bind(this));
+
 
                 on(this.label3, "click", function (evt) {
                     this.updateVizState({ name: "area" });
@@ -191,7 +210,7 @@ define([
                     var query = settings.layer1.createQuery();
 
                     query.returnGeometry = false;
-                    query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.floorname, settings.statusname, settings.buildingIDname];
+                    query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.leaseexpiryname, settings.floorname, settings.statusname, settings.buildingIDname];
 
                     settings.layer1.queryFeatures(query).then(function (result) {
                         var currentResult = result.features;
@@ -205,11 +224,14 @@ define([
                         var initTenancy = chartMaker.createChartData_ten(currentResult, settings);
                         // for area renderer
                         var initArea = barMaker.createChartData(currentResult, settings, 10);
+                        // for lease expiry renderer
+                        var initLeaseexpiry = barMaker.createChartData(currentResult, settings, 10);
 
                         var initCharts = {
                             stats: initStats,
                             usage: initUsage,
                             tenancy: initTenancy,
+                            leaseexpiry: initLeaseexpiry,
                             area: initArea
                         };
 
@@ -306,6 +328,17 @@ define([
                         this.menu.setLoadingState("loaded");
                     }.bind(this));
                 }
+             
+                if (vizName === "leaseexpiry") {
+                    settings.layer1.renderer = applyRenderer.createRendererVV(initData, settings.leaseexpiryname);
+
+                    domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
+                    domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
+
+                    barMaker.createChart(initData, initCharts.leaseexpiry, settings, "city", this.view, function (state) {
+                        this.menu.setLoadingState("loaded");
+                    }.bind(this));
+                }
             },
 
             changeVisualiationSelection: function (vizName, menu, settings, view) {
@@ -317,7 +350,7 @@ define([
                 var query = settings.layer1.createQuery();
 
                 query.returnGeometry = false;
-                query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.floorname, settings.statusname, settings.buildingIDname];
+                query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.leaseexpiryname, settings.floorname, settings.statusname, settings.buildingIDname];
 
                 settings.layer1.queryFeatures(query).then(function (result) {
 
@@ -369,6 +402,23 @@ define([
                     }
                     if (vizName === "area") {
                         settings.layer1.renderer = applyRenderer.createRendererVV(selection, settings.areaname);
+
+                        domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
+                        domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
+
+                        var barData = barMaker.createChartData(selection, settings, 6);
+                        barMaker.createChart(selection, barData, settings, "building", view, function (state) {
+                            menu.setLoadingState(state);
+                        });
+
+                        var data2 = statsMaker.createChartData(selection, settings);
+                        statsMaker.createChart(data2, function (state) {
+                            menu.setLoadingState(state);
+                        });
+                    }
+                 
+                     if (vizName === "leaseexpiry") {
+                        settings.layer1.renderer = applyRenderer.createRendererVV(selection, settings.leaseexpiryname);
 
                         domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
