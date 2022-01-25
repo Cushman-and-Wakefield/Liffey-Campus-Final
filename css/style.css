@@ -318,7 +318,7 @@ html, body {
 #reset{
   position: absolute;
   width: 50px;
-  top: 240px;
+  top: 290px;
   left: 20px;
   text-align: center;
   cursor: pointer
