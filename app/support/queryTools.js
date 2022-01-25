@@ -133,9 +133,9 @@ define([
                     for (var i = 0; i < selection.length; i++) {
                         values_exp.push(selection[i].attributes[fieldname]);
                     }
-                 
+                    var year = []
                     for (var k = 0, k < selection.length; k++) {
-                       var year = splitDate(values_exp[k])
+                       year = splitDate(values_exp[k])
                        values_exp[k] = year[2]; 
                    }
 
