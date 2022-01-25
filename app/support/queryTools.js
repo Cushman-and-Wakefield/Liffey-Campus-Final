@@ -109,6 +109,12 @@ define([
          
             distinctValues_exp: function (layer, fieldname, OIDname, callback) {
 
+                
+                splitDate: function (date){
+                  var result = date.split(' ');
+                  return result;
+                }
+             
                 var query = layer.createQuery();
 
                 var values_exp = [];
@@ -128,6 +134,10 @@ define([
                     for (var i = 0; i < selection.length; i++) {
                         values_exp.push(selection[i].attributes[fieldname]);
                     }
+                 
+                   for (var k = 0, k < selection.length; k++) {
+                       var year = splitDate(values_exp[k])
+                       values_exp[k] = year };
 
                     values_exp.sort(function (a, b) { return a - b; });
 
