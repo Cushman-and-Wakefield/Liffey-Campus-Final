@@ -156,7 +156,7 @@ define([
                 });
 
                 // create home button that leads back to welcome page
-                var home = domCtr.create("div", { className: "button", id: "homeButton", innerHTML: "Home" }, header);
+                var home = domCtr.create("div", { className: "button", id: "homeButton", innerHTML: "Back" }, header);
 
                 on(home, "click", function () {
                     var URI = window.location.href;
