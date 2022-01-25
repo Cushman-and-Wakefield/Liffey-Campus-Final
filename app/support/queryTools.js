@@ -124,7 +124,7 @@ define([
                 }).then(function (results) {
                     
                 
-                    function splitDate(date){
+                    splitDate: function (date){
                       var result = date.split(' ');
                       return result;
                     }
