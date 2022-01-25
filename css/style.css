@@ -347,7 +347,7 @@ html, body {
 
 #viz-leaseexpiry {
   left: 20px;
-  top: 60px;
+  top: 120px;
 }
 
 
@@ -466,7 +466,7 @@ html, body {
   align-items: center;
   margin-top: 15px;
   margin-left: 15px;
-  height: 450px;
+  height: 350px;
   width: 550px;
   z-index: 0;
 }
