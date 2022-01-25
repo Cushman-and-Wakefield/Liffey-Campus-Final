@@ -212,6 +212,7 @@ define([
                                     areaFeatures: undefined,
                                     floorFeatures: undefined,
                                     tenancyFeatures: undefined,
+                                    statusFeatures: undefined,
                                     vacancyFeatures: undefined
                                 },
                                 combinedFilteredFeatures: undefined
