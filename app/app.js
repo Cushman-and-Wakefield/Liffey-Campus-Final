@@ -76,6 +76,7 @@ define([
             tenancyname: "Tenant",                          // tenant names (string)
             floorname: "Floor_1",                           // floor attribute (int)
             statusname: "Status",                           // status attribute like let, vacant etc. (string)
+            leaseexpiryname: "Lease_Expiry",                // lease expiry attribute (string)
             OIDname: "OBJECTID",                            // objectid
             buildingIDname: "BuildID",                   // building attribute (int)
             areaname: "sq_m",                           // area attribute (float)
@@ -213,6 +214,7 @@ define([
                                     floorFeatures: undefined,
                                     tenancyFeatures: undefined,
                                     statusFeatures: undefined,
+                                    leaseexpiryFeatures: undefined,
                                     vacancyFeatures: undefined
                                 },
                                 combinedFilteredFeatures: undefined
