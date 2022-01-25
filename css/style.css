@@ -233,6 +233,7 @@ html, body {
     padding-right: 15px;
     width: 500px;
     height: 50px;
+    display: none;
   }
 
 .labelSelect {
@@ -291,7 +292,7 @@ html, body {
 
 .containerViz {
     position: relative;
-    top: 20px;
+    top: 10px;
     margin: 0;
     padding-left: 15px;
     padding-top: 15px;
