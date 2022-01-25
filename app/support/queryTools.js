@@ -128,9 +128,7 @@ define([
                     for (var i = 0; i < selection.length; i++) {
                         values_exp.push(selection[i].attributes[fieldname]);
                     }
-                    for (var k = 0; k < values_ten.length; k++) {
-                        values_exp[k] = new Date(values.exp[k]).getFullYear();
-                        }
+
                     values_exp.sort(function (a, b) { return a - b; });
 
                     for (var j = 0; j < values_exp.length; j++) {
