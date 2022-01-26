@@ -143,7 +143,7 @@ define([
                      return years
                      }
 
-                    var values_exp = generateArrayOfYears().toString();
+                    var values_exp = generateArrayOfYears();
                    
                     /*var year = []
                     for (var k = 0; k < values_exp.length; k++) {
