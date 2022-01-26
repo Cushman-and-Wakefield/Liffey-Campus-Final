@@ -144,6 +144,7 @@ define([
                      }
 
                     var values_exp = generateArrayOfYears();
+                   
                     /*var year = []
                     for (var k = 0; k < values_exp.length; k++) {
                        year = splitDate(values_exp[k]);
@@ -157,6 +158,7 @@ define([
                             values_exp.splice(j, 1);
                         }
                     }
+                    values_exp = ['2020', '2029']
 
                     callback(values_exp);
 
