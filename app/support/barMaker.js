@@ -232,9 +232,28 @@ define([
                     totalrange.push(selection[j].attributes[settings.leaseexpiryname]);
                 }
 
-                totalrange = ['2022', '2022', '2029', '2022', '2025', '2025', '2030'] 
+                /*totalrange = ['2022', '2022', '2029', '2022', '2025', '2025', '2030'] 
                 var unique_years = ['2021', '2022', '2025', '2029', '2030', '2035']
-                var bins_new = 6
+                var bins_new = 6*/
+             
+                var years =[];
+                var unique_years = [];
+                function generateArrayOfYears() {
+                    for (var k = 0; k < totalrange.length; k++) {
+                      var year_temp = new Date(totalrange[k]).getFullYear();
+                       years.push(year_temp.toString());
+                     }
+                     return years;
+                }
+                totalrange = generateArrayOfYears();
+
+                function onlyUnique(value, index, self) {
+                     return self.indexOf(value) === index;
+                }
+
+                unique_years = totalrange.filter(onlyUnique);
+             
+                var bins_new = unique_years.length;
              
                 var color = [];
 
