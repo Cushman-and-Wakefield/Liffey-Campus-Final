@@ -222,8 +222,6 @@ define([
          //For Lease Expiry Date
             createChartData_exp: function (selection, settings, bins) {
                 
-                selection = new Date(selection);
-                selection = selection.getFullYear();
                 this.selection = selection;
 
                 var chartData = [];
