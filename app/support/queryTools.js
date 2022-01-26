@@ -137,7 +137,6 @@ define([
                          }
                          return years
                     }
-                    var values_exp = [];
                     var values_exp = generateArrayOfYears();
                  
                     function onlyUnique(value, index, self) {
@@ -148,12 +147,12 @@ define([
 
                     values_exp.sort(function (a, b) { return a - b; });
 
-                    /*for (var j = 0; j < values_exp.length; j++) {
+                    for (var j = 0; j < values_exp.length; j++) {
                         if (values_exp[j] === null || values_exp[j] === undefined) {
                             values_exp.splice(j, 1);
                         }
-                    }*/
-                    var values_exp = ['2020', '2029', '2029']
+                    }
+                    var values_exp = ['2020', '2029', '2024']
 
                     callback(values_exp);
 
