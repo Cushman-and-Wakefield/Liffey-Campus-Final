@@ -339,8 +339,8 @@ define([
 
                 chart.addListener("clickGraphItem", function (event) {
 
-                    var max = 2000;
-                    var min = 2100;
+                    var max = 2022;
+                    var min = 2022;
                     var color = event.item.dataContext.color;
 
                     settings.layer1.renderer = applyRenderer.createRendererVVbar(min, max, color, settings.leaseexpiryname);
