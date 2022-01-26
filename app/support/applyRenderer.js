@@ -125,7 +125,7 @@ define([
                     });
                 }
             },
-
+            //For Area Bar chart
             createRendererVV: function (selection, fieldname) {
 
                 var totalrange = [];
@@ -182,6 +182,77 @@ define([
                             { value: min, color: color },
                             { value: max, color: color },
                             { value: max+1, color: defaultcolor}
+                        ]
+                    }]
+
+                });
+            }
+         
+            //For Lease Expiry Bar Chart
+            createRendererVV_exp: function (selection, fieldname) {
+
+                var totalrange = [];
+
+                
+                for (var j = 0; j < selection.length; j++) {
+                    if (selection[j].attributes[fieldname] !== null) {
+                        totalrange.push(selection[j].attributes[fieldname]);
+                    }
+                }
+             
+               var years =[];
+                var unique_years = [];
+                function generateArrayOfYears() {
+                    for (var k = 0; k < totalrange.length; k++) {
+                      var year_temp = new Date(totalrange[k]).getFullYear();
+                       years.push(year_temp.toString());
+                     }
+                     return years;
+                }
+                totalrange = generateArrayOfYears();
+
+                var year = parseInt(totalrange[totalrange.length-1]);
+                //var valuemin = Math.floor(Math.min.apply(Math, totalrange));
+
+                return new UniqueValueRenderer({
+                    defaultSymbol: new MeshSymbol3D({
+                        symbolLayers: [new FillSymbol3DLayer({
+                            material: {
+                                color: "white"
+                            }
+                        })]
+                    }),
+                    defaultLabel: "N.A.",
+                    visualVariables: [{
+                        type: "color",
+                        field: fieldname,
+                        stops: [
+                            { value: year, color: "#E4002B"}
+                        ]
+                    }]
+
+                });
+            },
+
+            createRendererVVbar_exp: function (year, color, fieldname) {
+
+                var defaultcolor = [135, 135, 135, 0.2];
+
+                return new UniqueValueRenderer({
+                    defaultSymbol: new MeshSymbol3D({
+                        symbolLayers: [new FillSymbol3DLayer({
+                            material: {
+                                color: defaultcolor
+                            }
+                        })]
+                    }),
+                    defaultLabel: "N.A.",
+                    visualVariables: [{
+                        type: "color",
+                        field: fieldname,
+                        stops: [
+                            { value: year-1, color: defaultcolor},
+                            { value: year, color: color }
                         ]
                     }]
 
