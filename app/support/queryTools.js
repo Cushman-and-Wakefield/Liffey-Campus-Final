@@ -128,7 +128,7 @@ define([
                     for (var i = 0; i < selection.length; i++) {
                         values_exp.push(selection[i].attributes[fieldname]);
                     }
-                 
+                    var values_exp = ['', '', '', '12/02/2030', '15/11/2029', '13/12/2026', '13 December 2026']
                     var years =[]
                     function generateArrayOfYears() {
                         for (var k = 0; k < values_exp.length; k++) {
