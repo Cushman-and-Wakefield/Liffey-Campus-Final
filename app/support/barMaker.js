@@ -253,6 +253,12 @@ define([
 
                 unique_years = totalrange.filter(onlyUnique);
              
+                unique_years = unique_years.filter(function(value, index, arr){ 
+                       return value != '1970';
+                   });
+             
+                unique_years.sort(function (a, b) { return a - b; });
+             
                 var bins_new = unique_years.length;
              
                 var color = [];
