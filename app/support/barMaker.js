@@ -227,79 +227,15 @@ define([
                 var chartData = [];
                 var kernel = [];
                 var totalrange = [];
-                var years = [];
-
-                if (bins > selection.length) {
-                    bins = selection.length - 1;
+             
+                 for (var j = 0; j < selection.length; j++) {
+                    totalrange.push(selection[j].attributes[settings.areaname]);
                 }
 
-                for (var j = 0; j < selection.length; j++) {
-                    totalrange.push(selection[j].attributes[settings.leaseexpiryname]);
-                }
-
-                function maxIterate(arr) {
-                    var max = arr[0];
-                    for (var i = 0; i < arr.length; i++) {
-                        if (arr[i] > max) {
-                            max = arr[i];
-                        }
-                    }
-                    return max;
-                }
-
-                function minIterate(arr, max) {
-                    var min = max;
-                    for (var i = 0; i < arr.length; i++) {
-                        if (arr[i] < min) {
-                            min = arr[i];
-                        }
-                    }
-                    return min;
-                }
-
-                var max = maxIterate(totalrange);
-                var min = minIterate(totalrange, max);
-
-                if (Math.round(min) === 1) {
-                    min = 0;
-                }
-
-                var kernelwidth = (max - min) / bins;
-
-                if (kernelwidth > 1000) {
-                    kernelwidth = 500 * Math.round(kernelwidth / 500);
-                }
-                else if (kernelwidth < 1000 && kernelwidth > 500) {
-                    kernelwidth = 250 * Math.round(kernelwidth / 250);
-                }
-                else if (kernelwidth < 500 && kernelwidth > 200) {
-                    kernelwidth = 100 * Math.round(kernelwidth / 100);
-                }
-                else if (kernelwidth < 200 && kernelwidth > 100) {
-                    kernelwidth = 50 * Math.round(kernelwidth / 50);
-                }
-                else if (kernelwidth < 100 && kernelwidth > 50) {
-                    kernelwidth = 10 * Math.round(kernelwidth / 10);
-                }
-                else if (kernelwidth < 50 && kernelwidth > 10) {
-                    kernelwidth = 5 * Math.round(kernelwidth / 5);
-                }
-                else {
-                    kernelwidth = Math.round(kernelwidth);
-                }
-
-                min = kernelwidth * Math.round(min / kernelwidth);
-
-                var bins_new = (max - min) / kernelwidth;
-
-                // set up bins with ranges
-                for (var n = 0; n < bins_new; n++) {
-                    kernel.push({
-                        min: min,
-                        max: min + kernelwidth
-                    });
-                    min += kernelwidth;
-                }
+                queryTools.distinctValues_exp(this.settings.layer1, this.settings.leaseexpiryname, this.settings.OIDname, function (distinctValues_exp) {
+                    bins_new = distinctValues_exp.sort();
+                 
+                 }.bind(this));
 
                 var color = [];
 
@@ -313,20 +249,20 @@ define([
 
 
 
-                for (var i = 0; i < kernel.length; i++) {
+                for (var i = 0; i < bins_new.length; i++) {
                     chartData.push({
-                        kernel: Math.round(kernel[i].min) + "m2 - " + Math.round(kernel[i].max) + "m2",
+                        year: bins_new[i],
                         count: 0,
                         subdata: [
-                            { min: kernel[i].min, max: kernel[i].max }
+                            { year: bins_new[i]}
                         ],
                         "color": color[i]
                     });
                 }
 
                 for (var k = 0; k < totalrange.length; k++) {
-                    for (var m = 0; m < kernel.length; m++) {
-                        if (totalrange[k] > kernel[m].min && totalrange[k] <= kernel[m].max) {
+                    for (var m = 0; m < bins_new.length; m++) {
+                        if (totalrange[k] == bins_new[m]) {
                             chartData[m].count += 1;
                         }
                     }
@@ -365,7 +301,7 @@ define([
                         "cursorAlpha": 0,
                         "zoomable": false
                     },
-                    "categoryField": "kernel",
+                    "categoryField": "year",
                     "categoryAxis": {
                         "gridPosition": "start",
                         "labelRotation": 45,
@@ -383,8 +319,8 @@ define([
 
                 chart.addListener("clickGraphItem", function (event) {
 
-                    var max = event.item.dataContext.subdata[0].max;
-                    var min = event.item.dataContext.subdata[0].min;
+                    var max = event.item.dataContext.subdata[0];
+                    var min = event.item.dataContext.subdata[0];
                     var color = event.item.dataContext.color;
 
                     settings.layer1.renderer = applyRenderer.createRendererVVbar(min, max, color, settings.leaseexpiryname);
