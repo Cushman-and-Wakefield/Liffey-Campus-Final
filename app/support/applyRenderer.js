@@ -186,7 +186,7 @@ define([
                     }]
 
                 });
-            }
+            },
          
             //For Lease Expiry Bar Chart
             createRendererVV_exp: function (selection, fieldname) {
