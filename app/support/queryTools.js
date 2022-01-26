@@ -128,7 +128,7 @@ define([
                     for (var i = 0; i < selection.length; i++) {
                         values_exp.push(selection[i].attributes[fieldname]);
                     }
-                    //values_exp = ['18 November 2020', '13 November 2026', '13 December 2027', '13 December 2026'];
+                    
                     var years =[];
                     function generateArrayOfYears() {
                         for (var k = 0; k < values_exp.length; k++) {
@@ -152,7 +152,9 @@ define([
                             values_exp.splice(j, 1);
                         }
                     }
-                    //values_exp = ['2020', '2029', '2024'];
+                    values_exp = values_exp.filter(function(value, index, arr){ 
+                       return value != '1970';
+                   });
 
                     callback(values_exp);
 
