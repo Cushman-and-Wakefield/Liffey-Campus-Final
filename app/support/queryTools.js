@@ -128,22 +128,22 @@ define([
                     for (var i = 0; i < selection.length; i++) {
                         values_exp.push(selection[i].attributes[fieldname]);
                     }
-                    /*var values_exp = ['18 November 2020', '13 November 2026', '13 December 2027', '13 December 2026']
-                    var years =[]
+                    values_exp = ['18 November 2020', '13 November 2026', '13 December 2027', '13 December 2026'];
+                    var years =[];
                     function generateArrayOfYears() {
                         for (var k = 0; k < values_exp.length; k++) {
-                          var year_temp = new Date(values_exp[k]).getFullYear()
-                           years.push(year_temp.toString())
+                          var year_temp = new Date(values_exp[k]).getFullYear();
+                           years.push(year_temp.toString());
                          }
-                         return years
+                         return years;
                     }
-                    var values_exp = generateArrayOfYears();
+                    values_exp = generateArrayOfYears();
                  
                     function onlyUnique(value, index, self) {
                          return self.indexOf(value) === index;
                     }
                 
-                    var values_exp = values_exp.filter(onlyUnique);*/
+                    values_exp = values_exp.filter(onlyUnique);
 
                     values_exp.sort(function (a, b) { return a - b; });
 
@@ -152,7 +152,7 @@ define([
                             values_exp.splice(j, 1);
                         }
                     }
-                    values_exp = ['2020', '2029', '2024'];
+                    //values_exp = ['2020', '2029', '2024'];
 
                     callback(values_exp);
 
