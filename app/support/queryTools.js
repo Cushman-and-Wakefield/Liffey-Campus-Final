@@ -145,19 +145,19 @@ define([
 
                     var values_exp = generateArrayOfYears();
                  
-                    var year = []
+                    /*var year = []
                     for (var k = 0; k < values_exp.length; k++) {
                        year = splitDate(values_exp[k]);
                        values_exp[k] = year[2]; 
-                   }
+                   }*/
 
                     values_exp.sort(function (a, b) { return a - b; });
 
-                    /*for (var j = 0; j < values_exp.length; j++) {
+                    for (var j = 0; j < values_exp.length; j++) {
                         if (values_exp[j] === null || values_exp[j] === undefined) {
                             values_exp.splice(j, 1);
                         }
-                    }*/
+                    }
                     
 
                     callback(values_exp);
