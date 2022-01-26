@@ -225,18 +225,17 @@ define([
                 this.selection = selection;
 
                 var chartData = [];
-                var kernel = [];
+                var year = [];
                 var totalrange = [];
              
                  for (var j = 0; j < selection.length; j++) {
-                    totalrange.push(selection[j].attributes[settings.areaname]);
+                    totalrange.push(selection[j].attributes[settings.leaseexpiryname]);
                 }
 
-                queryTools.distinctValues_exp(this.settings.layer1, this.settings.leaseexpiryname, this.settings.OIDname, function (distinctValues_exp) {
-                    bins_new = distinctValues_exp.sort();
-                 
-                 }.bind(this));
-
+                totalrange = ['2022', '2022', '2029', '2022', '2025', '2025', '2030'] 
+                var unique_years = ['2021', '2022', '2025', '2029', '2030', '2035']
+                var bins_new = 6
+             
                 var color = [];
 
                 if (bins_new > 9) {
@@ -246,23 +245,19 @@ define([
                 else {
                     color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#001933"];
                 }
+             
 
-
-
-                for (var i = 0; i < bins_new.length; i++) {
+                for (var i = 0; i < unique_years.length; i++) {
                     chartData.push({
-                        year: bins_new[i],
+                        year: unique_years[i],
                         count: 0,
-                        subdata: [
-                            { year: bins_new[i]}
-                        ],
                         "color": color[i]
                     });
                 }
 
                 for (var k = 0; k < totalrange.length; k++) {
-                    for (var m = 0; m < bins_new.length; m++) {
-                        if (totalrange[k] == bins_new[m]) {
+                    for (var m = 0; m < unique_years.length; m++) {
+                        if (totalrange[k] == unique_years[m]) {
                             chartData[m].count += 1;
                         }
                     }
@@ -289,7 +284,7 @@ define([
                     "gridAboveGraphs": true,
                     "startDuration": 1,
                     "graphs": [{
-                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        //"balloonText": "[[category]]: <b>[[value]]</b>",
                         "fillAlphas": 0.8,
                         "lineAlpha": 0,
                         "fillColorsField": "color",
@@ -319,8 +314,8 @@ define([
 
                 chart.addListener("clickGraphItem", function (event) {
 
-                    var max = event.item.dataContext.subdata[0];
-                    var min = event.item.dataContext.subdata[0];
+                    var max = 2000;
+                    var min = 2100;
                     var color = event.item.dataContext.color;
 
                     settings.layer1.renderer = applyRenderer.createRendererVVbar(min, max, color, settings.leaseexpiryname);
