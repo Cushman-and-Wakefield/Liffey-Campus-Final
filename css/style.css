@@ -440,6 +440,11 @@ html, body {
   top: 100px;
 }
 
+#filter-leaseexpiry {
+  top: 100px;
+  left: 215px;
+}
+
 #filterAreaMin{
     position: absolute;
     top: 185px;
