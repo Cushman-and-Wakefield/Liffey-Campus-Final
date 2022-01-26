@@ -339,11 +339,10 @@ define([
 
                 chart.addListener("clickGraphItem", function (event) {
 
-                    var max = 2022;
-                    var min = 2022;
+                    var year = event.item.dataContext.year;
                     var color = event.item.dataContext.color;
 
-                    settings.layer1.renderer = applyRenderer.createRendererVVbar(min, max, color, settings.leaseexpiryname);
+                    settings.layer1.renderer = applyRenderer.createRendererVVbar_exp(year, color, settings.leaseexpiryname);
                     
                     view.environment.lighting.directShadowsEnabled = false;
                     view.environment.lighting.ambientOcclusionEnabled = false;
@@ -351,7 +350,7 @@ define([
 
                 on(dom.byId("reload"), "click", function (event) {
 
-                    settings.layer1.renderer = applyRenderer.createRendererVV(selection, settings.leaseexpiryname);
+                    settings.layer1.renderer = applyRenderer.createRendererVV_exp(selection, settings.leaseexpiryname);
                     
                     view.environment.lighting.directShadowsEnabled = true;
                     view.environment.lighting.ambientOcclusionEnabled = true;
