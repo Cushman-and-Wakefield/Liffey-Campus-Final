@@ -123,11 +123,6 @@ define([
 
                 }).then(function (results) {
                     
-                
-                    /*splitDate: function (date){
-                      var result = date.split(' ');
-                      return result;
-                    }*/
                     var selection = results.features;
 
                     for (var i = 0; i < selection.length; i++) {
@@ -136,14 +131,20 @@ define([
                  
                     var years =[]
                     function generateArrayOfYears() {
-                    for (var k = 0; k < values_exp.length; k++) {
-                      var year_temp = new Date(values_exp[k]).getFullYear()
-                       years.push(year_temp.toString())
-                     }
-                     return years
-                     }
-                    var values_exp = []
+                        for (var k = 0; k < values_exp.length; k++) {
+                          var year_temp = new Date(values_exp[k]).getFullYear()
+                           years.push(year_temp.toString())
+                         }
+                         return years
+                    }
+                    var values_exp = [];
                     var values_exp = generateArrayOfYears();
+                 
+                    function onlyUnique(value, index, self) {
+                         return self.indexOf(value) === index;
+                    }
+                
+                    var values_exp = values_exp.filter(onlyUnique);
 
                     values_exp.sort(function (a, b) { return a - b; });
 
