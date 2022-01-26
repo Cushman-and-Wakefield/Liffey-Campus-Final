@@ -340,6 +340,7 @@ define([
                 chart.addListener("clickGraphItem", function (event) {
 
                     var year = event.item.dataContext.year;
+                    year = parseInt(year);
                     var color = event.item.dataContext.color;
 
                     settings.layer1.renderer = applyRenderer.createRendererVVbar_exp(year, color, settings.leaseexpiryname);
