@@ -153,7 +153,7 @@ define([
                             values_exp.splice(j, 1);
                         }
                     }*/
-                    
+                    var values_exp = ['2020', '2029', '2029']
 
                     callback(values_exp);
 
