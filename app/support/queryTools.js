@@ -134,7 +134,7 @@ define([
                         values_exp.push(selection[i].attributes[fieldname]);
                     }
                  
-                    var years =[]
+                    /*var years =[]
                     function generateArrayOfYears() {
                     for (var k = 0; k < values_exp.length; k++) {
                       var year_temp = new Date(values_exp[k]).getFullYear()
@@ -143,7 +143,7 @@ define([
                      return years
                      }
 
-                    var values_exp = generateArrayOfYears();
+                    var values_exp = generateArrayOfYears();*/
                    
                     /*var year = []
                     for (var k = 0; k < values_exp.length; k++) {
