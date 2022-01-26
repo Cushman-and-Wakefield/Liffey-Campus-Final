@@ -152,7 +152,7 @@ define([
                             values_exp.splice(j, 1);
                         }
                     }
-                    var values_exp = ['2020', '2029', '2024']
+                    /*var values_exp = ['2020', '2029', '2024'];*/
 
                     callback(values_exp);
 
