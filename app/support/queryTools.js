@@ -138,20 +138,18 @@ define([
                     function generateArrayOfYears() {
                     for (var k = 0; k < values_exp.length; k++) {
                       var year_temp = new Date(values_exp[k]).getFullYear()
-                       years.push(year_temp)
+                       years.push(year_temp.toString())
                      }
                      return years
                      }
 
                     var values_exp = generateArrayOfYears();
                  
-                    var values_exp = ['2029', '2029', '2020']
-                   
-                    /*var year = []
+                    var year = []
                     for (var k = 0; k < values_exp.length; k++) {
                        year = splitDate(values_exp[k]);
                        values_exp[k] = year[2]; 
-                   }*/
+                   }
 
                     values_exp.sort(function (a, b) { return a - b; });
 
