@@ -142,7 +142,7 @@ define([
                     function onlyUnique(value, index, self) {
                          return self.indexOf(value) === index;
                     }
-                
+                    console.info(values_exp);
                     values_exp = values_exp.toString();
                     values_exp = values_exp.filter(onlyUnique);
 
