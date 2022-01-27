@@ -349,7 +349,6 @@ define([
 
                     settings.layer1.renderer = applyRenderer.createRendererVVbar_exp(year, color, settings.leaseexpiryname);
                     console.info(typeof(year));
-                    console.info(attributes[settings.leaseexpiryname]);
                     
                     view.environment.lighting.directShadowsEnabled = false;
                     view.environment.lighting.ambientOcclusionEnabled = false;
