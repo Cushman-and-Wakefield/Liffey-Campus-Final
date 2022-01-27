@@ -350,6 +350,10 @@ html, body {
   top: 120px;
 }
 
+#viz-reviewdate {
+  left: 160px;
+  top: 120px;
+}
 
 .titleFilter{
   position: relative;
