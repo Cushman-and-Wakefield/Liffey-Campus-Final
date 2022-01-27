@@ -244,7 +244,7 @@ define([
                         // for tenancy renderer
                         var initTenancy = chartMaker.createChartData_ten(currentResult, settings);
                         // for area renderer
-                        var initArea = barMaker.createChartData(currentResult, settings, 15);
+                        var initArea = barMaker.createChartData(currentResult, settings, 8);
                         // for lease expiry renderer
                         var initLeaseexpiry = barMaker.createChartData_exp(currentResult, settings, 10);
                         // for review date renderer
