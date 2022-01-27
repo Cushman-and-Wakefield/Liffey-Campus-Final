@@ -443,7 +443,7 @@ html, body {
 #filter-leaseexpiry {
   top: 100px;
   left: 215px;
-  display: hide;
+  display: none;
 }
 
 #filterAreaMin{
