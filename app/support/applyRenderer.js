@@ -210,8 +210,21 @@ define([
                      return years;
                 }
                 totalrange = generateArrayOfYears();
+             
+                function onlyUnique(value, index, self) {
+                     return self.indexOf(value) === index;
+                }
 
-                var year = parseInt(totalrange[totalrange.length-1]);
+                unique_years = totalrange.filter(onlyUnique);
+             
+                unique_years = unique_years.filter(function(value, index, arr){ 
+                       return value != '1970';
+                   });
+             
+                unique_years.sort(function (a, b) { return a - b; });
+
+                var year_max = parseInt(unique_years[totalrange.length-1]);
+                var year_min = parseInt(unique_years[1]);
                 //var valuemin = Math.floor(Math.min.apply(Math, totalrange));
 
                 return new UniqueValueRenderer({
@@ -227,14 +240,15 @@ define([
                         type: "color",
                         field: fieldname,
                         stops: [
-                            { value: year, color: "#E4002B"}
+                            { value: year_min, color: "#E4002B"},
+                            { value: year_max, color: "#001933" }
                         ]
                     }]
 
                 });
             },
 
-            createRendererVVbar_exp: function (year, color, fieldname) {
+            createRendererVVbar_exp: function (min, max, color, fieldname) {
 
                 var defaultcolor = [135, 135, 135, 0.2];
 
@@ -251,8 +265,10 @@ define([
                         type: "color",
                         field: fieldname,
                         stops: [
-                            { value: year-1, color: defaultcolor},
-                            { value: year, color: color }
+                            { value: min-1, color: defaultcolor},
+                            { value: min, color: color },
+                            { value: max, color: color },
+                            { value: max+1, color: defaultcolor}
                         ]
                     }]
 
