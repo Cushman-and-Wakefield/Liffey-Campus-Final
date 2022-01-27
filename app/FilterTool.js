@@ -89,6 +89,10 @@ define([
                        break;
                    case "leaseexpiry": this.state.leaseexpiryFeatures = selection;
                        break;
+                   case "reviewdate": this.state.reviewdateFeatures = selection;
+                       break;
+                   case "reviewtype": this.state.reviewtypeFeatures = selection;
+                       break;
                     case "none":
                         this.state.usageFeatures = undefined;
                         this.state.floorFeatures = undefined;
@@ -96,6 +100,8 @@ define([
                         this.state.tenancyFeatures = undefined;
                         this.state.statusFeatures = undefined;
                         this.state.leaseexpiryFeatures = undefined;
+                        this.state.reviewdateFeatures = undefined;
+                        this.state.reviewtypeFeatures = undefined;
                 }
 
                 this.menu.setFilterState(this.state);
@@ -113,6 +119,8 @@ define([
                 filterstate.tenancyFeatures = undefined;
                 filterstate.statusFeatures = undefined;
                 filterstate.leaseexpiryFeatures = undefined;
+                filterstate.reviewdateFeatures = undefined;
+                filterstate.reviewtypeFeatures = undefined;
 
                 callback(filterstate);
 
@@ -202,6 +210,8 @@ define([
                 this.createFilterStatusUI(this.container);
                 this.createFilterAreaUI(this.container);
                 this.createFilterLeaseexpiryUI(this.container);
+                this.createFilterReviewdateUI(this.container);
+                this.createFilterReviewtypeUI(this.container);
 
                 on(this.reset, "click", function (evt) {
 
@@ -293,6 +303,40 @@ define([
                     }.bind(this));
 
                     this.onChangeLeaseexpiry = this.dropdownChangeLeaseexpiry(this.leaseexpirySelector, this.settings.leaseexpiryname, "leaseexpiry");
+
+                }.bind(this));
+
+            },
+           
+            createFilterReviewdateUI: function (container) {
+                this.ReviewdateFilterContainer = domCtr.create("div", { className: "FilterLabel", id: "filter-reviewdate" }, container);
+
+                queryTools.distinctValues(this.settings.layer1, this.settings.reviewdatename, this.settings.OIDname, function (distinctValues) {
+                    distinctValues.sort();
+                    distinctValues.unshift("Select Review Date");
+
+                    this.setDropdown("Reviewdate", distinctValues, this.ReviewdateFilterContainer, function (reviewdateSelector) {
+                        this.reviewdateSelector = reviewdateSelector;
+                    }.bind(this));
+
+                    this.onChangeReviewdate = this.dropdownChangeReviewdate(this.reviewdateSelector, this.settings.reviewdatename, "reviewdate");
+
+                }.bind(this));
+
+            },
+         
+            createFilterReviewtypeUI: function (container) {
+                this.ReviewtypeFilterContainer = domCtr.create("div", { className: "FilterLabel", id: "filter-reviewtype" }, container);
+
+                queryTools.distinctValues(this.settings.layer1, this.settings.reviewtypename, this.settings.OIDname, function (distinctValues) {
+                    distinctValues.sort();
+                    distinctValues.unshift("Select Review Type");
+
+                    this.setDropdown("Reviewtype", distinctValues, this.ReviewtypeFilterContainer, function (reviewtypeSelector) {
+                        this.reviewtypeSelector = reviewtypeSelector;
+                    }.bind(this));
+
+                    this.onChangeReviewtype = this.dropdownChangeReviewtype(this.reviewtypeSelector, this.settings.reviewtypename, "reviewtype");
 
                 }.bind(this));
 
@@ -445,6 +489,20 @@ define([
 
                 on(nameSelector, "change", function () {
                     this.updateFilterFeatures(nameSelector, fieldname, "leaseexpiry");
+                }.bind(this));
+            },
+         
+            dropdownChangeReviewdate: function (nameSelector, fieldname, state) {
+
+                on(nameSelector, "change", function () {
+                    this.updateFilterFeatures(nameSelector, fieldname, "reviewdate");
+                }.bind(this));
+            },
+         
+            dropdownChangeReviewtype: function (nameSelector, fieldname, state) {
+
+                on(nameSelector, "change", function () {
+                    this.updateFilterFeatures(nameSelector, fieldname, "reviewtype");
                 }.bind(this));
             },
 
