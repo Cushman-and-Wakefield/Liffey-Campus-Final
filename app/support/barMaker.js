@@ -292,7 +292,6 @@ define([
 
                 return chartData;
             },
-            console.info(chartData);
 
 
             createChart_exp: function (selection, data, settings, state, view, callback) {
