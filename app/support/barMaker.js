@@ -232,21 +232,6 @@ define([
                     totalrange.push(selection[j].attributes[settings.leaseexpiryname]);
                 }
 
-                /*totalrange = ['2022', '2022', '2029', '2022', '2025', '2025', '2030'] 
-                var unique_years = ['2021', '2022', '2025', '2029', '2030', '2035']
-                var bins_new = 6
-             
-                var years =[];
-                var unique_years = [];
-                function generateArrayOfYears() {
-                    for (var k = 0; k < totalrange.length; k++) {
-                      var year_temp = new Date(totalrange[k]).getFullYear();
-                       years.push(year_temp.toString());
-                     }
-                     return years;
-                }
-                totalrange = generateArrayOfYears();*/
-
                 function onlyUnique(value, index, self) {
                      return self.indexOf(value) === index;
                 }
@@ -271,8 +256,6 @@ define([
                     color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#001933"];
                 }
              
-                //unique_years = unique_years.toString();
-                console.info(unique_years);
                 for (var i = 0; i < unique_years.length; i++) {
                     chartData.push({
                         year: unique_years[i],
@@ -280,7 +263,6 @@ define([
                         "color": color[i]
                     });
                 }
-                //totalrange = totalrange.toString();
 
                 for (var k = 0; k < totalrange.length; k++) {
                     for (var m = 0; m < unique_years.length; m++) {
@@ -342,14 +324,126 @@ define([
                 chart.addListener("clickGraphItem", function (event) {
 
                     var year = event.item.dataContext.year;
-                    //var year_max = event.item.dataContext.year;
-                    //year = parseInt(year);
-                    //year_max = parseInt(year_max);
                     var color = event.item.dataContext.color;
 
                     settings.layer1.renderer = applyRenderer.createRendererVVbar_exp(year, color, settings.leaseexpiryname);
-                    console.info(typeof(year));
-                    
+                 
+                    view.environment.lighting.directShadowsEnabled = false;
+                    view.environment.lighting.ambientOcclusionEnabled = false;
+                });
+
+                
+            },
+         
+            //For Review Date
+            createChartData_rev: function (selection, settings, bins) {
+                
+                this.selection = selection;
+
+                var chartData = [];
+                var year = [];
+                var totalrange = [];
+             
+                 for (var j = 0; j < selection.length; j++) {
+                    totalrange.push(selection[j].attributes[settings.reviewdatename]);
+                }
+
+                function onlyUnique(value, index, self) {
+                     return self.indexOf(value) === index;
+                }
+                var unique_years = [];
+                unique_years = totalrange.filter(onlyUnique);
+             
+                unique_years = unique_years.filter(function(value, index, arr){ 
+                       return value != null;
+                   });
+             
+                unique_years.sort(function (a, b) { return a - b; });
+             
+                var bins_new = unique_years.length;
+             
+                var color = [];
+
+                if (bins_new > 9) {
+                    color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#56AAC6", "#9EC8DB", "#003865", "#526180", "#001933"];
+
+                }
+                else {
+                    color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#001933"];
+                }
+             
+                for (var i = 0; i < unique_years.length; i++) {
+                    chartData.push({
+                        year: unique_years[i],
+                        count: 0,
+                        "color": color[i]
+                    });
+                }
+
+                for (var k = 0; k < totalrange.length; k++) {
+                    for (var m = 0; m < unique_years.length; m++) {
+                        if (totalrange[k] == unique_years[m]) {
+                            chartData[m].count += 1;
+                        }
+                    }
+                }
+
+                return chartData;
+            },
+
+
+            createChart_rev: function (selection, data, settings, state, view, callback) {
+
+                var chart = AmCharts.makeChart("chartDiv", {
+                    "type": "serial",
+                    "theme": "light",
+                    "sequencedAnimation": false,
+                    "dataProvider": data,
+                    "fontSize": 12,
+                    "fontFamily": "Avenir LT W01 65 Medium",
+                    "valueAxes": [{
+                        "gridColor": "#FFFFFF",
+                        "gridAlpha": 0.2,
+                        "dashLength": 0
+                    }],
+                    "gridAboveGraphs": true,
+                    "startDuration": 1,
+                    "graphs": [{
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillAlphas": 0.8,
+                        "lineAlpha": 0,
+                        "fillColorsField": "color",
+                        "type": "column",
+                        "valueField": "count"
+                    }],
+                    "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                    },
+                    "categoryField": "year",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "labelRotation": 45,
+                        "gridAlpha": 0,
+                        "tickPosition": "start",
+                        "tickLength": 20
+                    },
+                    "export": {
+                        "enabled": true
+                    }
+
+                });
+
+                callback("loaded");
+
+                chart.addListener("clickGraphItem", function (event) {
+
+                    var year = event.item.dataContext.year;
+                    var color = event.item.dataContext.color;
+
+                    settings.layer1.renderer = applyRenderer.createRendererVVbar_exp(year, color, settings.reviewdatename);
+                 
                     view.environment.lighting.directShadowsEnabled = false;
                     view.environment.lighting.ambientOcclusionEnabled = false;
                 });
