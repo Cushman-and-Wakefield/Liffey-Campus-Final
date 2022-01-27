@@ -223,10 +223,13 @@ define([
                         var initUsage = chartMaker.createChartData(currentResult, settings);
                         // for tenancy renderer
                         var initTenancy = chartMaker.createChartData_ten(currentResult, settings);
+                        console.info(initTenancy);
                         // for area renderer
                         var initArea = barMaker.createChartData(currentResult, settings, 10);
+                        console.info(initArea);
                         // for lease expiry renderer
                         var initLeaseexpiry = barMaker.createChartData_exp(currentResult, settings, 10);
+                        console.info(initLeaseexpiry);
 
                         var initCharts = {
                             stats: initStats,
@@ -311,7 +314,7 @@ define([
                 }
                 if (vizName === "tenancy") {
                     settings.layer1.renderer = applyRenderer.createRenderer(settings.values_ten, settings.color, settings.tenancyname);
-
+                    console.info(settings.values_ten);
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
@@ -321,7 +324,7 @@ define([
                 }
                 if (vizName === "area") {
                     settings.layer1.renderer = applyRenderer.createRendererVV(initData, settings.areaname);
-
+                    console.info(initData);
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
@@ -332,7 +335,7 @@ define([
              
                 if (vizName === "leaseexpiry") {
                     settings.layer1.renderer = applyRenderer.createRendererVV_exp(initData, settings.leaseexpiryname);
-
+                    console.info(initData);
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
