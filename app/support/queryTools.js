@@ -138,12 +138,12 @@ define([
                          return years;
                     }
                     values_exp = generateArrayOfYears();*/
-                 
+                     
                     function onlyUnique(value, index, self) {
                          return self.indexOf(value) === index;
                     }
                 
-                    values_exp = values_exp.toString()
+                    values_exp = values_exp.toString();
                     values_exp = values_exp.filter(onlyUnique);
 
                     values_exp.sort(function (a, b) { return a - b; });
@@ -153,6 +153,7 @@ define([
                             values_exp.splice(j, 1);
                         }
                     }
+                    console.info(values_exp);
                     values_exp = values_exp.filter(function(value, index, arr){ 
                        return value != '1970';
                    });
