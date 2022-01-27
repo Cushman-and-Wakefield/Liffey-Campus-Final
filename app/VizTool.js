@@ -215,7 +215,7 @@ define([
 
                     settings.layer1.queryFeatures(query).then(function (result) {
                         var currentResult = result.features;
-                        console.info(result);
+                        console.info(currentResult);
 
                         var initData = currentResult;
                         // for white renderer
