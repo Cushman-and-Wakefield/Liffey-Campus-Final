@@ -199,7 +199,7 @@ define([
                     }
                 }
              
-               var years =[];
+               /*var years =[];
                 var unique_years = [];
                 function generateArrayOfYears() {
                     for (var k = 0; k < totalrange.length; k++) {
@@ -220,10 +220,10 @@ define([
                        return value != '1970';
                    });
              
-                unique_years.sort(function (a, b) { return a - b; });
+                unique_years.sort(function (a, b) { return a - b; });*/
 
-                var year_max = parseInt(unique_years[totalrange.length-1]);
-                var year_min = parseInt(unique_years[1]);
+                var year_max = Math.ceil(Math.max.apply(Math, totalrange));
+                var year_min = Math.floor(Math.min.apply(Math, totalrange));
                 //var valuemin = Math.floor(Math.min.apply(Math, totalrange));
 
                 return new UniqueValueRenderer({
