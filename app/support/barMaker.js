@@ -234,7 +234,7 @@ define([
 
                 /*totalrange = ['2022', '2022', '2029', '2022', '2025', '2025', '2030'] 
                 var unique_years = ['2021', '2022', '2025', '2029', '2030', '2035']
-                var bins_new = 6*/
+                var bins_new = 6
              
                 var years =[];
                 var unique_years = [];
@@ -245,16 +245,16 @@ define([
                      }
                      return years;
                 }
-                totalrange = generateArrayOfYears();
+                totalrange = generateArrayOfYears();*/
 
                 function onlyUnique(value, index, self) {
                      return self.indexOf(value) === index;
                 }
-
+                var unique_years = [];
                 unique_years = totalrange.filter(onlyUnique);
              
                 unique_years = unique_years.filter(function(value, index, arr){ 
-                       return value != '1970';
+                       return value != null;
                    });
              
                 unique_years.sort(function (a, b) { return a - b; });
@@ -271,7 +271,7 @@ define([
                     color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#001933"];
                 }
              
-
+                unique_years = unique_years.toString();
                 for (var i = 0; i < unique_years.length; i++) {
                     chartData.push({
                         year: unique_years[i],
@@ -341,7 +341,7 @@ define([
 
                     var year = event.item.dataContext.year;
                     //var year_max = event.item.dataContext.year;
-                    year = parseInt(year);
+                    //year = parseInt(year);
                     //year_max = parseInt(year_max);
                     var color = event.item.dataContext.color;
 
