@@ -199,32 +199,8 @@ define([
                     }
                 }
              
-               /*var years =[];
-                var unique_years = [];
-                function generateArrayOfYears() {
-                    for (var k = 0; k < totalrange.length; k++) {
-                      var year_temp = new Date(totalrange[k]).getFullYear();
-                       years.push(year_temp.toString());
-                     }
-                     return years;
-                }
-                totalrange = generateArrayOfYears();
-             
-                function onlyUnique(value, index, self) {
-                     return self.indexOf(value) === index;
-                }
-
-                unique_years = totalrange.filter(onlyUnique);
-             
-                unique_years = unique_years.filter(function(value, index, arr){ 
-                       return value != '1970';
-                   });
-             
-                unique_years.sort(function (a, b) { return a - b; });*/
-
                 var year_max = Math.ceil(Math.max.apply(Math, totalrange));
                 var year_min = Math.floor(Math.min.apply(Math, totalrange));
-                //var valuemin = Math.floor(Math.min.apply(Math, totalrange));
 
                 return new UniqueValueRenderer({
                     defaultSymbol: new MeshSymbol3D({
