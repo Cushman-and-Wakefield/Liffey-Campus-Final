@@ -67,7 +67,7 @@ define([
 
                 domCtr.create("div", { id: "welcomeTitle", className: "animate-bottom", innerHTML: "Liffey Campus" }, container);
                 domCtr.create("hr", { id: "welcomeLine", className: "animate-bottom", style: "width:300px" }, container);
-                domCtr.create("img", { id: "esri-logo", src: "img/Cushman_&_Wakefield_logo.PNG", style: "width:200px;height:48px", top: "65%", left: "35%" }, container);
+                domCtr.create("img", { id: "esri-logo", src: "img/Cushman_&_Wakefield_logo.png", style: "width:200px;height:48px", top: "65%", left: "35%" }, container);
 
                 domCtr.create("div", { id: "description2", innerHTML: "A project by Cushman & Wakefield" }, container);
                 /*domCtr.create("div", { id: "description2", innerHTML: "supervised by Javier Gutierrez" }, container);*/
