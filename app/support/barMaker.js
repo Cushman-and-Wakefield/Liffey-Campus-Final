@@ -351,14 +351,7 @@ define([
                     view.environment.lighting.ambientOcclusionEnabled = false;
                 });
 
-                on(dom.byId("reload"), "click", function (event) {
-
-                    settings.layer1.renderer = applyRenderer.createRendererVV_exp(selection, settings.leaseexpiryname);
-                    
-                    view.environment.lighting.directShadowsEnabled = true;
-                    view.environment.lighting.ambientOcclusionEnabled = true;
-                });
-
+                
             },
 
             rgbToHex: function (color) {
