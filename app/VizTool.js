@@ -150,7 +150,7 @@ define([
                     domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
                     domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
                     domCtr.destroy(dom.byId("reload"));
-                    domCtr.create("img", { className: "reload", src: "img/reload.png", style: "width:25px;height:25px" }, this.reload);
+                    
                 }
 
                 if (viz === "area") {
