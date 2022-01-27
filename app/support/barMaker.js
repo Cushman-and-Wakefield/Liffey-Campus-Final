@@ -271,7 +271,7 @@ define([
                     color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#001933"];
                 }
              
-                unique_years = unique_years.toString();
+                //unique_years = unique_years.toString();
                 console.info(unique_years);
                 for (var i = 0; i < unique_years.length; i++) {
                     chartData.push({
@@ -280,8 +280,7 @@ define([
                         "color": color[i]
                     });
                 }
-                console.info(chartData);
-                totalrange = totalrange.toString();
+                //totalrange = totalrange.toString();
 
                 for (var k = 0; k < totalrange.length; k++) {
                     for (var m = 0; m < unique_years.length; m++) {
@@ -293,6 +292,7 @@ define([
 
                 return chartData;
             },
+            console.info(chartData);
 
 
             createChart_exp: function (selection, data, settings, state, view, callback) {
@@ -312,7 +312,7 @@ define([
                     "gridAboveGraphs": true,
                     "startDuration": 1,
                     "graphs": [{
-                        //"balloonText": "[[category]]: <b>[[value]]</b>",
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
                         "fillAlphas": 0.8,
                         "lineAlpha": 0,
                         "fillColorsField": "color",
