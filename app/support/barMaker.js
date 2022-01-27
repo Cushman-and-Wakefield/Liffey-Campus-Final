@@ -246,6 +246,7 @@ define([
                      return years;
                 }
                 totalrange = generateArrayOfYears();*/
+                console.info(totalrange);
 
                 function onlyUnique(value, index, self) {
                      return self.indexOf(value) === index;
@@ -258,6 +259,7 @@ define([
                    });
              
                 unique_years.sort(function (a, b) { return a - b; });
+                console.info(unique_years);
              
                 var bins_new = unique_years.length;
              
