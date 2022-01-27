@@ -215,7 +215,6 @@ define([
 
                     settings.layer1.queryFeatures(query).then(function (result) {
                         var currentResult = result.features;
-                        console.info(currentResult);
 
                         var initData = currentResult;
                         // for white renderer
@@ -331,7 +330,6 @@ define([
              
                 if (vizName === "leaseexpiry") {
                     settings.layer1.renderer = applyRenderer.createRendererVV_exp(initData, settings.leaseexpiryname);
-                    console.info(initData);
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
@@ -402,8 +400,6 @@ define([
                     }
                     if (vizName === "area") {
                         settings.layer1.renderer = applyRenderer.createRendererVV(selection, settings.areaname);
-                        console.info(selection);
-                        console.info(settings.areaname);
                         domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
@@ -425,7 +421,6 @@ define([
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
                         var barData = barMaker.createChartData_exp(selection, settings, 6);
-                        console.info(barData);
                         barMaker.createChart_exp(selection, barData, settings, "building", view, function (state) {
                             menu.setLoadingState(state);
                         });
