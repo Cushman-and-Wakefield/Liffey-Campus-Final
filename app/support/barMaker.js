@@ -339,13 +339,13 @@ define([
 
                 chart.addListener("clickGraphItem", function (event) {
 
-                    var year_min = event.item.dataContext.year;
-                    var year_max = event.item.dataContext.year;
-                    year_min = parseInt(year_min);
-                    year_max = parseInt(year_max);
+                    var year = event.item.dataContext.year;
+                    //var year_max = event.item.dataContext.year;
+                    year = parseInt(year);
+                    //year_max = parseInt(year_max);
                     var color = event.item.dataContext.color;
 
-                    settings.layer1.renderer = applyRenderer.createRendererVVbar_exp(year_min, year_max, color, settings.leaseexpiryname);
+                    settings.layer1.renderer = applyRenderer.createRendererVVbar_exp(year, color, settings.leaseexpiryname);
                     
                     view.environment.lighting.directShadowsEnabled = false;
                     view.environment.lighting.ambientOcclusionEnabled = false;
