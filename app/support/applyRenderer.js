@@ -192,6 +192,7 @@ define([
             createRendererVV_exp: function (selection, fieldname) {
 
                 var totalrange = [];
+                console.info(selection);
 
                 
                 for (var j = 0; j < selection.length; j++) {
@@ -210,6 +211,7 @@ define([
                      return years;
                 }
                 totalrange = generateArrayOfYears();
+                console.info(totalrange);
              
                 function onlyUnique(value, index, self) {
                      return self.indexOf(value) === index;
@@ -222,6 +224,7 @@ define([
                    });
              
                 unique_years.sort(function (a, b) { return a - b; });
+                console.info(unique_years);
 
                 var year_max = parseInt(unique_years[totalrange.length-1]);
                 var year_min = parseInt(unique_years[1]);
