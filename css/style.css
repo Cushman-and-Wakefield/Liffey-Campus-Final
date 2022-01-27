@@ -433,7 +433,7 @@ html, body {
 
 #filter-tenancy {
   top: 50px;
-  left: 415px
+  left: 415px;
 }
 
 #filter-status {
@@ -444,6 +444,16 @@ html, body {
   top: 100px;
   left: 215px;
   display: none;
+}
+
+#filter-reviewdate {
+  top: 100px;
+  left: 215px;
+}
+
+#filter-reviewtype {
+  top: 100px;
+  left: 415px;
 }
 
 #filterAreaMin{
