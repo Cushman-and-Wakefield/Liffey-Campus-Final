@@ -330,6 +330,7 @@ define([
              
                 if (vizName === "leaseexpiry") {
                     settings.layer1.renderer = applyRenderer.createRendererVV_exp(initData, settings.leaseexpiryname);
+                    console.info(initData);
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
@@ -418,7 +419,6 @@ define([
                  
                      if (vizName === "leaseexpiry") {
                         settings.layer1.renderer = applyRenderer.createRendererVV_exp(selection, settings.leaseexpiryname);
-                        console.info(settings.leaseexpiryname);
 
                         domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
