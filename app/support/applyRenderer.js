@@ -129,6 +129,7 @@ define([
             createRendererVV: function (selection, fieldname) {
 
                 var totalrange = [];
+                console.info(selection);
 
                 
                 for (var j = 0; j < selection.length; j++) {
