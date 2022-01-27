@@ -246,7 +246,6 @@ define([
                      return years;
                 }
                 totalrange = generateArrayOfYears();*/
-                console.info(totalrange);
 
                 function onlyUnique(value, index, self) {
                      return self.indexOf(value) === index;
@@ -259,7 +258,6 @@ define([
                    });
              
                 unique_years.sort(function (a, b) { return a - b; });
-                console.info(unique_years);
              
                 var bins_new = unique_years.length;
              
@@ -274,6 +272,7 @@ define([
                 }
              
                 unique_years = unique_years.toString();
+                console.info(unique_years);
                 for (var i = 0; i < unique_years.length; i++) {
                     chartData.push({
                         year: unique_years[i],
@@ -281,6 +280,8 @@ define([
                         "color": color[i]
                     });
                 }
+                console.info(chartData);
+                totalrange = totalrange.toString();
 
                 for (var k = 0; k < totalrange.length; k++) {
                     for (var m = 0; m < unique_years.length; m++) {
