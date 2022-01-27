@@ -143,6 +143,9 @@ define([
                          return self.indexOf(value) === index;
                     }
                     console.info(values_exp);
+                    values_exp = values_exp.filter(function(value, index, arr){ 
+                       return value != null;
+                    });
                     values_exp = values_exp.toString();
                     values_exp = values_exp.filter(onlyUnique);
 
@@ -154,9 +157,6 @@ define([
                         }
                     }
                     console.info(values_exp);
-                    values_exp = values_exp.filter(function(value, index, arr){ 
-                       return value != '1970';
-                   });
 
                     callback(values_exp);
 
