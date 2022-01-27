@@ -341,11 +341,11 @@ define([
 
                     var year = event.item.dataContext.year;
                     //var year_max = event.item.dataContext.year;
-                    //year = parseInt(year);
+                    year = parseInt(year);
                     //year_max = parseInt(year_max);
                     var color = event.item.dataContext.color;
 
-                    settings.layer1.renderer = applyRenderer.createRenderer(year, color, settings.leaseexpiryname);
+                    settings.layer1.renderer = applyRenderer.createRendererVVbar_exp(year, color, settings.leaseexpiryname);
                     console.info(typeof(year));
                     console.info(settings.leaseexpiryname);
                     
