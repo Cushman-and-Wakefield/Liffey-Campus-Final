@@ -346,6 +346,8 @@ define([
                     var color = event.item.dataContext.color;
 
                     settings.layer1.renderer = applyRenderer.createRenderer(year, color, settings.leaseexpiryname);
+                    console.info(year);
+                    console.info(settings.leaseexpiryname);
                     
                     view.environment.lighting.directShadowsEnabled = false;
                     view.environment.lighting.ambientOcclusionEnabled = false;
