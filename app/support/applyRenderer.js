@@ -129,7 +129,6 @@ define([
             createRendererVV: function (selection, fieldname) {
 
                 var totalrange = [];
-                console.info(selection);
 
                 
                 for (var j = 0; j < selection.length; j++) {
@@ -165,8 +164,6 @@ define([
             createRendererVVbar: function (min, max, color, fieldname) {
 
                 var defaultcolor = [135, 135, 135, 0.2];
-                console.info(min-1);
-                console.info(max+1);
 
                 return new UniqueValueRenderer({
                     defaultSymbol: new MeshSymbol3D({
@@ -253,8 +250,6 @@ define([
             createRendererVVbar_exp: function (year, color, fieldname) {
 
                 var defaultcolor = [135, 135, 135, 0.2];
-                console.info(year-1);
-                console.info(year+1);
 
                 return new UniqueValueRenderer({
                     defaultSymbol: new MeshSymbol3D({
