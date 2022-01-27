@@ -251,9 +251,10 @@ define([
                 });
             },
 
-            createRendererVVbar_exp: function (min, max, color, fieldname) {
+            createRendererVVbar_exp: function (year, color, fieldname) {
 
                 var defaultcolor = [135, 135, 135, 0.2];
+                console.info(fieldname);
 
                 return new UniqueValueRenderer({
                     defaultSymbol: new MeshSymbol3D({
@@ -268,10 +269,9 @@ define([
                         type: "color",
                         field: fieldname,
                         stops: [
-                            { value: min-1, color: defaultcolor},
-                            { value: min, color: color },
-                            { value: max, color: color },
-                            { value: max+1, color: defaultcolor}
+                            { value: year-1, color: defaultcolor},
+                            { value: year, color: color },
+                            { value: year+1, color: defaultcolor}
                         ]
                     }]
 
