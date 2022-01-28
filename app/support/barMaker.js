@@ -397,7 +397,7 @@ define([
                           });
                     }
                 }
-                console.info(chartData[[year]]);
+                console.info(chartData[1].year);
 
                 for (var k = 0; k < totalrange.length; k++) {
                     for (var m = 0; m < unique_types.length; m++) {
