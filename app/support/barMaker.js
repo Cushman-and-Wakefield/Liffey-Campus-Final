@@ -272,7 +272,6 @@ define([
                         }
                     }
                 }
-                console.info(chartData);
                 return chartData;
             },
 
@@ -412,7 +411,6 @@ define([
                          }
                     }
                 }
-                console.info(chartData);
                 return chartData;
             },
 
