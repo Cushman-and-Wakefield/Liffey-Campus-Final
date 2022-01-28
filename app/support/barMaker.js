@@ -398,10 +398,9 @@ define([
                           });
                     }
                 }
-                console.info(chartData[1].year);
-
+             
                 for (var k = 0; k < totalrange.length; k++) {
-                    for (var m = 0; m < unique_types.length*2; m++) {
+                    for (var m = 0; m < (unique_types.length)*2; m++) {
                          if ((totalrange[k] == 2024) && (totalreview[k] == unique_types[m])) {
                               chartData[m].count += 1;
                          }
@@ -411,6 +410,7 @@ define([
                     }
                 }
                 console.info(chartData);
+                console.info((unique_types.length)*2);
                 return chartData;
             },
 
