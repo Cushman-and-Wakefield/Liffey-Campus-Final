@@ -174,6 +174,7 @@ define([
 
             createChart: function(data, callback){
 
+                dom.byId("buildingInfo").innerHTML = "Number of Buildings: " + data.numberofBuildings;
                 dom.byId("numberofwholebuildings").innerHTML = "<b>Number of entire Buildings:</b>      " + data.numberofWholeBuildings;
                 dom.byId("numberofunits").innerHTML = "<b>Number of Units:</b>      " + data.numberofUnits;
                 dom.byId("usage").innerHTML = "<b>Most common usage:</b>        " + data.mostCommonUsage.usage;
