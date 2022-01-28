@@ -531,7 +531,7 @@ html, body {
   background: white;
   top: 160px;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 50px;
   margin-left: 10px;
   height: 400px;
   width: 550px;
@@ -540,7 +540,8 @@ html, body {
 }
 
 #titleStats{
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: bold;
   padding-bottom: 10px; 
 }
 
