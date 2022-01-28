@@ -152,22 +152,22 @@ define([
              
                 // whole building data
 
-                var buildingData = [];
+                var enitrebuildingData = [];
 
                 for (var k = 0; k < data.length; k++) {
                     if (data[k].attributes[settings.buildingname] !== null) {
-                        buildingData.push(data[k].attributes[settings.buildingname]);
+                        enitrebuildingData.push(data[k].attributes[settings.buildingname]);
                     }
                 }
-               console.info(buildingData);
+               console.info(enitrebuildingData);
 
                 function onlyUnique (value, index, self) {
                     return self.indexOf(value) === index;
                 }
 
-                var buildingDataunique = buildingData.filter(onlyUnique);
+                var enitrebuildingDataunique = enitrebuildingData.filter(onlyUnique);
 
-                chartData.numberofWholeBuildings = buildingDataunique.length;
+                chartData.numberofWholeBuildings = enitrebuildingDataunique.length;
 
                 return chartData;
 
