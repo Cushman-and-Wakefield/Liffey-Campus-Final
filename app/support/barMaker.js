@@ -403,7 +403,7 @@ define([
                         for (var p = 0; p < totalreview.length; p++) {
                             for (var n = 0; n < unique_types.length; n++) {
                                 if ((totalrange[k] == unique_years[m]) && (totalreview[p] == unique_types[n])) {
-                                    chartData[n].count += 1;
+                                    chartData[m].count += 1;
                                 }
                             }
                         }
