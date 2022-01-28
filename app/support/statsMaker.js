@@ -48,8 +48,7 @@ define([
                     numberofWholeBuildings: null,
                     numberofBuildings: null,
                     mostCommonUsage: {
-                        usage: null,
-                        tenancy: null
+                        usage: null
                     },
                     averageArea: null,
                     areaMax: null,
@@ -77,10 +76,8 @@ define([
                 
                 if (usageAreaSum === 0){
                     chartData.mostCommonUsage.usage = "0ther";
-                    chartData.mostCommonUsage.tenancy = "0ther";
                 } else{
                     chartData.mostCommonUsage.usage = usageData[usageData.length - 1];
-                    chartData.mostCommonUsage.tenancy = usageData[usageData.length - 1];
                 }
             
 
@@ -180,7 +177,6 @@ define([
                 dom.byId("numberofbuildings").innerHTML = "Number of Buildings: " + data.numberofBuildings;
                 dom.byId("numberofunits").innerHTML = "<b>Number of Units:</b>      " + data.numberofUnits;
                 dom.byId("usage").innerHTML = "<b>Most common usage:</b>        " + data.mostCommonUsage.usage;
-                dom.byId("tenancy").innerHTML = "<b>Most common tenancy:</b>        " + data.mostCommonUsage.tenancy;
                 dom.byId("averagearea").innerHTML = "<b>Average Area:</b>       " + data.averageArea + " m2";
                 dom.byId("maxarea").innerHTML = "<b>Max Area:</b>       " + data.areaMax + " m2";
                 dom.byId("maxfloor").innerHTML = "<b>Max Floor Number:</b>      " + data.floorMax;
