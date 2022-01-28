@@ -376,7 +376,6 @@ define([
                    });
              
                 unique_types.sort(function (a, b) { return a - b; });
-                console.info(unique_types);
              
                 var color = [];
 
@@ -403,11 +402,9 @@ define([
                     for (var m = 0; m < unique_types.length; m++) {
                          for (var n = 0; n < chartData.length; n++) {
                               if ((totalrange[k] == 2024) && (totalreview[k] == unique_types[m]) && (chartData[n].year == 2024) && (chartData[n].type == unique_types[m])) {
-                                   //console.info(chartData[m].year);
                                    chartData[n].count += 1;
                               }
                               else if ((totalrange[k] == 2025) && (totalreview[k] == unique_types[m]) && (chartData[n].year == 2025) && (chartData[n].type == unique_types[m])) {
-                                  console.info(chartData[n].year);
                                   chartData[n].count += 1;
                               }
                          }
@@ -423,11 +420,19 @@ define([
                 var chart = AmCharts.makeChart("chartDiv", {
                     "type": "serial",
                     "theme": "light",
+                    "legend": {
+                        "horizontalGap": 10,
+                        "maxColumns": 1,
+                        "position": "right",
+                        "useGraphSettings": true,
+                        "markerSize": 10
+                    },
                     "sequencedAnimation": false,
                     "dataProvider": data,
                     "fontSize": 12,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "valueAxes": [{
+                        "stackType": "regular",
                         "gridColor": "#FFFFFF",
                         "gridAlpha": 0.2,
                         "dashLength": 0
