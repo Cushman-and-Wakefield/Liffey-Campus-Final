@@ -159,6 +159,7 @@ define([
                         buildingData.push(data[k].attributes[settings.buildingname]);
                     }
                 }
+               console.info(buildingData);
 
                 function onlyUnique (value, index, self) {
                     return self.indexOf(value) === index;
