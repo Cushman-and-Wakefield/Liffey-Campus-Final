@@ -419,6 +419,7 @@ define([
 
                 var chart = AmCharts.makeChart("chartDiv", {
                     "type": "serial",
+                    "hideCredits":true,
                     "theme": "light",
                     "legend": {
                         "horizontalGap": 10,
@@ -493,6 +494,9 @@ define([
                 chart.addListener("clickGraphItem", function (event) {
 
                     var year = event.item.dataContext.year;
+                    var CPI = event.item.dataContext.CPI;
+                    var OMRV = event.item.dataContext.OMRV;
+                    var CPI_Cap_and_Collar = event.item.dataContext.CPI_Cap_and_Collar;
                     var color = event.item.dataContext.color;
 
                     settings.layer1.renderer = applyRenderer.createRendererVVbar_exp(year, color, settings.reviewdatename);
