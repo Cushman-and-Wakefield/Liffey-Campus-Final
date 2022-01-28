@@ -391,8 +391,7 @@ define([
                     for (var j = 0; j < unique_types.length; j++) {
                          chartData.push({
                              year: unique_years[i],
-                             type: unique_types[j],
-                             count: 0,
+                             unique_types[j]: 0,
                              "color": color[j]
                           });
                     }
