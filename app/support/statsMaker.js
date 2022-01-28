@@ -45,7 +45,6 @@ define([
 
                 var chartData = {
                     numberofUnits: null,
-                    numberofWholeBuildings: null,
                     numberofBuildings: null,
                     mostCommonUsage: {
                         usage: null
@@ -77,7 +76,7 @@ define([
                 if (usageAreaSum === 0){
                     chartData.mostCommonUsage.usage = "0ther";
                 } else{
-                    chartData.mostCommonUsage.usage = usageData[usageData.length - 1];
+                    chartData.mostCommonUsage = usageData[usageData.length - 1];
                 }
             
 
