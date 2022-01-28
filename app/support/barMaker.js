@@ -400,13 +400,11 @@ define([
 
                 for (var k = 0; k < totalrange.length; k++) {
                     for (var m = 0; m < unique_years.length; m++) {
-                        for (var p = 0; p < totalreview.length; p++) {
                             for (var n = 0; n < unique_types.length; n++) {
-                                if ((totalrange[k] == unique_years[m]) && (totalreview[p] == unique_types[n])) {
+                                if ((totalrange[k] == unique_years[m]) && (totalreview[k] == unique_types[n])) {
                                     chartData[m].count += 1;
                                 }
                             }
-                        }
                     }
                 }
                 console.info(chartData);
