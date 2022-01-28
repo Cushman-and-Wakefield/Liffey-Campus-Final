@@ -376,9 +376,6 @@ define([
                    });
              
                 unique_types.sort(function (a, b) { return a - b; });
-                
-                console.info(totalreview);
-                console.info(unique_types);
              
                 var color = [];
 
@@ -405,7 +402,7 @@ define([
                     for (var m = 0; m < unique_years.length; m++) {
                         for (var n = 0; n < unique_types.length; n++) {
                             if ((totalrange[k] == unique_years[m]) && (totalreview[k] == unique_types[n])) {
-                                chartData[n].count += 1;
+                                chartData[m][n].count += 1;
                             }
                         }
                     }
