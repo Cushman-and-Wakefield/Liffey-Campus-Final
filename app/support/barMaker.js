@@ -402,10 +402,11 @@ define([
                 for (var k = 0; k < totalrange.length; k++) {
                     for (var m = 0; m < (unique_types.length)*2; m++) {
                          if ((totalrange[k] == 2024) && (totalreview[k] == unique_types[m])) {
-                              console.info(chartData[m].year);
+                              //console.info(chartData[m].year);
                               chartData[m].count += 1;
                          }
                          else if ((totalrange[k] == 2025) && (totalreview[k] == unique_types[m])) {
+                             console.info(chartData[m].year);
                              chartData[m].count += 1;
                          }
                     }
