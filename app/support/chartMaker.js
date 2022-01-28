@@ -117,7 +117,7 @@ define([
                     "fontSize": 12,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "radius": 100,
-                    "marginTop": 50,
+                    "marginTop": 20,
                     "pieAlpha": 0.8,
                     "sequencedAnimation": true,
                     "balloon": {
@@ -199,7 +199,7 @@ define([
                     "fontSize": 12,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "radius": 100,
-                    "marginTop": 50,
+                    "marginTop": 20,
                     "pieAlpha": 0.8,
                     "sequencedAnimation": true,
                     "balloon": {
