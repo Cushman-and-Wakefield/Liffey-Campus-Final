@@ -49,6 +49,9 @@ define([
                     mostCommonUsage: {
                         usage: null
                     },
+                    mostCommonTenancy: {
+                        tenancy: null
+                    },
                     averageArea: null,
                     areaMax: null,
                     floorMax: null,
@@ -77,6 +80,24 @@ define([
                     chartData.mostCommonUsage.usage = "0ther";
                 } else{
                     chartData.mostCommonUsage = usageData[usageData.length - 1];
+                }
+             
+                // tenancy data
+
+                var tenancyData = chartMaker.createChartData(data, settings);
+
+                tenancyData.sort(function (a, b) { return a.area - b.area; });
+
+                var tenancyAreaSum = 0;
+
+                for (var i = 0; i < tenancyData.length; i++) {
+                        tenancyAreaSum += tenancyData[i].area;
+                }
+                
+                if (tenancyAreaSum === 0){
+                    chartData.mostCommonTenancy.tenancy = "0ther";
+                } else{
+                    chartData.mostCommonTenancy = usageData[tenancyData.length - 1];
                 }
 
                 // area data
@@ -143,6 +164,26 @@ define([
 
                 var buildingDataunique = buildingData.filter(onlyUnique);
 
+                chartData.numberofUnits = buildingDataunique.length;
+
+                return chartData;
+             
+                // whole building data
+
+                var buildingData = [];
+
+                for (var k = 0; k < data.length; k++) {
+                    if (data[k].attributes[settings.buildingname] !== null) {
+                        buildingData.push(data[k].attributes[settings.buildingname]);
+                    }
+                }
+
+                function onlyUnique (value, index, self) {
+                    return self.indexOf(value) === index;
+                }
+
+                var buildingDataunique = buildingData.filter(onlyUnique);
+
                 chartData.numberofBuildings = buildingDataunique.length;
 
                 return chartData;
@@ -154,11 +195,12 @@ define([
                 dom.byId("buildingInfo").innerHTML = "Number of Buildings: " + data.numberofBuildings;
                 dom.byId("numberofunits").innerHTML = "<b>Number of Units:</b>      " + data.numberofUnits;
                 dom.byId("usage").innerHTML = "<b>Most common usage:</b>        " + data.mostCommonUsage.usage;
+                dom.byId("usage").innerHTML = "<b>Most common tenancy:</b>        " + data.mostCommonTenancy.tenancy;
                 dom.byId("averagearea").innerHTML = "<b>Average Area:</b>       " + data.averageArea + " m2";
                 dom.byId("maxarea").innerHTML = "<b>Max Area:</b>       " + data.areaMax + " m2";
-                dom.byId("averagefloor").innerHTML = "<b>Average Floor Number:</b>      " + data.averageFloor;
                 dom.byId("maxfloor").innerHTML = "<b>Max Floor Number:</b>      " + data.floorMax;
-
+                dom.byId("averagefloor").innerHTML = "<b>Average Floor Number:</b>      " + data.averageFloor;
+             
                 callback("loaded");
 
             }
