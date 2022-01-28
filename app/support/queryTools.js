@@ -128,16 +128,6 @@ define([
                     for (var i = 0; i < selection.length; i++) {
                         values_exp.push(selection[i].attributes[fieldname]);
                     }
-                    
-                    /*var years =[];
-                    function generateArrayOfYears() {
-                        for (var k = 0; k < values_exp.length; k++) {
-                          var year_temp = new Date(values_exp[k]).getFullYear();
-                           years.push(year_temp.toString());
-                         }
-                         return years;
-                    }
-                    values_exp = generateArrayOfYears();*/
                      
                     function onlyUnique(value, index, self) {
                          return self.indexOf(value) === index;
