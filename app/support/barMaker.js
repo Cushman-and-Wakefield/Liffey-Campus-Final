@@ -400,16 +400,16 @@ define([
                 }
              
                 for (var k = 0; k < totalrange.length; k++) {
-                    for (var m = 0; m < (unique_types.length)*2; m++) {
-                         console.info(totalrange[k]);
-                         console.info(totalreview[k]);
-                         if ((totalrange[k] == 2024) && (totalreview[k] == unique_types[m])) {
-                              //console.info(chartData[m].year);
-                              chartData[m].count += 1;
-                         }
-                         else if ((totalrange[k] == 2025) && (totalreview[k] == unique_types[m])) {
-                             console.info(chartData[m].year);
-                             chartData[m].count += 1;
+                    for (var m = 0; m < unique_types.length; m++) {
+                         for (var n = 0; n < chartData.length; n++) {
+                              if ((totalrange[k] == 2024) && (totalreview[k] == unique_types[m]) && (chartData[n].year == 2024) && (chartData[n].type == unique_types[m])) {
+                                   //console.info(chartData[m].year);
+                                   chartData[n].count += 1;
+                              }
+                              else if ((totalrange[k] == 2025) && (totalreview[k] == unique_types[m]) && (chartData[n].year == 2025) && (chartData[n].type == unique_types[m])) {
+                                  console.info(chartData[n].year);
+                                  chartData[n].count += 1;
+                              }
                          }
                     }
                 }
