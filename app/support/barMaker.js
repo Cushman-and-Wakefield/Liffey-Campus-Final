@@ -361,6 +361,14 @@ define([
                 unique_years.sort(function (a, b) { return a - b; });
              
                 var bins_new = unique_years.length;
+                console.info(unique_years);
+                
+                //Add-on for stacked bar chart with review type
+                var totalreview = []
+                for (var j = 0; j < selection.length; j++) {
+                    totalreview.push(selection[j].attributes[settings.reviewtypename]);
+                }
+                console.info(totalreview);
              
                 var color = [];
 
