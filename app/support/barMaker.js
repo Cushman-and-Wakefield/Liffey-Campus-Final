@@ -376,6 +376,7 @@ define([
                    });
              
                 unique_types.sort(function (a, b) { return a - b; });
+                console.info(unique_types);
              
                 var color = [];
 
