@@ -107,6 +107,7 @@ define([
                 var chart = AmCharts.makeChart("chartDiv", {
                     "type": "pie",
                     "theme": "light",
+                    "hideCredits":true,
                     "dataProvider": data,
                     "valueField": "area",
                     "titleField": "usage",
@@ -188,6 +189,7 @@ define([
                 var chart = AmCharts.makeChart("chartDiv", {
                     "type": "pie",
                     "theme": "light",
+                    "hideCredits":true,
                     "dataProvider": data,
                     "valueField": "area",
                     "titleField": "tenancy",
