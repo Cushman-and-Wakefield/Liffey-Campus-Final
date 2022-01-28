@@ -388,25 +388,25 @@ define([
                 }
              
                 for (var i = 0; i < unique_years.length; i++) {
-                    for (var j = 0; j < unique_types.length; j++) {
                          chartData.push({
                              "year": unique_years[i],
-                             "type": unique_types[j],
-                             "count": 0,
-                             "color": color[j]
+                             "CPI": 0,
+                             "OMRV": 0,
+                             "CPI_Cap_and_Collar": 0,
+                             "color": color[i]
                           });
-                    }
                 }
              
                 for (var k = 0; k < totalrange.length; k++) {
-                    for (var m = 0; m < unique_types.length; m++) {
-                         for (var n = 0; n < chartData.length; n++) {
-                              if ((totalrange[k] == 2024) && (totalreview[k] == unique_types[m]) && (chartData[n].year == 2024) && (chartData[n].type == unique_types[m])) {
-                                   chartData[n].count += 1;
-                              }
-                              else if ((totalrange[k] == 2025) && (totalreview[k] == unique_types[m]) && (chartData[n].year == 2025) && (chartData[n].type == unique_types[m])) {
-                                  chartData[n].count += 1;
-                              }
+                    for (var m = 0; m < unique_years.length; m++) {
+                          if ((totalrange[k] == unique_years[m]) && (totalreview[k] == "CPI")) {
+                               chartData[m].CPI += 1;
+                          }
+                          else if ((totalrange[k] == unique_years[m]) && (totalreview[k] == "OMRV")) {
+                               chartData[m].OMRV += 1;
+                          }
+                          else if ((totalrange[k] == unique_years[m]) && (totalreview[k] == "CPI Cap & Collar")) {
+                              chartData[m].CPI_Cap_and_Collar += 1;
                          }
                     }
                 }
