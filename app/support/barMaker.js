@@ -271,7 +271,7 @@ define([
                         }
                     }
                 }
-
+                console.info(chartData);
                 return chartData;
             },
 
@@ -440,12 +440,34 @@ define([
                     "gridAboveGraphs": true,
                     "startDuration": 1,
                     "graphs": [{
-                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
                         "fillAlphas": 0.8,
+                        "labelText": "[[value]]",
                         "lineAlpha": 0,
-                        "fillColorsField": "color",
+                        "title": "CPI",
+                        "fillColors": "#3C3C3C",
                         "type": "column",
-                        "valueField": "count"
+                        "valueField": "CPI"
+                    },
+                       {
+                        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                        "fillAlphas": 0.8,
+                        "labelText": "[[value]]",
+                        "lineAlpha": 0,
+                        "title": "OMRV",
+                        "fillColors": "#E11010",
+                        "type": "column",
+                        "valueField": "OMRV"
+                    },
+                       {
+                        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                        "fillAlphas": 0.8,
+                        "labelText": "[[value]]",
+                        "lineAlpha": 0,
+                        "title": "CPI Cap & Collar",
+                        "fillColors": "#66CC00",
+                        "type": "column",
+                        "valueField": "CPI_Cap_and_Collar"
                     }],
                     "chartCursor": {
                         "categoryBalloonEnabled": false,
