@@ -455,7 +455,7 @@ define([
                         "labelText": "[[value]]",
                         "lineAlpha": 0,
                         "title": "OMRV",
-                        "fillColors": "#A6192B"",
+                        "fillColors": "#A6192B",
                         "type": "column",
                         "valueField": "OMRV"
                     },
@@ -465,7 +465,7 @@ define([
                         "labelText": "[[value]]",
                         "lineAlpha": 0,
                         "title": "CPI Cap & Collar",
-                        "fillColors": "#9BD3DD"",
+                        "fillColors": "#9BD3DD",
                         "type": "column",
                         "valueField": "CPI_Cap_and_Collar"
                     }],
