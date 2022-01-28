@@ -158,6 +158,7 @@ define([
                 var chart = AmCharts.makeChart("chartDiv", {
                     "type": "serial",
                     "theme": "light",
+                    "hideCredits":true,
                     "sequencedAnimation": false,
                     "dataProvider": data,
                     "fontSize": 12,
@@ -281,6 +282,7 @@ define([
                 var chart = AmCharts.makeChart("chartDiv", {
                     "type": "serial",
                     "theme": "light",
+                    "hideCredits":true,
                     "sequencedAnimation": false,
                     "dataProvider": data,
                     "fontSize": 12,
