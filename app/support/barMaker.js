@@ -397,14 +397,16 @@ define([
                           });
                     }
                 }
+                console.info(chartData[year]);
 
                 for (var k = 0; k < totalrange.length; k++) {
-                    for (var m = 0; m < unique_years.length; m++) {
-                            for (var n = 0; n < unique_types.length; n++) {
-                                if ((totalrange[k] == unique_years[m]) && (totalreview[k] == unique_types[n])) {
-                                    chartData[m].count += 1;
-                                }
-                            }
+                    for (var m = 0; m < unique_types.length; m++) {
+                         if ((totalrange[k] == unique_years[0]) && (totalreview[k] == unique_types[m])) {
+                             chartData[m].count += 1;
+                         }
+                         else if ((totalrange[k] == unique_years[1]) && (totalreview[k] == unique_types[m])) {
+                             chartData[m].count += 1;
+                         }
                     }
                 }
                 console.info(chartData);
