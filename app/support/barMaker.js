@@ -393,7 +393,7 @@ define([
                          chartData.push({
                              "year": unique_years[i],
                              "type": unique_types[j],
-                             "count": 0
+                             "count": 0,
                              "color": color[j]
                           });
                     }
