@@ -231,10 +231,11 @@ define([
                     var query = settings.layer1.createQuery();
 
                     query.returnGeometry = false;
-                    query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.leaseexpiryname, settings.reviewdatename, settings.floorname, settings.statusname, settings.buildingIDname];
+                    query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.leaseexpiryname, settings.reviewdatename, settings.reviewtypename, settings.floorname, settings.statusname, settings.buildingIDname];
 
                     settings.layer1.queryFeatures(query).then(function (result) {
                         var currentResult = result.features;
+                        console.info(currentResult);
 
                         var initData = currentResult;
                         // for white renderer
@@ -249,6 +250,7 @@ define([
                         var initLeaseexpiry = barMaker.createChartData_exp(currentResult, settings, 10);
                         // for review date renderer
                         var initReviewdate = barMaker.createChartData_rev(currentResult, settings, 10);
+                        console.info(initReviewdate);
 
                         var initCharts = {
                             stats: initStats,
@@ -381,7 +383,7 @@ define([
                 var query = settings.layer1.createQuery();
 
                 query.returnGeometry = false;
-                query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.leaseexpiryname, settings.reviewdatename, settings.floorname, settings.statusname, settings.buildingIDname];
+                query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.leaseexpiryname, settings.reviewdatename, settings.reviewtypename, settings.floorname, settings.statusname, settings.buildingIDname];
 
                 settings.layer1.queryFeatures(query).then(function (result) {
 
