@@ -361,14 +361,24 @@ define([
                 unique_years.sort(function (a, b) { return a - b; });
              
                 var bins_new = unique_years.length;
-                console.info(unique_years);
                 
                 //Add-on for stacked bar chart with review type
                 var totalreview = []
                 for (var j = 0; j < selection.length; j++) {
                     totalreview.push(selection[j].attributes[settings.reviewtypename]);
                 }
+                
+                var unique_types = [];
+                unique_types = totalreview.filter(onlyUnique);
+             
+                unique_types = unique_types.filter(function(value, index, arr){ 
+                       return value != null;
+                   });
+             
+                unique_types.sort(function (a, b) { return a - b; });
+                
                 console.info(totalreview);
+                console.info(unique_types);
              
                 var color = [];
 
@@ -381,21 +391,26 @@ define([
                 }
              
                 for (var i = 0; i < unique_years.length; i++) {
-                    chartData.push({
-                        year: unique_years[i],
-                        count: 0,
-                        "color": color[i]
-                    });
+                    for (var j = 0; j < unique_types.length; j++) {
+                         chartData.push({
+                             year: unique_years[i],
+                             type: unique_types[j],
+                             count: 0,
+                             "color": color[j]
+                          });
+                    }
                 }
 
                 for (var k = 0; k < totalrange.length; k++) {
                     for (var m = 0; m < unique_years.length; m++) {
-                        if (totalrange[k] == unique_years[m]) {
-                            chartData[m].count += 1;
+                        for (var n = 0; n < unique_types.length; n++) {
+                            if ((totalrange[k] == unique_years[m]) && (totalreview[k] == unique_types[n])) {
+                                chartData[n].count += 1;
+                            }
                         }
                     }
                 }
-
+                console.info(chartData);
                 return chartData;
             },
 
