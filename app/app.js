@@ -80,7 +80,8 @@ define([
             reviewdatename: "Next_Review_Date_Year",        //review date year attribute (int)
             reviewtypename: "Review_Type",                  //review type attribute (string)
             OIDname: "OBJECTID",                            // objectid
-            buildingIDname: "BuildID",                   // building attribute (int)
+            buildingIDname: "BuildID",                   // pat of building attribute (int)
+            buildingname: "Building_No_",               // Whole Building Count (int)
             areaname: "sq_m",                           // area attribute (float)
             color: [                                        // color ramp for unique value renderer
                     [228, 0, 43, 1],                     
