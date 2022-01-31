@@ -108,6 +108,7 @@ define([
                 domCtr.create("div", { id: "numberofwholebuildings", innerHTML: "<b>Number of Buildings:     </b>" }, "statsDiv");
                 //domCtr.create("div", { id: "numberofunits", innerHTML: "<b>Number of Units:     </b>" }, "statsDiv");
                 domCtr.create("div", { id: "usage", innerHTML: "<b>Most Common Usage:       </b>" }, "statsDiv");
+                domCtr.create("div", { id: "totalarea", innerHTML: "<b>Total Area:      </b>" }, "statsDiv");
                 //domCtr.create("div", { id: "averagearea", innerHTML: "<b>Average Area:      </b>" }, "statsDiv");
                 domCtr.create("div", { id: "maxarea", innerHTML: "<b>Max Area:      </b>" }, "statsDiv");
                 domCtr.create("div", { id: "maxfloor", innerHTML: "<b>Max Floor Number:     </b>" }, "statsDiv");
