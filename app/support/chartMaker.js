@@ -102,6 +102,7 @@ define([
                 if (settings.name !== "Zurich") {
                     groupPercentValue = "0";
                 }
+                console.info(data);
 
                 var chart = AmCharts.makeChart("chartDiv", {
                     "type": "pie",
