@@ -241,7 +241,7 @@ define([
                 };
                 totalrange = filterUnwanted(totalrange);
                
-             
+                totalrange = [...new Map(totalrange.map(obj => [JSON.stringify(obj), obj])).values()];
              
              
                 console.info(totalrange);
