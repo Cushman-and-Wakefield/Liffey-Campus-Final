@@ -135,7 +135,7 @@ define([
                     portalItem: {
                         id: this.settings.webscene
                     },
-                    basemap: "topo"
+                    basemap: "basemap-premium"
                     //,ground: "world-elevation"
                 });
 
