@@ -233,13 +233,14 @@ define([
 
                     query.returnGeometry = false;
                     query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.leaseexpiryname, settings.reviewdatename, settings.reviewtypename, settings.buildingname, settings.floorname, settings.statusname, settings.buildingIDname];
-
+                    console.info(settings.buildingname);
                     settings.layer1.queryFeatures(query).then(function (result) {
                         var currentResult = result.features;
 
                         var initData = currentResult;
                         // for white renderer
                         var initStats = statsMaker.createChartData(currentResult, settings, this.view);
+                        console.info(initStats);
                         // for usage renderer
                         var initUsage = chartMaker.createChartData(currentResult, settings);
                         // for tenancy renderer
