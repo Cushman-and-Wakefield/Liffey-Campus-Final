@@ -41,7 +41,7 @@ define([
                     symbol: new MeshSymbol3D({
                         symbolLayers: [
                             new FillSymbol3DLayer({
-                                material: { color: "#3399FF" },
+                                material: { color: "red" },
                                 outline: { color: "red" },
 
                             })
