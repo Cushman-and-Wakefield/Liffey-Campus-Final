@@ -89,7 +89,7 @@ define([
                    for (var i = 0; i < chartData_ten.length; i++) {
                        chartData_ten[i].area = Math.round(chartData_ten[i].area);
                    }
-
+                   console.info(chartData_ten);
                    return chartData_ten;
                },
 
