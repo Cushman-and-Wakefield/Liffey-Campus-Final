@@ -195,7 +195,6 @@ define([
 
                 reviewData = reviewData.sort();
                 reviewData = reviewData[0];
-                console.info(reviewData);
              
                 if (reviewData === undefined || reviewData === null){
                     chartData.nextReview = "None";
