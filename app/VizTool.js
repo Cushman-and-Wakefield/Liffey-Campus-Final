@@ -92,7 +92,7 @@ define([
             },
 
             createUI: function (container) {
-                this.title = domCtr.create("div", { className: "titleViz", id: "titleViz", innerHTML: "Visualisation by" }, container);
+                this.title = domCtr.create("div", { className: "titleViz", id: "titleViz", innerHTML: "Visualise by" }, container);
                 this.label1 = domCtr.create("div", { className: "labelViz", id: "viz-white", innerHTML: "None" }, container);
                 this.label2 = domCtr.create("div", { className: "labelViz", id: "viz-usage", innerHTML: "Usage" }, container);
                 this.label4 = domCtr.create("div", { className: "labelViz", id: "viz-tenancy", innerHTML: "Tenancy" }, container);
@@ -106,7 +106,7 @@ define([
 
                 domCtr.create("div", { id: "titleStats", innerHTML: "Statistics" }, "statsDiv");
                 domCtr.create("div", { id: "numberofwholebuildings", innerHTML: "<b>Number of entire Buildings:     </b>" }, "statsDiv");
-                domCtr.create("div", { id: "numberofunits", innerHTML: "<b>Number of Units:     </b>" }, "statsDiv");
+                //domCtr.create("div", { id: "numberofunits", innerHTML: "<b>Number of Units:     </b>" }, "statsDiv");
                 domCtr.create("div", { id: "usage", innerHTML: "<b>Most common usage:       </b>" }, "statsDiv");
                 domCtr.create("div", { id: "averagearea", innerHTML: "<b>Average Area:      </b>" }, "statsDiv");
                 domCtr.create("div", { id: "maxarea", innerHTML: "<b>Max Area:      </b>" }, "statsDiv");
