@@ -119,64 +119,64 @@ define([
                 var viz = state.name;
 
                 if (viz === "white") {
-                    domStyle.set(dom.byId("viz-white"), { "opacity": 1, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-white"), { "opacity": 1});
+                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-area"), { "opacity": 0.3});
                     domCtr.destroy(dom.byId("reload"));
                 }
 
                 if (viz === "usage") {
-                    domStyle.set(dom.byId("viz-usage"), { "opacity": 1, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-usage"), { "opacity": 1});
+                    domStyle.set(dom.byId("viz-white"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-area"), { "opacity": 0.3});
                     domCtr.destroy(dom.byId("reload"));
                 }
                
                 if (viz === "tenancy") {
-                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 1, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 1});
+                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-white"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-area"), { "opacity": 0.3});
                     domCtr.destroy(dom.byId("reload"));
                 }
              
                 if (viz === "leaseexpiry") {
-                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 1, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 1});
+                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-white"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-area"), { "opacity": 0.3});
                     domCtr.destroy(dom.byId("reload"));
                     
                 }
              
                 if (viz === "reviewdate") {
-                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 1, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-area"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 1});
+                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-white"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-area"), { "opacity": 0.3});
                     domCtr.destroy(dom.byId("reload"));
                     
                 }
 
                 if (viz === "area") {
-                    domStyle.set(dom.byId("viz-area"), { "opacity": 1, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-white"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 0.3, "border": "1px solid black" });
-                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3, "border": "1px solid black" });
+                    domStyle.set(dom.byId("viz-area"), { "opacity": 1});
+                    domStyle.set(dom.byId("viz-white"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-tenancy"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-leaseexpiry"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-reviewdate"), { "opacity": 0.3});
+                    domStyle.set(dom.byId("viz-usage"), { "opacity": 0.3});
                     this.reload = domCtr.create("div", { id: "reload" }, this.container);
                     domCtr.create("img", { className: "reload", src: "img/reload.png", style: "width:25px;height:25px" }, this.reload);
                 }
@@ -437,7 +437,7 @@ define([
                         domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
-                        var barData = barMaker.createChartData(selection, settings, 6);
+                        var barData = barMaker.createChartData(selection, settings, 10);
                         barMaker.createChart(selection, barData, settings, "building", view, function (state) {
                             menu.setLoadingState(state);
                         });
