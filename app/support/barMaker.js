@@ -227,11 +227,12 @@ define([
 
                 var chartData = [];
                 var year = [];
+                var totalobjects = [];
                 var totalrange = [];
              
                  for (var j = 0; j < selection.length; j++) {
                     //totalrange.push(selection[j].attributes[settings.leaseexpiryname]);
-                    totalrange.push({'key': selection[j].attributes[settings.tenancyname], 'value': selection[j].attributes[settings.leaseexpiryname]});
+                    totalobjects.push({'key': selection[j].attributes[settings.tenancyname], 'value': selection[j].attributes[settings.leaseexpiryname]});
                 }
                 const filterUnwanted = (arr) => {
                   const required = arr.filter(el => {
@@ -239,9 +240,11 @@ define([
                   });
                   return required;
                 };
-                totalrange = filterUnwanted(totalrange);
+                totalobjects = filterUnwanted(totalobjects);
                
-                totalrange = [...new Map(totalrange.map(obj => [JSON.stringify(obj), obj])).values()];
+                totalobjects = [...new Map(totalobjects.map(obj => [JSON.stringify(obj), obj])).values()];
+             
+                totalrange = totalobjects.map(a => a.value);
              
              
                 console.info(totalrange);
