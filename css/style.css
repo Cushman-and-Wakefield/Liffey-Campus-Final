@@ -555,14 +555,14 @@ html, body {
   font-weight: bold;
   padding-bottom: 10px;
   color: grey;
-  border-bottom: 5px solid #FBE789;
+  border-bottom: 1px solid #FBE789;
   
 }
 
 #numberofwholebuildings {
   align-items: center;
-  height: 80px;
-  margin-bottom: .75rem;
+  height: 50px;
+  margin-bottom: 15px;
   padding: 1rem 1.5rem;
   border: 1px solid #FBE789;
   border-radius: 8px;
