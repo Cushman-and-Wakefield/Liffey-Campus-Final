@@ -324,12 +324,14 @@ html, body {
   top: 290px;
   left: 20px;
   text-align: center;
-  cursor: pointer
+  cursor: pointer;
+  background: grey;
+  color: white;
 }
 
 #reset:hover{
-  background: grey;
-  color: white
+  background: #FBE789;
+  color: grey
 }
 
 #viz-white {
