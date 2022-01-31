@@ -40,15 +40,14 @@ define([
                 return new SimpleRenderer({
                     symbol: new MeshSymbol3D({
                         symbolLayers: [{type: "fill",
-                                          material: { color: "yellow" },
-                                         outline: { color: "red" },
+                                          material: { color: [244, 247, 134] },
                                 edges: {
                                      type: "solid", // autocasts as new SolidEdges3D()
-                                     color: [50, 50, 50, 0.8]
+                                     color: [50, 50, 50, 0.2]
                                 }},
                             new FillSymbol3DLayer({
                                 
-                                material: { color: "yellow" },
+                                material: { color: [244, 247, 134] }
                                
                             })
                         ]
@@ -60,13 +59,9 @@ define([
             createRenderer: function (values, color, fieldname) {
                 return new UniqueValueRenderer({
                     defaultSymbol: new MeshSymbol3D({
-                        symbolLayers: [{type: "fill",
+                        symbolLayers: [new FillSymbol3DLayer({
                             material: {
-                                color: [238, 15, 156, 0.8]
-                            }},
-                            new FillSymbol3DLayer({
-                            material: {
-                                color: [238, 15, 156, 0.8]
+                                color: [135, 135, 135, 0.2]
                             }
                         })]
                     }),
