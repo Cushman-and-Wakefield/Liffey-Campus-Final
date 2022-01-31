@@ -51,6 +51,7 @@ define([
                         usage: null
                     },
                     averageArea: null,
+                    totalArea: null,
                     areaMax: null,
                     floorMax: null,
                     averageFloor: null
@@ -94,6 +95,10 @@ define([
                 areaData.sort(function (a, b) { return a - b; });
 
                 chartData.areaMax = Math.round(areaData[areaData.length - 1]);
+              
+                for (let i = 0; i < areaData.length; i++) {
+                      chartData.areaTotal += array[i];
+                }
 
                 var areaSum = areaData.reduce(sum, 0);
 
@@ -175,6 +180,7 @@ define([
                 dom.byId("buildingInfo").innerHTML = "Number of Buildings: " + data.numberofBuildings;
                 dom.byId("numberofwholebuildings").innerHTML = "<b>Number of Buildings:</b>      " + data.numberofWholeBuildings;
                 dom.byId("usage").innerHTML = "<b>Most Common Usage:</b>        " + data.mostCommonUsage.usage;
+                dom.byId("totalarea").innerHTML = "<b>Total Area:</b>       " + data.totalArea + " m2";
                 dom.byId("maxarea").innerHTML = "<b>Max Area:</b>       " + data.areaMax + " m2";
                 dom.byId("maxfloor").innerHTML = "<b>Max Floor Number:</b>      " + data.floorMax;
                 dom.byId("averagefloor").innerHTML = "<b>Average Floor Number:</b>      " + data.averageFloor;
