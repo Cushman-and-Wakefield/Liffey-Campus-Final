@@ -251,7 +251,7 @@ define([
             createChart: function(data, callback){
 
                 dom.byId("buildingInfo").innerHTML = "Number of Buildings: " + data.numberofBuildings;
-                dom.byId("numberofwholebuildings").innerHTML = "Number of Buildings      <br>" + data.numberofWholeBuildings;
+                dom.byId("numberofwholebuildings").innerHTML = "<small>Number of Buildings      <br></small>" + data.numberofWholeBuildings;
                 dom.byId("usage").innerHTML = "<b>Most Common Usage:</b>        " + data.mostCommonUsage.usage;
                 dom.byId("tenancy").innerHTML = "<b>Most Common Tenancy:</b>        " + data.mostCommonTenancy.tenancy;
                 dom.byId("totalarea").innerHTML = "<b>Total Area:</b>       " + data.totalArea + " m2";
