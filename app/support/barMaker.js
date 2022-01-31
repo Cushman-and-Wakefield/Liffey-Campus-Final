@@ -378,8 +378,6 @@ define([
                 var totalreview = [];
                 totalreview = totalobjects.map(a => a.type);
              
-                console.info(totalreview);
-
                 function onlyUnique(value, index, self) {
                      return self.indexOf(value) === index;
                 }
