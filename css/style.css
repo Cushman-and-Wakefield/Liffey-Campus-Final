@@ -46,7 +46,7 @@ html, body {
   padding: 2px;
   padding-left: 4px;
   padding-right: 4px;
-  border: 1px solid grey
+  border-radius: 8px;
 }
 
 #homeButton{
@@ -332,28 +332,34 @@ html, body {
 
 #viz-white {
   left: 20px;
+  border-radius: 8px;
 }
 
 #viz-usage {
   left: 160px;
+  border-radius: 8px;
 }
 
 #viz-tenancy {
   left: 300px;
+  border-radius: 8px;
 }
 
 #viz-area {
   left: 440px;
+  border-radius: 8px;
 }
 
 #viz-leaseexpiry {
   left: 20px;
   top: 120px;
+  border-radius: 8px;
 }
 
 #viz-reviewdate {
   left: 160px;
   top: 120px;
+  border-radius: 8px;
 }
 
 .titleFilter{
