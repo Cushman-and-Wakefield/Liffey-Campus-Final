@@ -105,7 +105,7 @@ define([
 
 
                 domCtr.create("div", { id: "titleStats", innerHTML: "Statistics" }, "statsDiv");
-                domCtr.create("div", { id: "numberofwholebuildings", innerHTML: "<b>Number of Buildings:     </b>" }, "statsDiv");
+                domCtr.create("div", { className: "statsViz", id: "numberofwholebuildings", innerHTML: "Number of Buildings:     <br>" }, <b>"statsDiv"</b>);
                 //domCtr.create("div", { id: "numberofunits", innerHTML: "<b>Number of Units:     </b>" }, "statsDiv");
                 domCtr.create("div", { id: "usage", innerHTML: "<b>Most Common Usage:       </b>" }, "statsDiv");
                 domCtr.create("div", { id: "tenancy", innerHTML: "<b>Most Common Tenancy:       </b>" }, "statsDiv");
