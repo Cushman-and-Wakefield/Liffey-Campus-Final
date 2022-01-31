@@ -172,7 +172,7 @@ define([
                 leaseexpiryData = leaseexpiryData.sort();
                 leaseexpiryData = leaseexpiryData[0];
              
-                if (leaseexpiryData === null){
+                if (leaseexpiryData === undefined || leaseexpiryData === null){
                     chartData.nextExpiry = "None";
                 } else{
                     var date = leaseexpiryData.getDate();
@@ -197,7 +197,7 @@ define([
                 reviewData = reviewData[0];
                 console.info(reviewData);
              
-                if (reviewData === null){
+                if (reviewData undefined || reviewData === null){
                     chartData.nextReview = "None";
                 } else{
                     var date = reviewData.getDate();
