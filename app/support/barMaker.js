@@ -227,11 +227,13 @@ define([
 
                 var chartData = [];
                 var year = [];
-                var totalrange = [];
+                let totalrange = {};
              
                  for (var j = 0; j < selection.length; j++) {
-                    totalrange.push(selection[j].attributes[settings.leaseexpiryname]);
+                    //totalrange.push(selection[j].attributes[settings.leaseexpiryname]);
+                    totalrange[selection[j].attributes[settings.leaseexpiryname]]: selection[j].attributes[settings.leaseexpiryname]
                 }
+                console.info(totalrange);
 
                 function onlyUnique(value, index, self) {
                      return self.indexOf(value) === index;
