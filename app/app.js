@@ -71,7 +71,7 @@ define([
         var settings_demo = {
             name: "Liffey Campus",
             url: "https://cwireland.maps.arcgis.com",           // portal URL for config
-            webscene: "358e8ffefba84c03999d03f966c6124e",   // portal item ID of the webscene
+            webscene: "8226d20419ca4ae6aca10e0c666bc012",   // portal item ID of the webscene
             usagename: "Use_",                             // usage attribute (string)
             tenancyname: "Tenant",                          // tenant names (string)
             floorname: "Floor",                           // floor attribute (string)
@@ -84,14 +84,14 @@ define([
             buildingname: "Building_No_",               // Whole Building Count (int)
             areaname: "sq_m",                           // area attribute (float)
             color: [                                        // color ramp for unique value renderer
-                    [228, 0, 43, 1],                     
-                    [166, 25, 46, 1],
-                    [255, 153, 153, 1],
-                    [155, 211, 221, 1],
-                    [217, 236, 235, 1],
-                    [0, 147, 178, 1],
-                    [86, 170, 198, 1],
-                    [158, 200, 219, 1],
+                    [251, 231, 137, 1],                     
+                    [226, 221, 140, 1],
+                    [201, 211, 143, 1],
+                    [176, 202, 147, 1],
+                    [151, 192, 150, 1],
+                    [126, 182, 153, 1],
+                    [101, 173, 157, 1],
+                    [76, 163, 160, 1],
                     [105, 107, 107, 1],
                     [150, 152, 152, 1],
                     [195, 196, 196, 1],
