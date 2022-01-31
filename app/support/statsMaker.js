@@ -122,6 +122,8 @@ define([
                 for (let i = 0; i < areaData.length; i++) {
                       chartData.totalArea += areaData[i];
                 }
+                
+                chartData.totalArea = Math.round(chartData.totalArea);
 
                 var areaSum = areaData.reduce(sum, 0);
 
