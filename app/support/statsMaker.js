@@ -189,6 +189,7 @@ define([
                         reviewData.push(new Date(data[k].attributes[settings.exactreviewdatename]));
                     }
                 }
+                console.info(reviewData);
 
                 reviewData = reviewData.sort();
                 reviewData = reviewData[0];
