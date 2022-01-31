@@ -563,6 +563,7 @@ html, body {
 #numberofwholebuildings {
   align-items: center;
   height: 50px;
+  font-size: 2rem;
   margin-bottom: 15px;
   padding: 1rem 1.5rem;
   border: 1px solid #FBE789;
