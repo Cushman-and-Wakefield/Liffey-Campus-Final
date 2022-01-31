@@ -361,7 +361,7 @@ define([
              
                  for (var j = 0; j < selection.length; j++) {
                     //totalrange.push(selection[j].attributes[settings.reviewdatename]);
-                    totalobjects.push({'key': selection[j].attributes[settings.tenancyname], 'value': selection[j].attributes[settings.reviewdatename]});
+                    totalobjects.push({'key': selection[j].attributes[settings.tenancyname], 'value': selection[j].attributes[settings.reviewdatename], 'type': selection[j].attributes[settings.reviewtypename]});
                 }
                 const filterUnwanted = (arr) => {
                   const required = arr.filter(el => {
@@ -375,8 +375,10 @@ define([
              
                 totalrange = totalobjects.map(a => a.value);
              
+                var totalreview = [];
+                totalreview = totalobjects.map(a => a.type);
              
-                console.info(totalrange);
+                console.info(totalreview);
 
                 function onlyUnique(value, index, self) {
                      return self.indexOf(value) === index;
@@ -393,10 +395,10 @@ define([
                 var bins_new = unique_years.length;
                 
                 //Add-on for stacked bar chart with review type
-                var totalreview = []
-                for (var j = 0; j < selection.length; j++) {
+                //var totalreview = []
+                /*for (var j = 0; j < selection.length; j++) {
                     totalreview.push(selection[j].attributes[settings.reviewtypename]);
-                }
+                }*/
                 
                 var unique_types = [];
                 unique_types = totalreview.filter(onlyUnique);
