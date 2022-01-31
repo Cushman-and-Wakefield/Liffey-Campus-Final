@@ -114,6 +114,7 @@ define([
                 domCtr.create("div", { id: "maxarea", innerHTML: "<b>Max Area:      </b>" }, "statsDiv");
                 domCtr.create("div", { id: "maxfloor", innerHTML: "<b>Max Floor Number:     </b>" }, "statsDiv");
                 domCtr.create("div", { id: "averagefloor", innerHTML: "<b>Average Floor Number:     </b>" }, "statsDiv");
+                domCtr.create("div", { id: "nextexpiry", innerHTML: "<b>Next Lease Expiry:     </b>" }, "statsDiv");
                 
             },
 
