@@ -177,10 +177,31 @@ define([
                 var year = leaseexpiryData.getFullYear();
 
                 var dateString = date + "-" +(month + 1) + "-" + year;
+
+                chartData.nextExpiry = dateString;
+             
+                // review data
+
+                var reviewData = [];
+
+                for (var k = 0; k < data.length; k++) {
+                    if (data[k].attributes[settings.exactreviewdatename] !== null) {
+                        reviewData.push(new Date(data[k].attributes[settings.exactreviewdatename]));
+                    }
+                }
+
+                reviewData = reviewData.sort();
+                reviewData = reviewData[0];
+             
+                var date = reviewData.getDate();
+                var month = reviewData.getMonth(); //Be careful! January is 0 not 1
+                var year = reviewData.getFullYear();
+
+                var dateString = date + "-" +(month + 1) + "-" + year;
                 
                 console.info(dateString);
 
-                chartData.nextExpiry = dateString;
+                chartData.nextReview = dateString;
 
                 // building data
 
@@ -234,6 +255,7 @@ define([
                 dom.byId("maxfloor").innerHTML = "<b>Max Floor Number:</b>      " + data.floorMax;
                 dom.byId("averagefloor").innerHTML = "<b>Average Floor Number:</b>      " + data.averageFloor;
                 dom.byId("nextexpiry").innerHTML = "<b>Next Lease Expiry:</b>      " + data.nextExpiry;
+                dom.byId("nextreview").innerHTML = "<b>Next Review:</b>      " + data.nextReview;
              
                 callback("loaded");
 
