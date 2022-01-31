@@ -233,6 +233,17 @@ define([
                     //totalrange.push(selection[j].attributes[settings.leaseexpiryname]);
                     totalrange.push({'key': selection[j].attributes[settings.tenancyname], 'value': selection[j].attributes[settings.leaseexpiryname]});
                 }
+                const filterUnwanted = (arr) => {
+                  const required = arr.filter(el => {
+                     return el.value;
+                  });
+                  return required;
+                };
+                totalrange = filterUnwanted(totalrange);
+               
+             
+             
+             
                 console.info(totalrange);
 
                 function onlyUnique(value, index, self) {
