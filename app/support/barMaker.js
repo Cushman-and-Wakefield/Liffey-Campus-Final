@@ -245,9 +245,6 @@ define([
                 totalobjects = [...new Map(totalobjects.map(obj => [JSON.stringify(obj), obj])).values()];
              
                 totalrange = totalobjects.map(a => a.value);
-             
-             
-                console.info(totalrange);
 
                 function onlyUnique(value, index, self) {
                      return self.indexOf(value) === index;
@@ -359,11 +356,27 @@ define([
 
                 var chartData = [];
                 var year = [];
+                var totalobjects = [];
                 var totalrange = [];
              
                  for (var j = 0; j < selection.length; j++) {
-                    totalrange.push(selection[j].attributes[settings.reviewdatename]);
+                    //totalrange.push(selection[j].attributes[settings.reviewdatename]);
+                    totalobjects.push({'key': selection[j].attributes[settings.tenancyname], 'value': selection[j].attributes[settings.reviewdatename]});
                 }
+                const filterUnwanted = (arr) => {
+                  const required = arr.filter(el => {
+                     return el.value;
+                  });
+                  return required;
+                };
+                totalobjects = filterUnwanted(totalobjects);
+               
+                totalobjects = [...new Map(totalobjects.map(obj => [JSON.stringify(obj), obj])).values()];
+             
+                totalrange = totalobjects.map(a => a.value);
+             
+             
+                console.info(totalrange);
 
                 function onlyUnique(value, index, self) {
                      return self.indexOf(value) === index;
