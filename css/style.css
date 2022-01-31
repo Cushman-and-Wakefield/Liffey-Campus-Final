@@ -126,6 +126,7 @@ html, body {
 }
 
 #header{
+  display:none;
   position: absolute;
   top: 0px;
   height: 40px;
@@ -213,13 +214,13 @@ html, body {
 #viewDiv {
   margin-top: 50px;
   width: calc(100% - 600px);
-  height: calc(100% - 50px);
+  height: 100%;
 }
 
 #toolsMenu{
   position: absolute;
   top: 50px;
-  height: calc(100% - 50px);
+  height: 100%;
   right: 0px;
   width: 600px;
 }
