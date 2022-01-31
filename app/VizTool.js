@@ -328,7 +328,6 @@ define([
 
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
-                    console.info(initCharts.usage);
 
                     chartMaker.createChart(this.view, initCharts.usage, settings, "city", function (state) {
                         this.menu.setLoadingState("loaded");
