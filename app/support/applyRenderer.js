@@ -40,11 +40,8 @@ define([
                 return new SimpleRenderer({
                     symbol: new MeshSymbol3D({
                         symbolLayers: [{type: "fill",
-                                          material: { color: [244, 247, 134] },
-                                edges: {
-                                     type: "solid", // autocasts as new SolidEdges3D()
-                                     color: [50, 50, 50, 0.1]
-                                }},
+                                          material: { color: [244, 247, 134] }
+                               },
                             new FillSymbol3DLayer({
                                 
                                 material: { color: [244, 247, 134] }
