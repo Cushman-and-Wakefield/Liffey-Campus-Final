@@ -97,7 +97,7 @@ define([
                 chartData.areaMax = Math.round(areaData[areaData.length - 1]);
               
                 for (let i = 0; i < areaData.length; i++) {
-                      chartData.areaTotal += array[i];
+                      chartData.areaTotal += areaData[i];
                 }
 
                 var areaSum = areaData.reduce(sum, 0);
