@@ -58,7 +58,6 @@ define([
                 for (var i = 0; i < chartData.length; i++) {
                     chartData[i].area = Math.round(chartData[i].area);
                 }
-                console.info(chartData);
                 return chartData;
             },
          
@@ -102,7 +101,6 @@ define([
                 if (settings.name !== "Zurich") {
                     groupPercentValue = "0";
                 }
-                console.info(data);
 
                 var chart = AmCharts.makeChart("chartDiv", {
                     "type": "pie",
