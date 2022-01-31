@@ -85,7 +85,7 @@ define([
             buildingname: "Building_No_",               // Whole Building Count (int)
             areaname: "sq_m",                           // area attribute (float)
             exactexpirydatename: "Lease_Expiry",        // whole lease expiry date for statistics part only (string)
-            exactreviewdatename: "Next_Review_Date",    // whole review date for statistics part only (string)
+            exactreviewdatename: "Next_Review_Date1",    // whole review date for statistics part only (string)
             color: [                                        // color ramp for unique value renderer
                     [251, 231, 137, 1],                     
                     [226, 221, 140, 1],
