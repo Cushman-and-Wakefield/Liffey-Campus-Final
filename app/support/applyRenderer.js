@@ -43,7 +43,7 @@ define([
                                           material: { color: [244, 247, 134] },
                                 edges: {
                                      type: "solid", // autocasts as new SolidEdges3D()
-                                     color: [50, 50, 50, 0.2]
+                                     color: [50, 50, 50, 0.1]
                                 }},
                             new FillSymbol3DLayer({
                                 
@@ -160,8 +160,8 @@ define([
                         type: "color",
                         field: fieldname,
                         stops: [
-                            { value: valuemin, color: "#E4002B" },
-                            { value: valuemax, color: "#001933" }
+                            { value: valuemin, color: "#FBE789" },
+                            { value: valuemax, color: "#1B90A7" }
                         ]
                     }]
 
@@ -222,8 +222,8 @@ define([
                         type: "color",
                         field: fieldname,
                         stops: [
-                            { value: year_min, color: "#E4002B"},
-                            { value: year_max, color: "#001933" }
+                            { value: year_min, color: "#FBE789"},
+                            { value: year_max, color: "#1B90A7" }
                         ]
                     }]
 
