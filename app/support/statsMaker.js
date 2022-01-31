@@ -171,12 +171,16 @@ define([
 
                 leaseexpiryData = leaseexpiryData.sort();
                 leaseexpiryData = leaseexpiryData[0];
-                leaseexpiryData = _.groupBy(leaseexpiryData, function(d){
-                       return d.startedAt.toISOString().substring(0, 10);
-                    });
-                console.info(leaseexpiryData);
+             
+                var date = leaseexpiryData.getDate();
+                var month = leaseexpiryData.getMonth(); //Be careful! January is 0 not 1
+                var year = leaseexpiryData.getFullYear();
 
-                chartData.nextExpiry = leaseexpiryData[0];
+                var dateString = date + "-" +(month + 1) + "-" + year;
+                
+                console.info(dateString);
+
+                chartData.nextExpiry = dateString;
 
                 // building data
 
