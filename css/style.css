@@ -310,10 +310,12 @@ html, body {
   padding-right: 5px;
   width: 110px;
   height: 40px;
-  background: grey;
-  color: white;
+  background: #FBE789;
+  color: grey;
   text-align: center;
-  cursor: pointer
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Work Sans", sans-serif;
 }
 
 #reset{
