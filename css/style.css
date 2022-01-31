@@ -387,7 +387,7 @@ html, body {
     padding-bottom: 15px;
     padding-right: 15px;
     width: 550px;
-    height: 350px;
+    height: 320px;
   }
 
 .FilterLabel{
@@ -489,7 +489,7 @@ html, body {
   align-items: center;
   margin-top: 15px;
   margin-left: 0px;
-  height: 400px;
+  height: 450px;
   width: 550px;
   z-index: 0;
 }
@@ -530,11 +530,11 @@ html, body {
 #statsDiv {
   position: absolute;
   background: white;
-  top: 160px;
+  top: 180px;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 10px;
-  height: 400px;
+  height: 450px;
   width: 550px;
   font-size: 14px;
   z-index: 0;
