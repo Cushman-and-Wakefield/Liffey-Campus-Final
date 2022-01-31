@@ -135,8 +135,8 @@ define([
                     portalItem: {
                         id: this.settings.webscene
                     },
-                    basemap: "dark-gray-vector",
-                    ground: "world-elevation"
+                    basemap: "osi-basemap-premium"
+                    //,ground: "world-elevation"
                 });
 
                 // create a view
