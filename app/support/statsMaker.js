@@ -177,8 +177,12 @@ define([
                 var year = leaseexpiryData.getFullYear();
 
                 var dateString = date + "-" +(month + 1) + "-" + year;
-
-                chartData.nextExpiry = dateString;
+             
+                if (dateString.length === 0){
+                    chartData.nextExpiry = "None";
+                } else{
+                    chartData.nextExpiry = dateString;
+                }
              
                 // review data
 
@@ -189,7 +193,6 @@ define([
                         reviewData.push(new Date(data[k].attributes[settings.exactreviewdatename]));
                     }
                 }
-                console.info(reviewData);
 
                 reviewData = reviewData.sort();
                 reviewData = reviewData[0];
@@ -200,9 +203,13 @@ define([
 
                 var dateString = date + "-" +(month + 1) + "-" + year;
                 
+                 if (dateString.length === 0){
+                    chartData.nextReview = "None";
+                } else{
+                    chartData.nextReview = dateString;
+                }
+             
                 console.info(dateString);
-
-                chartData.nextReview = dateString;
 
                 // building data
 
