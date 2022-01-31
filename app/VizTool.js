@@ -240,7 +240,7 @@ define([
                         var initData = currentResult;
                         // for white renderer
                         var initStats = statsMaker.createChartData(currentResult, settings, this.view);
-                        console.info(initStats);
+                        console.info(currentResult[2].attributes[settings.buildingname]);
                         // for usage renderer
                         var initUsage = chartMaker.createChartData(currentResult, settings);
                         // for tenancy renderer
