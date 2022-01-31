@@ -50,11 +50,16 @@ define([
                     mostCommonUsage: {
                         usage: null
                     },
+                    mostCommonTenancy: {
+                       tenancy: null
+                    },
                     averageArea: null,
                     totalArea: null,
                     areaMax: null,
                     floorMax: null,
-                    averageFloor: null
+                    averageFloor: null,
+                    nextExpiry: null,
+                    nextReview: null
                 };
 
                 function sum (a, b) {
@@ -97,7 +102,7 @@ define([
                 chartData.areaMax = Math.round(areaData[areaData.length - 1]);
               
                 for (let i = 0; i < areaData.length; i++) {
-                      chartData.areaTotal += areaData[i];
+                      chartData.totalArea += areaData[i];
                 }
 
                 var areaSum = areaData.reduce(sum, 0);
