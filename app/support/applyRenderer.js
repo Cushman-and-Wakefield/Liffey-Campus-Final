@@ -39,15 +39,16 @@ define([
             createSimpleRenderer: function () {
                 return new SimpleRenderer({
                     symbol: new MeshSymbol3D({
-                        symbolLayers: [
-                            new FillSymbol3DLayer({
-                                type: "fill",
-                                material: { color: "yellow" },
-                                outline: { color: "red" },
+                        symbolLayers: [{type: "fill",
+                                         outline: { color: "red" },
                                 edges: {
                                      type: "solid", // autocasts as new SolidEdges3D()
                                      color: [50, 50, 50, 0.8]
-                                }
+                                }},
+                            new FillSymbol3DLayer({
+                                
+                                material: { color: "yellow" },
+                               
                             })
                         ]
                     })
