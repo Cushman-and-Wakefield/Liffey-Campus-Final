@@ -173,9 +173,8 @@ define([
             createChart: function(data, callback){
 
                 dom.byId("buildingInfo").innerHTML = "Number of Buildings: " + data.numberofBuildings;
-                dom.byId("numberofwholebuildings").innerHTML = "<b>Number of entire Buildings:</b>      " + data.numberofWholeBuildings;
-                dom.byId("usage").innerHTML = "<b>Most common usage:</b>        " + data.mostCommonUsage.usage;
-                dom.byId("averagearea").innerHTML = "<b>Average Area:</b>       " + data.averageArea + " m2";
+                dom.byId("numberofwholebuildings").innerHTML = "<b>Number of Buildings:</b>      " + data.numberofWholeBuildings;
+                dom.byId("usage").innerHTML = "<b>Most Common Usage:</b>        " + data.mostCommonUsage.usage;
                 dom.byId("maxarea").innerHTML = "<b>Max Area:</b>       " + data.areaMax + " m2";
                 dom.byId("maxfloor").innerHTML = "<b>Max Floor Number:</b>      " + data.floorMax;
                 dom.byId("averagefloor").innerHTML = "<b>Average Floor Number:</b>      " + data.averageFloor;
