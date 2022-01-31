@@ -212,14 +212,14 @@ html, body {
 }
 
 #viewDiv {
-  margin-top: 50px;
+  margin-top: 0px;
   width: calc(100% - 600px);
   height: 100%;
 }
 
 #toolsMenu{
   position: absolute;
-  top: 50px;
+  top: 0px;
   height: 100%;
   right: 0px;
   width: 600px;
