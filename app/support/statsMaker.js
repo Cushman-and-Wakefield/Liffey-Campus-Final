@@ -170,6 +170,10 @@ define([
                 }
 
                 leaseexpiryData = leaseexpiryData.sort();
+                leaseexpiryData = leaseexpiryData[0];
+                leaseexpiryData = _.groupBy(leaseexpiryData, function(d){
+                       return d.startedAt.toISOString().substring(0, 10);
+                    });
                 console.info(leaseexpiryData);
 
                 chartData.nextExpiry = leaseexpiryData[0];
