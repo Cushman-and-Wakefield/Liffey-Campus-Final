@@ -65,7 +65,6 @@ define([
                                 color: [238, 15, 156, 0.8]
                             }},
                             new FillSymbol3DLayer({
-                            type: "fill",
                             material: {
                                 color: [238, 15, 156, 0.8]
                             }
