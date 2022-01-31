@@ -89,7 +89,6 @@ define([
                    for (var i = 0; i < chartData_ten.length; i++) {
                        chartData_ten[i].area = Math.round(chartData_ten[i].area);
                    }
-                   console.info(chartData_ten);
                    return chartData_ten;
                },
 
@@ -101,7 +100,7 @@ define([
                 var groupPercentValue = 0;
 
                 if (settings.name !== "Zurich") {
-                    groupPercentValue = "2";
+                    groupPercentValue = "0";
                 }
 
                 var chart = AmCharts.makeChart("chartDiv", {
@@ -183,7 +182,7 @@ define([
                 var groupPercentValue = 0;
 
                 if (settings.name !== "Zurich") {
-                    groupPercentValue = "2";
+                    groupPercentValue = "0";
                 }
 
                 var chart = AmCharts.makeChart("chartDiv", {
