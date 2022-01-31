@@ -234,7 +234,7 @@ define([
                     var query = settings.layer1.createQuery();
 
                     query.returnGeometry = false;
-                    query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.leaseexpiryname, settings.reviewdatename, settings.reviewtypename, settings.buildingname, settings.floorname, settings.statusname, settings.buildingIDname];
+                    query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.leaseexpiryname, settings.reviewdatename, settings.reviewtypename, settings.buildingname, settings.floorname, settings.statusname, settings.exactexpirydatename, settings.exactreviewdatename, settings.buildingIDname];
                     
                     settings.layer1.queryFeatures(query).then(function (result) {
                         var currentResult = result.features;
@@ -384,7 +384,7 @@ define([
                 var query = settings.layer1.createQuery();
 
                 query.returnGeometry = false;
-                query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.leaseexpiryname, settings.reviewdatename, settings.reviewtypename, settings.buildingname, settings.floorname, settings.statusname, settings.buildingIDname];
+                query.outFields = [settings.OIDname, settings.usagename, settings.tenancyname, settings.areaname, settings.leaseexpiryname, settings.reviewdatename, settings.reviewtypename, settings.buildingname, settings.floorname, settings.statusname, settings.exactexpirydatename, settings.exactreviewdatename, settings.buildingIDname];
 
                 settings.layer1.queryFeatures(query).then(function (result) {
 
