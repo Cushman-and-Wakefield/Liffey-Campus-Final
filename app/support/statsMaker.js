@@ -195,6 +195,7 @@ define([
 
                 reviewData = reviewData.sort();
                 reviewData = reviewData[0];
+                console.info(reviewData);
              
                 if (reviewData.length === 0){
                     chartData.nextReview = "None";
