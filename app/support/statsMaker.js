@@ -146,8 +146,6 @@ define([
                 var buildingDataunique = buildingData.filter(onlyUnique);
 
                 chartData.numberofUnits = buildingDataunique.length;
-
-                return chartData;
             
              
                 // whole building data
@@ -159,7 +157,7 @@ define([
                         enitrebuildingData.push(data[k].attributes[settings.buildingname]);
                     }
                 }
-               console.info(enitrebuildingData);
+                console.info(enitrebuildingData);
 
                 function onlyUnique (value, index, self) {
                     return self.indexOf(value) === index;
