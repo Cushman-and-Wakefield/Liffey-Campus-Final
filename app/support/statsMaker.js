@@ -158,6 +158,21 @@ define([
                 if (floorData.length === 1){
                     chartData.averageFloor = floorData[0];
                 }
+             
+                // lease expiry data
+
+                var leaseexpiryData = [];
+
+                for (var k = 0; k < data.length; k++) {
+                    if (data[k].attributes[settings.exactexpirydatename] !== null) {
+                        leaseexpiryData.push(new Date(data[k].attributes[settings.exactexpirydatename]));
+                    }
+                }
+
+                leaseexpiryData = leaseexpiryData.sort();
+                console.info(leaseexpiryData);
+
+                chartData.nextExpiry = leaseexpiryData[0];
 
                 // building data
 
@@ -210,6 +225,7 @@ define([
                 dom.byId("maxarea").innerHTML = "<b>Max Area:</b>       " + data.areaMax + " m2";
                 dom.byId("maxfloor").innerHTML = "<b>Max Floor Number:</b>      " + data.floorMax;
                 dom.byId("averagefloor").innerHTML = "<b>Average Floor Number:</b>      " + data.averageFloor;
+                dom.byId("nextexpiry").innerHTML = "<b>Next Lease Expiry:</b>      " + data.nextExpiry;
              
                 callback("loaded");
 
