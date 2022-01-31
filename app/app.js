@@ -71,7 +71,7 @@ define([
         var settings_demo = {
             name: "Liffey Campus",
             url: "https://cwireland.maps.arcgis.com",           // portal URL for config
-            webscene: "8226d20419ca4ae6aca10e0c666bc012",   // portal item ID of the webscene
+            webscene: "38f99063ea7c4dd0abb08913839275f3",   // portal item ID of the webscene
             usagename: "Use_",                             // usage attribute (string)
             tenancyname: "Tenant",                          // tenant names (string)
             floorname: "Floor",                           // floor attribute (string)
