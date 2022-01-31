@@ -121,11 +121,11 @@ define([
                 var color = [];
 
                 if (bins_new > 9) {
-                    color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#56AAC6", "#9EC8DB", "#003865", "#526180", "#001933"];
+                    color = ["#FBE789", "#E2DD8C", "#C9D38F", "#B0CA93", "#97C096", "#7EB699", "#65AD9D", "#4CA3A0", "#3399A3", "#1B90A7"];
 
                 }
                 else {
-                    color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#001933"];
+                    color = ["#FBE789", "#CED58F", "#A1C495", "#74B29B", "#47A1A1", "#1B90A7"];
                 }
 
 
@@ -250,11 +250,11 @@ define([
                 var color = [];
 
                 if (bins_new > 9) {
-                    color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#56AAC6", "#9EC8DB", "#003865", "#526180", "#001933"];
+                    color = ["#FBE789", "#E2DD8C", "#C9D38F", "#B0CA93", "#97C096", "#7EB699", "#65AD9D", "#4CA3A0", "#3399A3", "#1B90A7"];
 
                 }
                 else {
-                    color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#001933"];
+                    color = ["#FBE789", "#CED58F", "#A1C495", "#74B29B", "#47A1A1", "#1B90A7"];
                 }
              
                 for (var i = 0; i < unique_years.length; i++) {
@@ -381,11 +381,11 @@ define([
                 var color = [];
 
                 if (bins_new > 9) {
-                    color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#56AAC6", "#9EC8DB", "#003865", "#526180", "#001933"];
+                    color = ["#FBE789", "#E2DD8C", "#C9D38F", "#B0CA93", "#97C096", "#7EB699", "#65AD9D", "#4CA3A0", "#3399A3", "#1B90A7"];
 
                 }
                 else {
-                    color = ["#E4002B", "#A6192B", "#9BD3DD", "#D9ECEB", "#0093B2", "#001933"];
+                    color = ["#FBE789", "#CED58F", "#A1C495", "#74B29B", "#47A1A1", "#1B90A7"];
                 }
              
                 for (var i = 0; i < unique_years.length; i++) {
@@ -446,7 +446,7 @@ define([
                         "labelText": "[[value]]",
                         "lineAlpha": 0,
                         "title": "CPI",
-                        "fillColors": "#E4002B",
+                        "fillColors": "#FBE789",
                         "type": "column",
                         "valueField": "CPI"
                     },
@@ -456,7 +456,7 @@ define([
                         "labelText": "[[value]]",
                         "lineAlpha": 0,
                         "title": "OMRV",
-                        "fillColors": "#A6192B",
+                        "fillColors": "#CED58F",
                         "type": "column",
                         "valueField": "OMRV"
                     },
@@ -466,7 +466,7 @@ define([
                         "labelText": "[[value]]",
                         "lineAlpha": 0,
                         "title": "CPI Cap & Collar",
-                        "fillColors": "#9BD3DD",
+                        "fillColors": "#A1C495",
                         "type": "column",
                         "valueField": "CPI_Cap_and_Collar"
                     }],
