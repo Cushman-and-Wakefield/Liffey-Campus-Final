@@ -227,11 +227,11 @@ define([
 
                 var chartData = [];
                 var year = [];
-                let totalrange = {};
+                var totalrange = [];
              
                  for (var j = 0; j < selection.length; j++) {
                     //totalrange.push(selection[j].attributes[settings.leaseexpiryname]);
-                    totalrange.push('key': selection[j].attributes[settings.leaseexpiryname], 'value': selection[j].attributes[settings.leaseexpiryname]);
+                    totalrange.push({'key': selection[j].attributes[settings.leaseexpiryname], 'value': selection[j].attributes[settings.leaseexpiryname]});
                 }
                 console.info(totalrange);
 
