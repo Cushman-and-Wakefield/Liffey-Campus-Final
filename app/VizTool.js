@@ -314,7 +314,7 @@ define([
                 var settings = this.settings;
 
                 if (vizName === "white") {
-                    settings.layer1.renderer = null;
+                    settings.layer1.renderer = applyRenderer.createSimpleRenderer();
 
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 0 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 1 });
