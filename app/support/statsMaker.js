@@ -172,15 +172,14 @@ define([
                 leaseexpiryData = leaseexpiryData.sort();
                 leaseexpiryData = leaseexpiryData[0];
              
-                var date = leaseexpiryData.getDate();
-                var month = leaseexpiryData.getMonth(); //Be careful! January is 0 not 1
-                var year = leaseexpiryData.getFullYear();
-
-                var dateString = date + "-" +(month + 1) + "-" + year;
-             
-                if (dateString.length === 0){
+                if (leaseexpiryData.length === 0){
                     chartData.nextExpiry = "None";
                 } else{
+                    var date = leaseexpiryData.getDate();
+                    var month = leaseexpiryData.getMonth(); //Be careful! January is 0 not 1
+                    var year = leaseexpiryData.getFullYear();
+
+                    var dateString = date + "-" +(month + 1) + "-" + year;
                     chartData.nextExpiry = dateString;
                 }
              
@@ -197,20 +196,17 @@ define([
                 reviewData = reviewData.sort();
                 reviewData = reviewData[0];
              
-                var date = reviewData.getDate();
-                var month = reviewData.getMonth(); //Be careful! January is 0 not 1
-                var year = reviewData.getFullYear();
-
-                var dateString = date + "-" +(month + 1) + "-" + year;
-                
-                 if (dateString.length === 0){
+                if (reviewData.length === 0){
                     chartData.nextReview = "None";
                 } else{
+                    var date = reviewData.getDate();
+                    var month = reviewData.getMonth(); //Be careful! January is 0 not 1
+                    var year = reviewData.getFullYear();
+
+                    var dateString = date + "-" +(month + 1) + "-" + year;
                     chartData.nextReview = dateString;
                 }
              
-                console.info(dateString);
-
                 // building data
 
                 var buildingData = [];
