@@ -43,8 +43,11 @@ define([
                             new FillSymbol3DLayer({
                                 type: "fill",
                                 material: { color: "yellow" },
-                                outline: { color: "red" }
-
+                                outline: { color: "red" },
+                                edges: {
+                                     type: "solid", // autocasts as new SolidEdges3D()
+                                     color: [50, 50, 50, 0.8]
+                                }
                             })
                         ]
                     })
@@ -56,8 +59,9 @@ define([
                 return new UniqueValueRenderer({
                     defaultSymbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
+                            type: "fill",
                             material: {
-                                color: [238, 15, 156, 0.2]
+                                color: [238, 15, 156, 0.8]
                             }
                         })]
                     }),
