@@ -100,7 +100,7 @@ define([
                 
                 if (tenancyAreaSum === 0){
                     chartData.mostCommonTenancy.tenancy = "None";
-                } if else ((tenancyData[tenancyData.length - 1] === "Vacant") && (tenancyData.length > 1)) {
+                } else if ((tenancyData[tenancyData.length - 1] === "Vacant") && (tenancyData.length > 1)) {
                     chartData.mostCommonTenancy = tenancyData[tenancyData.length - 2];
                 }
                 else {
