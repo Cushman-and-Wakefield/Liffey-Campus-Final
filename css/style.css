@@ -360,13 +360,13 @@ html, body {
 
 #viz-leaseexpiry {
   left: 20px;
-  top: 100px;
+  top: 120px;
   border-radius: 8px;
 }
 
 #viz-reviewdate {
   left: 160px;
-  top: 100px;
+  top: 120px;
   border-radius: 8px;
 }
 
@@ -407,7 +407,7 @@ html, body {
     position: relative;
     top: 30px;
     padding-left: 15px;
-    padding-top: 15px;
+    padding-top: 0px;
     padding-bottom: 15px;
     padding-right: 15px;
     width: 550px;
@@ -419,6 +419,7 @@ html, body {
   padding-top: 5px;
   padding-left: 5px;
   padding-right: 5px;
+  padding-bottom: 5px;
   width: 160px;
   height: 40px;
   border: none;
@@ -519,7 +520,7 @@ html, body {
   align-items: center;
   margin-top: 15px;
   margin-left: 0px;
-  height: 400px;
+  height: 420px;
   width: 550px;
   z-index: 0;
 }
@@ -570,7 +571,7 @@ html, body {
   align-items: center;
   margin-top: 15px;
   margin-left: 0px;
-  height: 400px;
+  height: 420px;
   width: 550px;
   font-size: 18px;
   color: grey;
@@ -580,6 +581,7 @@ html, body {
 #titleStats{
   font-size: 24px;
   font-weight: bold;
+  padding-left: 5px;
   padding-bottom: 5px;
   margin-bottom: 20px;
   color: grey;
