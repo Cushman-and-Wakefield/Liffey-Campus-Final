@@ -106,7 +106,7 @@ define([
                 else {
                     chartData.mostCommonTenancy = tenancyData[tenancyData.length - 1];
                 }
-                console.info(tenancyData[tenancyData.length - 1] === "Vacant");
+                console.info(tenancyData[tenancyData.length - 1]);
             
 
                 // area data
