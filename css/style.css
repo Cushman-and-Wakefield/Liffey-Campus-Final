@@ -432,7 +432,7 @@ html, body {
   color: grey;
 }
 
-.filterDropdown select {
+.FilterLabel select {
   display: none; /*hide original SELECT element: */
 }
 
