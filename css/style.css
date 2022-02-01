@@ -407,7 +407,7 @@ html, body {
     position: relative;
     padding-left: 15px;
     padding-top: 0px;
-    padding-bottom: 15px;
+    padding-bottom: 0px;
     padding-right: 15px;
     width: 550px;
     height: 38%;
@@ -432,9 +432,35 @@ html, body {
   color: grey;
 }
 
-.filterDropdown::selection{
-  background: #FBE789;
-  color: grey
+.filterDropdown select {
+  display: none; /*hide original SELECT element: */
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #FBE789 transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #FBE789 transparent;
+  top: 7px;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: #FBE789;
 }
 
 #AreaMin{
@@ -597,7 +623,7 @@ html, body {
   float: left;
   width: 45%;
   align-items: center;
-  height: 50px;
+  height: 53px;
   margin-bottom: 10px;
   padding-top: 0px;
   border: 1px solid #FBE789;
@@ -610,7 +636,7 @@ html, body {
   float: right;
   width: 45%;
   align-items: center;
-  height: 50px;
+  height: 53px;
   margin-bottom: 10px;
   padding-top: 0px;
   border: 1px solid #FBE789;
@@ -621,7 +647,7 @@ html, body {
 
 #numberofwholebuildings {
   align-items: center;
-  height: 50px;
+  height: 53px;
   margin-bottom: 10px;
   padding-top: 0px;
   border: 1px solid #FBE789;
