@@ -41,7 +41,7 @@ define([
                     symbol: new MeshSymbol3D({
                         symbolLayers: [{
                                 type: "fill",
-                                material: { color: [251, 231, 137] },
+                                material: { color: [251, 231, 137, 1] },
                                 colorMixMode: "replace"
                                
                             }
