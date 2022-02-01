@@ -432,7 +432,7 @@ html, body {
   color: grey;
 }
 
-.filterDropdown:selection{
+.filterDropdown::selection{
   background: #FBE789;
   color: grey
 }
@@ -597,7 +597,7 @@ html, body {
   float: left;
   width: 45%;
   align-items: center;
-  height: 45px;
+  height: 50px;
   margin-bottom: 10px;
   padding-top: 0px;
   border: 1px solid #FBE789;
@@ -610,7 +610,7 @@ html, body {
   float: right;
   width: 45%;
   align-items: center;
-  height: 45px;
+  height: 50px;
   margin-bottom: 10px;
   padding-top: 0px;
   border: 1px solid #FBE789;
@@ -621,7 +621,7 @@ html, body {
 
 #numberofwholebuildings {
   align-items: center;
-  height: 45px;
+  height: 50px;
   margin-bottom: 10px;
   padding-top: 0px;
   border: 1px solid #FBE789;
