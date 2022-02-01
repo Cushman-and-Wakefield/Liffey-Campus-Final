@@ -251,15 +251,15 @@ define([
             createChart: function(data, callback){
 
                 dom.byId("buildingInfo").innerHTML = "Number of Buildings: " + data.numberofBuildings;
-                dom.byId("numberofwholebuildings").innerHTML = "<small>Number of Buildings      </small><br>" + data.numberofWholeBuildings;
-                dom.byId("usage").innerHTML = "<small>Most Common Usage</small><br>        " + data.mostCommonUsage.usage;
-                dom.byId("tenancy").innerHTML = "<small>Most Common Tenancy</small><br>        " + data.mostCommonTenancy.tenancy;
-                dom.byId("totalarea").innerHTML = "<small>Total Area</small><br>       " + data.totalArea + " m2";
-                dom.byId("maxarea").innerHTML = "<small>Max Area</small><br>       " + data.areaMax + " m2";
-                dom.byId("maxfloor").innerHTML = "<small>Max Floor Number</small><br>      " + data.floorMax;
-                dom.byId("averagefloor").innerHTML = "<small>Average Floor Number</small><br>      " + data.averageFloor;
-                dom.byId("nextexpiry").innerHTML = "<small>Next Lease Expiry</small><br>      " + data.nextExpiry;
-                dom.byId("nextreview").innerHTML = "<small>Next Review</small><br>      " + data.nextReview;
+                dom.byId("numberofwholebuildings").innerHTML = "<small>Number of Buildings      <br></small>" + data.numberofWholeBuildings;
+                dom.byId("usage").innerHTML = "<small>Most Common Usage<br></small>        " + data.mostCommonUsage.usage;
+                dom.byId("tenancy").innerHTML = "<small>Most Common Tenancy<br></small>        " + data.mostCommonTenancy.tenancy;
+                dom.byId("totalarea").innerHTML = "<small>Total Area<br></small>       " + data.totalArea + " m2";
+                dom.byId("maxarea").innerHTML = "<small>Max Area<br></small>       " + data.areaMax + " m2";
+                dom.byId("maxfloor").innerHTML = "<small>Max Floor Number<br></small>      " + data.floorMax;
+                dom.byId("averagefloor").innerHTML = "<small>Average Floor Number<br></small>      " + data.averageFloor;
+                dom.byId("nextexpiry").innerHTML = "<small>Next Lease Expiry<br></small>      " + data.nextExpiry;
+                dom.byId("nextreview").innerHTML = "<small>Next Review<br></small>      " + data.nextReview;
              
                 callback("loaded");
 
