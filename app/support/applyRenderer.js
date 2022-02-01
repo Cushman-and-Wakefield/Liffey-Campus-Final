@@ -43,7 +43,6 @@ define([
                                           material: { color: [251, 231, 137] }
                                },
                             new FillSymbol3DLayer({
-                                type: "simple-fill",
                                 material: { color: [251, 231, 137] }
                                
                             })
