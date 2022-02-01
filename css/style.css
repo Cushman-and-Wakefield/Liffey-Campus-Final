@@ -548,6 +548,7 @@ html, body {
   width: 550px;
   font-size: 24px;
   font-weight: bold;
+  color: grey;
   z-index: 0;
 }
 
