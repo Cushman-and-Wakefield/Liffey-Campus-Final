@@ -286,9 +286,12 @@ html, body {
 
 .titleViz {
   position: relative;
-  padding-left: 5px;
-  padding-bottom: 10px;
-  font-size: 18px
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  color: grey;
+  border-bottom: 1px solid #FBE789;
 }
 
 .containerViz {
@@ -374,6 +377,15 @@ html, body {
   color: grey;
 }
 
+#titleFilter {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  color: grey;
+  border-bottom: 1px solid #FBE789;
+}
+
 #titleAreaMin{
     position: absolute;
     top: 255px;
@@ -410,14 +422,14 @@ html, body {
   height: 40px;
   border: none;
   color: grey;
-  text-decoration: underline;     
-  text-decoration-color: #FBE789; 
+  border-bottom: 1px solid #FBE789; 
 }
 
 .filterDropdown{
   width: 100%;
   border: none;
   color: grey;
+  background: #FBE789; 
 }
 
 #AreaMin{
@@ -566,7 +578,7 @@ html, body {
 #titleStats{
   font-size: 24px;
   font-weight: bold;
-  padding-bottom: 5px;
+  padding-bottom: 0px;
   margin-bottom: 20px;
   color: grey;
   border-bottom: 1px solid #FBE789;
@@ -579,7 +591,7 @@ html, body {
   align-items: center;
   height: 45px;
   margin-bottom: 10px;
-  padding: 10px;
+  padding-top: 5px;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
@@ -591,7 +603,7 @@ html, body {
   align-items: center;
   height: 45px;
   margin-bottom: 10px;
-  padding: 10px;
+  padding-top: 5px;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
@@ -601,7 +613,7 @@ html, body {
   align-items: center;
   height: 45px;
   margin-bottom: 10px;
-  padding: 10px;
+  padding-top: 5px;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
