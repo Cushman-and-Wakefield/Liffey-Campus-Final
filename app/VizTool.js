@@ -105,17 +105,17 @@ define([
 
 
                 domCtr.create("div", { id: "titleStats", innerHTML: "Statistics" }, "statsDiv");
-                domCtr.create("div", { className: "statsViz", id: "numberofwholebuildings", innerHTML: "<small>Number of Buildings     </small><br>" }, "statsDiv");
-                //domCtr.create("div", { id: "numberofunits", innerHTML: "<b>Number of Units:     </b>" }, "statsDiv");
-                domCtr.create("div", { id: "usage", innerHTML: "<b>Most Common Usage:       </b>" }, "statsDiv");
-                domCtr.create("div", { id: "tenancy", innerHTML: "<b>Most Common Tenancy:       </b>" }, "statsDiv");
-                domCtr.create("div", { id: "totalarea", innerHTML: "<b>Total Area:      </b>" }, "statsDiv");
+                domCtr.create("div", { id: "numberofwholebuildings", innerHTML: "<small>Number of Buildings     </small><br>" }, "statsDiv");
+                //domCtr.create("div", { className: "statsViz", id: "numberofunits", innerHTML: "<b>Number of Units:     </b>" }, "statsDiv");
+                domCtr.create("div", { className: "statsViz_left", id: "usage", innerHTML: "<b>Most Common Usage:       </b>" }, "statsDiv");
+                domCtr.create("div", { className: "statsViz_right", id: "tenancy", innerHTML: "<b>Most Common Tenancy:       </b>" }, "statsDiv");
+                domCtr.create("div", { className: "statsViz_left", id: "totalarea", innerHTML: "<b>Total Area:      </b>" }, "statsDiv");
                 //domCtr.create("div", { id: "averagearea", innerHTML: "<b>Average Area:      </b>" }, "statsDiv");
-                domCtr.create("div", { id: "maxarea", innerHTML: "<b>Max Area:      </b>" }, "statsDiv");
-                domCtr.create("div", { id: "maxfloor", innerHTML: "<b>Max Floor Number:     </b>" }, "statsDiv");
-                domCtr.create("div", { id: "averagefloor", innerHTML: "<b>Average Floor Number:     </b>" }, "statsDiv");
-                domCtr.create("div", { id: "nextexpiry", innerHTML: "<b>Next Lease Expiry:     </b>" }, "statsDiv");
-                domCtr.create("div", { id: "nextreview", innerHTML: "<b>Next Review:     </b>" }, "statsDiv");
+                domCtr.create("div", { className: "statsViz_right", id: "maxarea", innerHTML: "<b>Max Area:      </b>" }, "statsDiv");
+                domCtr.create("div", { className: "statsViz_left", id: "maxfloor", innerHTML: "<b>Max Floor Number:     </b>" }, "statsDiv");
+                domCtr.create("div", { className: "statsViz_right", id: "averagefloor", innerHTML: "<b>Average Floor Number:     </b>" }, "statsDiv");
+                domCtr.create("div", { className: "statsViz_left", id: "nextexpiry", innerHTML: "<b>Next Lease Expiry:     </b>" }, "statsDiv");
+                domCtr.create("div", { className: "statsViz_right", id: "nextreview", innerHTML: "<b>Next Review:     </b>" }, "statsDiv");
                 
             },
 
