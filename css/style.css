@@ -300,7 +300,7 @@ html, body {
     padding-bottom: 15px;
     padding-right: 15px;
     width: 550px;
-    height: 530px;
+    height: 75%;
   }
 
 .labelViz {
@@ -397,7 +397,7 @@ html, body {
     padding-bottom: 15px;
     padding-right: 15px;
     width: 550px;
-    height: 320px;
+    height: 25%;
   }
 
 .FilterLabel{
