@@ -546,7 +546,8 @@ html, body {
   margin-left: 10px;
   height: 450px;
   width: 550px;
-  font-size: 14px;
+  font-size: 24px;
+  font-weight: bold;
   z-index: 0;
 }
 
@@ -563,7 +564,6 @@ html, body {
 #numberofwholebuildings {
   align-items: center;
   height: 50px;
-  font-size: 2rem;
   margin-bottom: 15px;
   padding: 1rem 1.5rem;
   border: 1px solid #FBE789;
