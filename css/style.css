@@ -300,12 +300,12 @@ html, body {
     padding-bottom: 15px;
     padding-right: 15px;
     width: 550px;
-    height: 70%;
+    height: 65%;
   }
 
 .labelViz {
   position: absolute;
-  padding-top: 10px;
+  padding-top: 5px;
   padding-left: 5px;
   padding-right: 5px;
   width: 110px;
@@ -398,7 +398,7 @@ html, body {
     padding-bottom: 15px;
     padding-right: 15px;
     width: 550px;
-    height: 30%;
+    height: 35%;
   }
 
 .FilterLabel{
@@ -408,11 +408,12 @@ html, body {
   padding-right: 5px;
   width: 160px;
   height: 40px;
-  outline: none;
+  border: none;
 }
 
 .filterDropdown{
   width: 100%;
+  border: none;
 }
 
 #AreaMin{
@@ -545,8 +546,8 @@ html, body {
   background: white;
   top: 180px;
   align-items: center;
-  margin-top: 30px;
-  margin-left: 10px;
+  margin-top: 15px;
+  margin-left: 0px;
   height: 450px;
   width: 550px;
   font-size: 20px;
@@ -557,8 +558,8 @@ html, body {
 #titleStats{
   font-size: 24px;
   font-weight: bold;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
   color: grey;
   border-bottom: 1px solid #FBE789;
   
@@ -570,7 +571,7 @@ html, body {
   align-items: center;
   height: 45px;
   margin-bottom: 10px;
-  padding: 0.5rem 0.5rem;
+  padding: 0.3rem 0.5rem;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
@@ -582,7 +583,7 @@ html, body {
   align-items: center;
   height: 45px;
   margin-bottom: 10px;
-  padding: 0.5rem 0.5rem;
+  padding: 0.3rem 0.5rem;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
@@ -592,7 +593,7 @@ html, body {
   align-items: center;
   height: 45px;
   margin-bottom: 10px;
-  padding: 0.5rem 1.5rem;
+  padding: 0.3rem 1.5rem;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
