@@ -360,13 +360,13 @@ html, body {
 
 #viz-leaseexpiry {
   left: 20px;
-  top: 120px;
+  top: 115px;
   border-radius: 8px;
 }
 
 #viz-reviewdate {
   left: 160px;
-  top: 120px;
+  top: 115px;
   border-radius: 8px;
 }
 
@@ -405,9 +405,8 @@ html, body {
 
 .containerFilter {
     position: relative;
-    top: 30px;
     padding-left: 15px;
-    padding-top: 0px;
+    padding-top: 10px;
     padding-bottom: 15px;
     padding-right: 15px;
     width: 550px;
@@ -516,7 +515,7 @@ html, body {
 #chartDiv {
   position: absolute;
   background: white;
-  top: 160px;
+  top: 170px;
   align-items: center;
   margin-top: 15px;
   margin-left: 0px;
@@ -567,7 +566,7 @@ html, body {
 #statsDiv {
   position: absolute;
   background: white;
-  top: 160px;
+  top: 170px;
   align-items: center;
   margin-top: 15px;
   margin-left: 0px;
@@ -601,13 +600,19 @@ html, body {
   text-align: center;
 }
 
+br {
+   display: block; /* makes it have a width */
+   content: ""; /* clears default height */
+   margin-top: 5; /* change this to whatever height you want it */
+}
+
 .statsViz_right {
   float: right;
   width: 45%;
   align-items: center;
   height: 45px;
   margin-bottom: 10px;
-  padding-top: 5px;
+  padding-top: 0px;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
@@ -617,7 +622,7 @@ html, body {
   align-items: center;
   height: 45px;
   margin-bottom: 10px;
-  padding-top: 5px;
+  padding-top: 0px;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
@@ -629,7 +634,7 @@ html, body {
   top: 10px;
   right: 0px; 
   padding-left: 5px;
-  padding-top: 5px;
+  padding-top: 0px;
   padding-bottom: 5px;
   padding-right: 5px;
 }
