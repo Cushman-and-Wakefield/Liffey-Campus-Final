@@ -40,6 +40,7 @@ define([
                 return new SimpleRenderer({
                     symbol: new MeshSymbol3D({
                         symbolLayers: [{type: "fill",
+                                        colorMixMode: "replace",
                                           material: { color: [251, 231, 137] }
                                },
                             new FillSymbol3DLayer({
