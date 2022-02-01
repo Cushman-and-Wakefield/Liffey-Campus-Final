@@ -517,12 +517,14 @@ html, body {
 #chartDiv {
   position: absolute;
   background: white;
-  top: 175px;
+  top: 29.15%;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 2.5%;
   margin-left: 0px;
-  height: 410px;
-  width: 550px;
+  height: 68.3%;
+  width: 100%;
+  font-size: 1.35vw;
+  color: grey;
   z-index: 0;
 }
 
@@ -568,23 +570,23 @@ html, body {
 #statsDiv {
   position: absolute;
   background: white;
-  top: 175px;
+  top: 29.15%;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 2.5%;
   margin-left: 0px;
-  height: 410px;
-  width: 550px;
-  font-size: 18px;
+  height: 68.3%;
+  width: 100%;
+  font-size: 1.35vw;
   color: grey;
   z-index: 0;
 }
 
 #titleStats{
-  font-size: 24px;
+  font-size: 1.65vw;
   font-weight: bold;
-  padding-left: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
+  padding-left: 0.9%;
+  padding-bottom: 0.9%;
+  margin-bottom: 3.5%;
   color: grey;
   border-bottom: 1px solid #FBE789;
   
@@ -594,37 +596,37 @@ html, body {
   float: left;
   width: 45%;
   align-items: center;
-  height: 53px;
-  margin-bottom: 10px;
+  height: 8.5%;
+  margin-bottom: 3.5%;
   padding-top: 0px;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 18pt;
+  line-height: 1vw;
 }
 
 .statsViz_right {
   float: right;
   width: 45%;
   align-items: center;
-  height: 53px;
-  margin-bottom: 10px;
+  height: 8.5%;
+  margin-bottom: 3.5%;
   padding-top: 0px;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 18pt;
+  line-height: 1vw;
 }
 
 #numberofwholebuildings {
   align-items: center;
-  height: 53px;
-  margin-bottom: 10px;
+  height: 8.5%;
+  margin-bottom: 3.5%;
   padding-top: 0px;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 18pt;
+  line-height: 1vw;
    
 }
 
