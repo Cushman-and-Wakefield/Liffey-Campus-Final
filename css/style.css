@@ -360,13 +360,13 @@ html, body {
 
 #viz-leaseexpiry {
   left: 20px;
-  top: 115px;
+  top: 120px;
   border-radius: 8px;
 }
 
 #viz-reviewdate {
   left: 160px;
-  top: 115px;
+  top: 120px;
   border-radius: 8px;
 }
 
@@ -406,7 +406,7 @@ html, body {
 .containerFilter {
     position: relative;
     padding-left: 15px;
-    padding-top: 10px;
+    padding-top: 0px;
     padding-bottom: 15px;
     padding-right: 15px;
     width: 550px;
@@ -432,7 +432,7 @@ html, body {
   color: grey;
 }
 
-.filterDropdown:hover{
+.filterDropdown:selection{
   background: #FBE789;
   color: grey
 }
@@ -520,11 +520,11 @@ html, body {
 #chartDiv {
   position: absolute;
   background: white;
-  top: 165px;
+  top: 175px;
   align-items: center;
   margin-top: 15px;
   margin-left: 0px;
-  height: 420px;
+  height: 410px;
   width: 550px;
   z-index: 0;
 }
@@ -571,11 +571,11 @@ html, body {
 #statsDiv {
   position: absolute;
   background: white;
-  top: 165px;
+  top: 175px;
   align-items: center;
   margin-top: 15px;
   margin-left: 0px;
-  height: 420px;
+  height: 410px;
   width: 550px;
   font-size: 18px;
   color: grey;
@@ -599,10 +599,11 @@ html, body {
   align-items: center;
   height: 45px;
   margin-bottom: 10px;
-  padding-top: 5px;
+  padding-top: 0px;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
+  line-height: 18pt;
 }
 
 .statsViz_right {
@@ -615,6 +616,7 @@ html, body {
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
+  line-height: 18pt;
 }
 
 #numberofwholebuildings {
@@ -625,6 +627,7 @@ html, body {
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
+  line-height: 18pt;
    
 }
 
