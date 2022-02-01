@@ -42,7 +42,7 @@ define([
                         symbolLayers: [{
                                 type: "fill",
                                 colorMixMode: "replace",
-                                material: { color: [0, 0, 0] }
+                                material: { color: [251, 231, 137] }
                                
                             }
                         ]
