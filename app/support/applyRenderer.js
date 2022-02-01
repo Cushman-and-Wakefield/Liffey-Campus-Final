@@ -41,8 +41,8 @@ define([
                     symbol: new MeshSymbol3D({
                         symbolLayers: [{
                                 type: "fill",
-                                colorMixMode: "replace",
-                                material: { color: [251, 231, 137] }
+                                material: { color: [251, 231, 137] },
+                                colorMixMode: "replace"
                                
                             }
                         ]
@@ -57,7 +57,8 @@ define([
                         symbolLayers: [new FillSymbol3DLayer({
                             material: {
                                 color: [135, 135, 135, 0.2]
-                            }
+                            }, 
+                            colorMixMode: "replace"
                         })]
                     }),
                     defaultLabel: "N.A.",
