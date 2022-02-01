@@ -99,8 +99,11 @@ define([
                 }
                 
                 if (tenancyAreaSum === 0){
-                    chartData.mostCommonTenancy.tenancy = "0ther";
-                } else{
+                    chartData.mostCommonTenancy.tenancy = "None";
+                } if else ((tenancyData[tenancyData.length - 1] === "Vacant") && (tenancyData.length > 1)) {
+                    chartData.mostCommonTenancy = tenancyData[tenancyData.length - 2];
+                }
+                else {
                     chartData.mostCommonTenancy = tenancyData[tenancyData.length - 1];
                 }
             
@@ -255,9 +258,7 @@ define([
                 dom.byId("usage").innerHTML = "<small>Most Common Usage<br></small>        " + data.mostCommonUsage.usage;
                 dom.byId("tenancy").innerHTML = "<small>Most Common Tenancy<br></small>        " + data.mostCommonTenancy.tenancy;
                 dom.byId("totalarea").innerHTML = "<small>Total Area<br></small>       " + data.totalArea + " m2";
-                dom.byId("maxarea").innerHTML = "<small>Max Area<br></small>       " + data.areaMax + " m2";
                 dom.byId("maxfloor").innerHTML = "<small>Max Floor Number<br></small>      " + data.floorMax;
-                dom.byId("averagefloor").innerHTML = "<small>Average Floor Number<br></small>      " + data.averageFloor;
                 dom.byId("nextexpiry").innerHTML = "<small>Next Lease Expiry<br></small>      " + data.nextExpiry;
                 dom.byId("nextreview").innerHTML = "<small>Next Review<br></small>      " + data.nextReview;
              
