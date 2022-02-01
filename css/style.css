@@ -342,34 +342,34 @@ html, body {
 
 #viz-white {
   left: 3.5%;
-  border-radius: 1.3%;
+  border-radius: 10%;
 }
 
 #viz-usage {
   left: 28%;
-  border-radius: 1.3%;
+  border-radius: 10%;
 }
 
 #viz-tenancy {
   left: 52.6%;
-  border-radius: 1.3%;
+  border-radius: 10%;
 }
 
 #viz-area {
   left: 77.2%;
-  border-radius: 1.3%;
+  border-radius: 10%;
 }
 
 #viz-leaseexpiry {
   left: 3.5%;
   top: 20%;
-  border-radius: 1.3%;
+  border-radius: 10%;
 }
 
 #viz-reviewdate {
   left: 28%;
   top: 20%;
-  border-radius: 1.3%;
+  border-radius: 10%;
 }
 
 .titleFilter{
@@ -573,9 +573,9 @@ html, body {
   top: 29.15%;
   align-items: center;
   margin-top: 2.5%;
-  margin-left: 0px;
+  margin-left: 2.5%;
   height: 68.3%;
-  width: 100%;
+  width: 95%;
   font-size: 1.35vw;
   color: grey;
   z-index: 0;
@@ -596,37 +596,37 @@ html, body {
   float: left;
   width: 45%;
   align-items: center;
-  height: 8.5%;
+  height: 15%;
   margin-bottom: 3.5%;
   padding-top: 0px;
   border: 1px solid #FBE789;
-  border-radius: 8px;
+  border-radius: 10%;
   text-align: center;
-  line-height: 1vw;
+  line-height: 0.85vw;
 }
 
 .statsViz_right {
   float: right;
   width: 45%;
   align-items: center;
-  height: 8.5%;
+  height: 15%;
   margin-bottom: 3.5%;
   padding-top: 0px;
   border: 1px solid #FBE789;
-  border-radius: 8px;
+  border-radius: 10%;
   text-align: center;
-  line-height: 1vw;
+  line-height: 0.85vw;
 }
 
 #numberofwholebuildings {
   align-items: center;
-  height: 8.5%;
+  height: 15%;
   margin-bottom: 3.5%;
   padding-top: 0px;
   border: 1px solid #FBE789;
-  border-radius: 8px;
+  border-radius: 10%;
   text-align: center;
-  line-height: 1vw;
+  line-height: 0.85vw;
    
 }
 
