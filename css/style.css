@@ -563,7 +563,7 @@ html, body {
 
 .statsViz_left {
   float: left;
-  width: 20%;
+  width: 40%;
   align-items: center;
   height: 50px;
   margin-bottom: 10px;
@@ -574,8 +574,8 @@ html, body {
 }
 
 .statsViz_right {
-  float: left;
-  width: 20%;
+  float: right;
+  width: 40%;
   align-items: center;
   height: 50px;
   margin-bottom: 10px;
