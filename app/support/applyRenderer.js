@@ -53,7 +53,7 @@ define([
                     defaultSymbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
                             material: {
-                                color: [135, 135, 135, 0.2],
+                                color: [135, 135, 135],
                                 colorMixMode: "replace"
                             }, 
                             
@@ -164,7 +164,7 @@ define([
 
             createRendererVVbar: function (min, max, color, fieldname) {
 
-                var defaultcolor = [135, 135, 135, 0.2];
+                var defaultcolor = [135, 135, 135];
 
                 return new UniqueValueRenderer({
                     defaultSymbol: new MeshSymbol3D({
@@ -226,7 +226,7 @@ define([
 
             createRendererVVbar_exp: function (year, color, fieldname) {
 
-                var defaultcolor = [135, 135, 135, 0.2];
+                var defaultcolor = [135, 135, 135];
 
                 return new UniqueValueRenderer({
                     defaultSymbol: new MeshSymbol3D({
