@@ -39,10 +39,11 @@ define([
             createSimpleRenderer: function () {
                 return new SimpleRenderer({
                     symbol: new MeshSymbol3D({
-                        symbolLayers: [{type: "simple-fill",
+                        symbolLayers: [{type: "fill",
                                           material: { color: [251, 231, 137] }
                                },
                             new FillSymbol3DLayer({
+                                colorMixMode: "replace",
                                 material: { color: [251, 231, 137] }
                                
                             })
