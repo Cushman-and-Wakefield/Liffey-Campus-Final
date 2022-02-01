@@ -56,7 +56,7 @@ define([
                             material: {
                                 color: [135, 135, 135, 1],
                                 /*colorMixMode: "replace"*/
-                            }, 
+                            }
                             
                         })]
                     }),
