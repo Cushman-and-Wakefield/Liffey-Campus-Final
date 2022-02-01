@@ -39,12 +39,9 @@ define([
             createSimpleRenderer: function () {
                 return new SimpleRenderer({
                     symbol: new MeshSymbol3D({
-                        symbolLayers: [{
-                                type: "fill",
+                        symbolLayers: [new FillSymbol3DLayer({
                                 material: { color: [251, 231, 137], colorMixMode: "replace" },
-                                
-                               
-                            }
+                            })
                         ]
                     })
                 });
@@ -96,7 +93,7 @@ define([
                 return new MeshSymbol3D({
                     symbolLayers: [new FillSymbol3DLayer({
                         material: {
-                            color: color
+                            color: color, colorMixMode: "replace" 
                         }
                     })]
                 });
@@ -148,7 +145,7 @@ define([
                     defaultSymbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
                             material: {
-                                color: "white"
+                                color: "white", colorMixMode: "replace" 
                             }
                         })]
                     }),
@@ -173,7 +170,7 @@ define([
                     defaultSymbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
                             material: {
-                                color: defaultcolor
+                                color: defaultcolor, colorMixMode: "replace" 
                             }
                         })]
                     }),
@@ -210,7 +207,7 @@ define([
                     defaultSymbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
                             material: {
-                                color: "white"
+                                color: "white", colorMixMode: "replace" 
                             }
                         })]
                     }),
@@ -235,7 +232,7 @@ define([
                     defaultSymbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
                             material: {
-                                color: defaultcolor
+                                color: defaultcolor, colorMixMode: "replace" 
                             }
                         })]
                     }),
