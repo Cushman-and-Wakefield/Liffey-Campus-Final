@@ -100,13 +100,13 @@ define([
                 
                 if (tenancyAreaSum === 0){
                     chartData.mostCommonTenancy.tenancy = "None";
-                } else if (tenancyData[tenancyData.length - 1] === "Vacant") {
+                } else if (tenancyData[tenancyData.length - 1].tenancy === "Vacant") {
                     chartData.mostCommonTenancy = tenancyData[tenancyData.length - 2];
                 }
                 else {
                     chartData.mostCommonTenancy = tenancyData[tenancyData.length - 1];
                 }
-                console.info(tenancyData[tenancyData.length - 1].tenancy);
+                console.info(tenancyData[tenancyData.length - 1].tenancy === "Vacant");
             
 
                 // area data
