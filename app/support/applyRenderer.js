@@ -40,7 +40,8 @@ define([
                 return new SimpleRenderer({
                     symbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
-                                material: { color: [251, 231, 137, 0.8], colorMixMode: "replace" },
+                                material: { color: [251, 231, 137, 1]
+                                           /*, colorMixMode: "replace" */},
                             })
                         ]
                     })
@@ -53,8 +54,8 @@ define([
                     defaultSymbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
                             material: {
-                                color: [135, 135, 135, 0.2],
-                                colorMixMode: "replace"
+                                color: [135, 135, 135, 1],
+                                /*colorMixMode: "replace"*/
                             }, 
                             
                         })]
@@ -93,7 +94,7 @@ define([
                 return new MeshSymbol3D({
                     symbolLayers: [new FillSymbol3DLayer({
                         material: {
-                            color: color, colorMixMode: "replace" 
+                            color: color, /*colorMixMode: "replace" */
                         }
                     })]
                 });
@@ -145,7 +146,7 @@ define([
                     defaultSymbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
                             material: {
-                                color: "white", colorMixMode: "replace" 
+                                color: "white" /*, colorMixMode: "replace" */
                             }
                         })]
                     }),
@@ -164,13 +165,13 @@ define([
 
             createRendererVVbar: function (min, max, color, fieldname) {
 
-                var defaultcolor = [135, 135, 135, 0.2];
+                var defaultcolor = [135, 135, 135, 1];
 
                 return new UniqueValueRenderer({
                     defaultSymbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
                             material: {
-                                color: defaultcolor, colorMixMode: "replace" 
+                                color: defaultcolor /*, colorMixMode: "replace" */
                             }
                         })]
                     }),
@@ -207,7 +208,7 @@ define([
                     defaultSymbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
                             material: {
-                                color: "white", colorMixMode: "replace" 
+                                color: "white" /*, colorMixMode: "replace" */
                             }
                         })]
                     }),
@@ -226,13 +227,13 @@ define([
 
             createRendererVVbar_exp: function (year, color, fieldname) {
 
-                var defaultcolor = [135, 135, 135, 0.2];
+                var defaultcolor = [135, 135, 135, 1];
 
                 return new UniqueValueRenderer({
                     defaultSymbol: new MeshSymbol3D({
                         symbolLayers: [new FillSymbol3DLayer({
                             material: {
-                                color: defaultcolor, colorMixMode: "replace" 
+                                color: defaultcolor /*, colorMixMode: "replace" */
                             }
                         })]
                     }),
