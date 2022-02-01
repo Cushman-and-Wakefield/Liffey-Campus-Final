@@ -218,7 +218,7 @@ html, body {
 }
 
 #toolsMenu{
-  position: absolute;
+  position: relative;
   top: 0px;
   height: 100%;
   right: 0px;
@@ -308,7 +308,7 @@ html, body {
   }
 
 .labelViz {
-  position: absolute;
+  position: relative;
   padding-top: 1.7%;
   padding-left: 0.9%;
   padding-right: 0.9%;
