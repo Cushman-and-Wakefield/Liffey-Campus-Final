@@ -286,7 +286,7 @@ html, body {
 
 .titleViz {
   position: relative;
-  font-size: 4vw;
+  font-size: 1.5vw;
   font-weight: bold;
   padding-top: 3.5%;
   padding-bottom: 0.8%;
@@ -319,7 +319,7 @@ html, body {
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
-  font-size: 2vw;
+  font-size: 0.5vw;
 }
 
 #reset{
