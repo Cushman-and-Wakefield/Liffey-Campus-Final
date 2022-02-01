@@ -219,11 +219,7 @@ define([
                                     areaFeatures: undefined,
                                     floorFeatures: undefined,
                                     tenancyFeatures: undefined,
-                                    statusFeatures: undefined,
-                                    leaseexpiryFeatures: undefined,
-                                    reviewdateFeatures: undefined,
-                                    reviewtypeFeatures: undefined,
-                                    vacancyFeatures: undefined
+                                    statusFeatures: undefined
                                 },
                                 combinedFilteredFeatures: undefined
                             }
