@@ -333,29 +333,23 @@ define([
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
                  
-                    // Create a condition that targets viewports at least 768px wide
-                    const mediaQuery = window.matchMedia('(min-width: 1280px)')
+                   function checkMediaQuery() {
+                   // If the inner width of the window is greater then 768px
+                   if (window.innerWidth > 1280) {
+                     // Then log this message to the console
+                     chartMaker.createChart(this.view, initCharts.usage, settings, "city", function (state) {
+                         this.menu.setLoadingState("loaded");
+                     }.bind(this));
+                   }
+                   else {
+                      chartMaker.createChart_small(this.view, initCharts.usage, settings, "city", function (state) {
+                         this.menu.setLoadingState("loaded");
+                      }.bind(this));
+                   }
+                 }
 
-                    function handleTabletChange(e) {
-                      // Check if the media query is true
-                      if (e.matches) {
-                        // Then log the following message to the console
-                        chartMaker.createChart(this.view, initCharts.usage, settings, "city", function (state) {
-                            this.menu.setLoadingState("loaded");
-                        }.bind(this));
-                      }
-                      else {
-                        chartMaker.createChart_small(this.view, initCharts.usage, settings, "city", function (state) {
-                              this.menu.setLoadingState("loaded");
-                        }.bind(this));
-                      }
-                    }
-
-                    // Register event listener
-                    mediaQuery.addListener(handleTabletChange)
-
-                    // Initial check
-                    handleTabletChange(mediaQuery)
+                 // Add a listener for when the window resizes
+                 window.addEventListener('click', checkMediaQuery);
 
                     /*chartMaker.createChart(this.view, initCharts.usage, settings, "city", function (state) {
                          this.menu.setLoadingState("loaded");
@@ -436,29 +430,23 @@ define([
 
                         var chartData = chartMaker.createChartData(selection, settings);
                      
-                        // Create a condition that targets viewports at least 768px wide
-                       const mediaQuery = window.matchMedia('(min-width: 768px)')
-
-                       function handleTabletChange(e) {
-                         // Check if the media query is true
-                         if (e.matches) {
-                           // Then log the following message to the console
-                           chartMaker.createChart(view, chartData, settings, "building", function (state) {
-                            menu.setLoadingState(state);
-                           });
+                        function checkMediaQuery() {
+                           // If the inner width of the window is greater then 768px
+                           if (window.innerWidth > 768) {
+                             // Then log this message to the console
+                             chartMaker.createChart(view, chartData, settings, "building", function (state) {
+                             menu.setLoadingState(state);
+                             });
+                           }
+                           else {
+                             chartMaker.createChart_small(view, chartData, settings, "building", function (state) {
+                             menu.setLoadingState(state);
+                             });
+                           }
                          }
-                         else {
-                         chartMaker.createChart_small(view, chartData, settings, "building", function (state) {
-                            menu.setLoadingState(state);
-                         });
-                         }
-                       }
 
-                       // Register event listener
-                       mediaQuery.addListener(handleTabletChange)
-
-                       // Initial check
-                       handleTabletChange(mediaQuery)
+                         // Add a listener for when the window resizes
+                         window.addEventListener('click', checkMediaQuery);
                      
                         /*chartMaker.createChart(view, chartData, settings, "building", function (state) {
                             menu.setLoadingState(state);
