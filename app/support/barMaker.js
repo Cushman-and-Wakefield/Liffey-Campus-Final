@@ -459,7 +459,7 @@ define([
                     },
                     "sequencedAnimation": false,
                     "dataProvider": data,
-                    "fontSize": 15,
+                    "fontSize": 10,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "valueAxes": [{
                         "stackType": "regular",
