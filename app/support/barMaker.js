@@ -161,7 +161,75 @@ define([
                     "hideCredits":true,
                     "sequencedAnimation": false,
                     "dataProvider": data,
-                    "fontSize": 10,
+                    "fontSize": 12,
+                    "fontFamily": "Avenir LT W01 65 Medium",
+                    "valueAxes": [{
+                        "gridColor": "#FFFFFF",
+                        "gridAlpha": 0.2,
+                        "dashLength": 0
+                    }],
+                    "gridAboveGraphs": true,
+                    "startDuration": 1,
+                    "graphs": [{
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillAlphas": 0.8,
+                        "lineAlpha": 0,
+                        "fillColorsField": "color",
+                        "type": "column",
+                        "valueField": "count"
+                    }],
+                    "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                    },
+                    "categoryField": "kernel",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "labelRotation": 45,
+                        "gridAlpha": 0,
+                        "tickPosition": "start",
+                        "tickLength": 15
+                    },
+                    "export": {
+                        "enabled": true
+                    }
+
+                });
+
+                callback("loaded");
+
+                chart.addListener("clickGraphItem", function (event) {
+
+                    var max = event.item.dataContext.subdata[0].max;
+                    var min = event.item.dataContext.subdata[0].min;
+                    var color = event.item.dataContext.color;
+
+                    settings.layer1.renderer = applyRenderer.createRendererVVbar(min, max, color, settings.areaname);
+                    
+                    view.environment.lighting.directShadowsEnabled = false;
+                    view.environment.lighting.ambientOcclusionEnabled = false;
+                });
+
+                on(dom.byId("reload"), "click", function (event) {
+
+                    settings.layer1.renderer = applyRenderer.createRendererVV(selection, settings.areaname);
+                    
+                    view.environment.lighting.directShadowsEnabled = true;
+                    view.environment.lighting.ambientOcclusionEnabled = true;
+                });
+
+            },
+         
+            createChart_small: function (selection, data, settings, state, view, callback) {
+
+                var chart = AmCharts.makeChart("chartDiv", {
+                    "type": "serial",
+                    "theme": "light",
+                    "hideCredits":true,
+                    "sequencedAnimation": false,
+                    "dataProvider": data,
+                    "fontSize": 8,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "valueAxes": [{
                         "gridColor": "#FFFFFF",
@@ -297,7 +365,67 @@ define([
                     "hideCredits":true,
                     "sequencedAnimation": false,
                     "dataProvider": data,
-                    "fontSize": 10,
+                    "fontSize": 12,
+                    "fontFamily": "Avenir LT W01 65 Medium",
+                    "valueAxes": [{
+                        "gridColor": "#FFFFFF",
+                        "gridAlpha": 0.2,
+                        "dashLength": 0
+                    }],
+                    "gridAboveGraphs": true,
+                    "startDuration": 1,
+                    "graphs": [{
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillAlphas": 0.8,
+                        "lineAlpha": 0,
+                        "fillColorsField": "color",
+                        "type": "column",
+                        "valueField": "count"
+                    }],
+                    "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                    },
+                    "categoryField": "year",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "labelRotation": 45,
+                        "gridAlpha": 0,
+                        "tickPosition": "start",
+                        "tickLength": 15
+                    },
+                    "export": {
+                        "enabled": true
+                    }
+
+                });
+
+                callback("loaded");
+
+                chart.addListener("clickGraphItem", function (event) {
+
+                    var year = event.item.dataContext.year;
+                    var color = event.item.dataContext.color;
+
+                    settings.layer1.renderer = applyRenderer.createRendererVVbar_exp(year, color, settings.leaseexpiryname);
+                 
+                    view.environment.lighting.directShadowsEnabled = false;
+                    view.environment.lighting.ambientOcclusionEnabled = false;
+                });
+
+                
+            },
+         
+            createChart_exp_small: function (selection, data, settings, state, view, callback) {
+
+                var chart = AmCharts.makeChart("chartDiv", {
+                    "type": "serial",
+                    "theme": "light",
+                    "hideCredits":true,
+                    "sequencedAnimation": false,
+                    "dataProvider": data,
+                    "fontSize": 8,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "valueAxes": [{
                         "gridColor": "#FFFFFF",
@@ -451,15 +579,108 @@ define([
                     "hideCredits":true,
                     "theme": "light",
                     "legend": {
-                        "horizontalGap": 10,
+                        "horizontalGap": 12,
                         "maxColumns": 1,
                         "position": "right",
                         "useGraphSettings": true,
-                        "markerSize": 10
+                        "markerSize": 12
                     },
                     "sequencedAnimation": false,
                     "dataProvider": data,
-                    "fontSize": 10,
+                    "fontSize": 12,
+                    "fontFamily": "Avenir LT W01 65 Medium",
+                    "valueAxes": [{
+                        "stackType": "regular",
+                        "gridColor": "#FFFFFF",
+                        "gridAlpha": 0.2,
+                        "dashLength": 0
+                    }],
+                    "gridAboveGraphs": true,
+                    "startDuration": 1,
+                    "graphs": [{
+                        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                        "fillAlphas": 0.8,
+                        "labelText": "[[value]]",
+                        "lineAlpha": 0,
+                        "title": "CPI",
+                        "fillColors": "#FBE789",
+                        "type": "column",
+                        "valueField": "CPI"
+                    },
+                       {
+                        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                        "fillAlphas": 0.8,
+                        "labelText": "[[value]]",
+                        "lineAlpha": 0,
+                        "title": "OMRV",
+                        "fillColors": "#CED58F",
+                        "type": "column",
+                        "valueField": "OMRV"
+                    },
+                       {
+                        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                        "fillAlphas": 0.8,
+                        "labelText": "[[value]]",
+                        "lineAlpha": 0,
+                        "title": "CPI Cap & Collar",
+                        "fillColors": "#A1C495",
+                        "type": "column",
+                        "valueField": "CPI_Cap_and_Collar"
+                    }],
+                    "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                    },
+                    "categoryField": "year",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "labelRotation": 45,
+                        "gridAlpha": 0,
+                        "tickPosition": "start",
+                        "tickLength": 15
+                    },
+                    "export": {
+                        "enabled": true
+                    }
+
+                });
+
+                callback("loaded");
+
+                chart.addListener("clickGraphItem", function (event) {
+
+                    var year = event.item.dataContext.year;
+                    var CPI = event.item.dataContext.CPI;
+                    var OMRV = event.item.dataContext.OMRV;
+                    var CPI_Cap_and_Collar = event.item.dataContext.CPI_Cap_and_Collar;
+                    var color = event.item.dataContext.color;
+
+                    settings.layer1.renderer = applyRenderer.createRendererVVbar_exp(year, color, settings.reviewdatename);
+                 
+                    view.environment.lighting.directShadowsEnabled = false;
+                    view.environment.lighting.ambientOcclusionEnabled = false;
+                });
+
+                
+            },
+         
+            createChart_rev_small: function (selection, data, settings, state, view, callback) {
+
+                var chart = AmCharts.makeChart("chartDiv", {
+                    "type": "serial",
+                    "hideCredits":true,
+                    "theme": "light",
+                    "legend": {
+                        "horizontalGap": 8,
+                        "maxColumns": 1,
+                        "position": "right",
+                        "useGraphSettings": true,
+                        "markerSize": 8
+                    },
+                    "sequencedAnimation": false,
+                    "dataProvider": data,
+                    "fontSize": 8,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "valueAxes": [{
                         "stackType": "regular",
