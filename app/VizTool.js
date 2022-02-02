@@ -333,9 +333,9 @@ define([
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
                    
-                   
+                   var chartstyle = [];
                    function checkMediaQuery() {
-                    var chartstyle = []
+                    
                    // If the inner width of the window is greater then 768px
                    if (window.innerWidth > 1280) {
                      // Then log this message to the console
@@ -434,9 +434,9 @@ define([
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
                         var chartData = chartMaker.createChartData(selection, settings);
-                        
+                        var chartstyle = [];
                         function checkMediaQuery() {
-                           var chartstyle = []
+                           
                            // If the inner width of the window is greater then 768px
                            if (window.innerWidth > 1280) {
                              // Then log this message to the console
