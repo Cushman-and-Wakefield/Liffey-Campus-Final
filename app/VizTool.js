@@ -349,6 +349,7 @@ define([
 
                  // Add a listener for when the window resizes
                  var chart = window.addEventListener('click', checkMediaQuery);
+                 console.info(chart);
                  
                  chartMaker.chart(this.view, initCharts.usage, settings, "city", function (state) {
                          this.menu.setLoadingState("loaded");
@@ -432,17 +433,18 @@ define([
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
                         var chartData = chartMaker.createChartData(selection, settings);
-                        var chartsyle = []
+                        
                         function checkMediaQuery() {
+                           var chartstyle = []
                            // If the inner width of the window is greater then 768px
                            if (window.innerWidth > 768) {
                              // Then log this message to the console
-                             chartsyle = "createChart";
+                             chartstyle = "createChart";
                            }
                            else {
-                             chartsyle = "createChart_small";
+                             chartstyle = "createChart_small";
                            }
-                           return chartsyle;
+                           return chartstyle;
                          }
 
                          // Add a listener for when the window resizes
