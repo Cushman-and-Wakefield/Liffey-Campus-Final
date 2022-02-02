@@ -446,28 +446,24 @@ define([
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
                         var chartData = chartMaker.createChartData(selection, settings);
-                        var chartstyle = [];
-                        function checkMediaQuery() {
-                           
-                           // If the inner width of the window is greater then 768px
-                           if (window.innerWidth > 1280) {
-                             // Then log this message to the console
-                             chartstyle = 'chartMaker.createChart';
-                           }
-                           else {
-                             chartstyle = 'chartMaker.createChart_small';
-                           }
-                           return chartstyle;
-                         }
 
-                         // Add a listener for when the window resizes
-                         //var chart = window.addEventListener('click', checkMediaQuery);
-                         var chart = checkMediaQuery();
-                         console.info(chart);
-                     
-                         this[chart](view, chartData, settings, "building", function (state) {
+                        function checkMediaQuery() {
+                    
+                        // If the inner width of the window is greater then 768px
+                        if (window.innerWidth > 1280) {
+                          // Then log this message to the console
+                          chartMaker.createChart(view, chartData, settings, "building", function (state) {
                             menu.setLoadingState(state);
                             });
+                        }
+                        else {
+                           chartMaker.createChart_small(view, chartData, settings, "building", function (state) {
+                            menu.setLoadingState(state);
+                            });
+                        }
+                      }
+                      checkMediaQuery();
+
                      
                         /*chartMaker.createChart(view, chartData, settings, "building", function (state) {
                             menu.setLoadingState(state);
@@ -486,9 +482,28 @@ define([
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
                         var chartData = chartMaker.createChartData_ten(selection, settings);
-                        chartMaker.createChart_ten(view, chartData, settings, "building", function (state) {
+                        function checkMediaQuery() {
+                    
+                        // If the inner width of the window is greater then 768px
+                        if (window.innerWidth > 1280) {
+                          // Then log this message to the console
+                          chartMaker.createChart_ten(view, chartData, settings, "building", function (state) {
                             menu.setLoadingState(state);
                         });
+                        }
+                        else {
+                           chartMaker.createChart_ten_small(view, chartData, settings, "building", function (state) {
+                            menu.setLoadingState(state);
+                        });
+                        }
+                      }
+                      checkMediaQuery();
+   
+                     
+                     
+                     /*chartMaker.createChart_ten(view, chartData, settings, "building", function (state) {
+                            menu.setLoadingState(state);
+                        });*/
 
                         var data = statsMaker.createChartData(selection, settings);
                         statsMaker.createChart(data, function (state) {
