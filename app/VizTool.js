@@ -344,7 +344,7 @@ define([
                    else {
                       chartstyle = "createChart_small"
                    }
-                   return (chartsyle);
+                   return (chartstyle);
                  }
 
                  // Add a listener for when the window resizes
