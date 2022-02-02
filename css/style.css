@@ -328,7 +328,7 @@ html, body {
 #reset{
   position: absolute;
   width: 12%;
-  height: 8.5%;
+  height: 10%;
   top: 85%;
   left: 44%;
   text-align: center;
@@ -396,14 +396,14 @@ html, body {
 
 #titleAreaMin{
     position: absolute;
-    top: 75%;
+    top: 86%;
     left: 2.5%;
     font-size: 0.8vw;
 }
 
 #titleAreaMax{
     position: absolute;
-    top: 75%;
+    top: 86%;
     right: 1.75%;
     font-size: 0.8vw;
 }
@@ -478,7 +478,7 @@ html, body {
 }
 
 #filter-status {
-  top: 32%;
+  top: 35%;
 }
 
 #filter-leaseexpiry {
@@ -501,7 +501,7 @@ html, body {
 
 #filterAreaMin{
     position: absolute;
-    top: 56%;
+    top: 60%;
     width: 95%;
     height: 25%;  
     left: 2.5%;
