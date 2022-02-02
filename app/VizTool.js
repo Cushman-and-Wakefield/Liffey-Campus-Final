@@ -352,7 +352,7 @@ define([
                  var chart = checkMediaQuery();
                  console.info(chart);
                  
-                 window["chart"](this.view, initCharts.usage, settings, "city", function (state) {
+                 this[chart](this.view, initCharts.usage, settings, "city", function (state) {
                          this.menu.setLoadingState("loaded");
                     }.bind(this));
 
@@ -453,7 +453,7 @@ define([
                          var chart = checkMediaQuery();
                          console.info(chart);
                      
-                         window["chart"](view, chartData, settings, "building", function (state) {
+                         this[chart](view, chartData, settings, "building", function (state) {
                             menu.setLoadingState(state);
                             });
                      
