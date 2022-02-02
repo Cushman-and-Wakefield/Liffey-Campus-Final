@@ -438,7 +438,7 @@ define([
                              chartsyle = "createChart";
                            }
                            else {
-                             chartsyle = "createChart_small",
+                             chartsyle = "createChart_small";
                            }
                          }
 
