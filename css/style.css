@@ -319,7 +319,6 @@ html, body {
   background: #FBE789;
   color: grey;
   text-align: center;
-  display: inline-block;
   vertical-align: middle;
   cursor: pointer;
   text-transform: uppercase;
@@ -329,7 +328,7 @@ html, body {
 #reset{
   position: absolute;
   width: 12%;
-  height: 7.5%;
+  height: 8.5%;
   top: 85%;
   left: 44%;
   text-align: center;
@@ -337,7 +336,7 @@ html, body {
   cursor: pointer;
   background: grey;
   color: white;
-  font-size: 0.8vw;
+  font-size: 0.75vw;
 }
 
 #reset:hover{
