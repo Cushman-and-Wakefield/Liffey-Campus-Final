@@ -327,8 +327,9 @@ html, body {
 #reset{
   position: absolute;
   width: 12%;
-  top: 80%;
-  left: 2.5%;
+  height: 7.5%;
+  top: 85%;
+  left: 44%;
   text-align: center;
   cursor: pointer;
   background: grey;
@@ -385,24 +386,24 @@ html, body {
   font-size: 1.58vw;
   font-weight: bold;
   padding-bottom: 1.4%;
-  margin-top: 3.5%;
-  margin-bottom: 2.8%;
+  margin-top: 3.7%;
+  margin-bottom: 2.5%;
   color: grey;
   border-bottom: 1px solid #FBE789;
 }
 
 #titleAreaMin{
     position: absolute;
-    top: 70%;
-    left: 5.%;
-    font-size: 0.85vw;
+    top: 75%;
+    left: 2.5%;
+    font-size: 0.8vw;
 }
 
 #titleAreaMax{
     position: absolute;
-    top: 70%;
-    right: 1.6%;
-    font-size: 0.85vw;
+    top: 75%;
+    right: 1.75%;
+    font-size: 0.8vw;
 }
 
 .containerFilter {
@@ -417,10 +418,10 @@ html, body {
 
 .FilterLabel{
   position: absolute;
-  padding-top: 1.4%;
+  padding-top: 1.5%;
   padding-left: 0;
   padding-right: 0;
-  padding-bottom: 1.4%;
+  padding-bottom: 1.5%;
   width: 28%;
   height: 11%;
   border: none;
@@ -579,7 +580,7 @@ html, body {
   margin-left: 0%;
   height: 64%;
   width: 95%;
-  font-size: 1.20vw;
+  font-size: 1.15vw;
   color: grey;
   z-index: 0;
 }
@@ -601,11 +602,11 @@ html, body {
   align-items: center;
   height: 15%;
   margin-bottom: 3.5%;
-  padding-top: 2%;
+  padding-top: 1.5%;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1.2vw;
+  line-height: 1.15vw;
 }
 
 .statsViz_right {
@@ -614,22 +615,22 @@ html, body {
   align-items: center;
   height: 15%;
   margin-bottom: 3.5%;
-  padding-top: 2%;
+  padding-top: 1.5%;;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1.2vw;
+  line-height: 1.15vw;
 }
 
 #numberofwholebuildings {
   align-items: center;
   height: 15%;
   margin-bottom: 3.5%;
-  padding-top: 2%;
+  padding-top: 1.5%;;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1.2vw;
+  line-height: 1.15vw;
    
 }
 
