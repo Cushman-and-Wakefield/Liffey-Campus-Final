@@ -112,10 +112,10 @@ define([
                     "colorField": "color",
                     "groupPercent": groupPercentValue,
                     "startRadius": 100,
-                    "fontSize": 12,
+                    "fontSize": 10,
                     "fontFamily": "Avenir LT W01 65 Medium",
-                    "radius": 100,
-                    "marginTop": 20,
+                    "radius": 80%,
+                    "marginTop": 2.5%,
                     "pieAlpha": 0.8,
                     "sequencedAnimation": true,
                     "balloon": {
