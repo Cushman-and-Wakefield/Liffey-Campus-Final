@@ -161,7 +161,7 @@ define([
                     "hideCredits":true,
                     "sequencedAnimation": false,
                     "dataProvider": data,
-                    "fontSize": 12,
+                    "fontSize": 10,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "valueAxes": [{
                         "gridColor": "#FFFFFF",
@@ -189,7 +189,7 @@ define([
                         "labelRotation": 45,
                         "gridAlpha": 0,
                         "tickPosition": "start",
-                        "tickLength": 20
+                        "tickLength": 15
                     },
                     "export": {
                         "enabled": true
@@ -297,7 +297,7 @@ define([
                     "hideCredits":true,
                     "sequencedAnimation": false,
                     "dataProvider": data,
-                    "fontSize": 12,
+                    "fontSize": 10,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "valueAxes": [{
                         "gridColor": "#FFFFFF",
@@ -325,7 +325,7 @@ define([
                         "labelRotation": 45,
                         "gridAlpha": 0,
                         "tickPosition": "start",
-                        "tickLength": 20
+                        "tickLength": 15
                     },
                     "export": {
                         "enabled": true
@@ -459,7 +459,7 @@ define([
                     },
                     "sequencedAnimation": false,
                     "dataProvider": data,
-                    "fontSize": 12,
+                    "fontSize": 15,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "valueAxes": [{
                         "stackType": "regular",
@@ -510,7 +510,7 @@ define([
                         "labelRotation": 45,
                         "gridAlpha": 0,
                         "tickPosition": "start",
-                        "tickLength": 20
+                        "tickLength": 15
                     },
                     "export": {
                         "enabled": true
