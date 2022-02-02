@@ -339,16 +339,18 @@ define([
                    if (window.innerWidth > 1280) {
                      // Then log this message to the console
                      chartMaker.createChart(this.view, initCharts.usage, settings, "city", function (state) {
-                         this.menu.setLoadingState("loaded");
+                        
                     }.bind(this));
                    }
                    else {
                       chartMaker.createChart_small(this.view, initCharts.usage, settings, "city", function (state) {
-                         this.menu.setLoadingState("loaded");
                     }.bind(this));
                    }
                  }
                  checkMediaQuery();
+                 function (state) {
+                         this.menu.setLoadingState("loaded");
+                 }.bind(this);
 
                     /*chartMaker.createChart(this.view, initCharts.usage, settings, "city", function (state) {
                          this.menu.setLoadingState("loaded");
