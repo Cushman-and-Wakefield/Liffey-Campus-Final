@@ -391,16 +391,16 @@ html, body {
 
 #titleAreaMin{
     position: absolute;
-    top: 70%;
-    left: 5.15%;
-    font-size: 0.8vw;
+    top: 75%;
+    left: 5.%;
+    font-size: 0.85vw;
 }
 
 #titleAreaMax{
     position: absolute;
-    top: 70%;
+    top: 75%;
     right: 1.6%;
-    font-size: 0.8vw;
+    font-size: 0.85vw;
 }
 
 .containerFilter {
@@ -416,14 +416,15 @@ html, body {
 .FilterLabel{
   position: absolute;
   padding-top: 1.4%;
-  padding-left: 1.3%;
-  padding-right: 1.3%;
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 1.4%;
-  width: 30%;
+  width: 28%;
   height: 11%;
   border: none;
   color: grey;
-  border-bottom: 1px solid #FBE789; 
+  border-bottom: 1px solid #FBE789;
+  font-size: 0.85vw;
 }
 
 .filterDropdown{
@@ -434,19 +435,19 @@ html, body {
 
 #AreaMin{
     position: absolute;
-    top: 120px;
-    padding-left: 5px;
-    width: 250px;
-    height: 20px;
+    top: 45%;
+    padding-left: 0px;
+    width: 50%;
+    height: 10%;
     background: #80C9F5;
 }
 
 #AreaMax{
   position: absolute;
-    top: 190px;
-    padding-left: 5px;
-    width: 320px;
-    height: 20px;
+    top: 45%;
+    padding-left: 0px;
+    width: 50%;
+    height: 10%;
 }
 
 #confirmButton{
@@ -457,21 +458,21 @@ html, body {
 }
 
 #filter-floors {
-  top: 13.8%;
+  top: 13%;
 }
 
 #filter-usage {
-  top: 13.8%;
+  top: 13%;
   left: 35%
 }
 
 #filter-tenancy {
-  top: 13.8%;
-  left: 70%;
+  top: 13%;
+  left: 68%;
 }
 
 #filter-status {
-  top: 25%;
+  top: 30%;
 }
 
 #filter-leaseexpiry {
@@ -494,7 +495,7 @@ html, body {
 
 #filterAreaMin{
     position: absolute;
-    top: 45%;
+    top: 50%;
     width: 95%;
     left: 2.5%;
     padding-left: 0;
@@ -515,11 +516,11 @@ html, body {
 #chartDiv {
   position: absolute;
   background: white;
-  top: 29.15%;
+  top: 32%%;
   align-items: center;
   margin-top: 2.5%;
   margin-left: 0%;
-  height: 68.3%;
+  height: 65.5%;
   width: 95%;
   font-size: 1.35vw;
   color: grey;
@@ -543,11 +544,11 @@ html, body {
 
 #AreaMinText{
     position: absolute;
-    top: 10%;
+    top: 200%;
     left: 0px;
-    width: 15%;
-    height: 10%;
-    font-size: 0.75vw;
+    width: 20%;
+    height: 300%;
+    font-size: 40vw;
     border: none;
     color: grey;
     border-bottom: 1px solid #FBE789; 
@@ -555,11 +556,11 @@ html, body {
 
 #AreaMaxText{
     position: absolute;
-    top: 10%;
+    top: 200%;
     right: 0px;
-    width: 15%;
-    height: 10%;
-    font-size: 0.75vw;
+    width: 20%;
+    height: 300%;
+    font-size: 40vw;
     border: none;
     color: grey;
     border-bottom: 1px solid #FBE789;  
@@ -568,13 +569,13 @@ html, body {
 #statsDiv {
   position: absolute;
   background: white;
-  top: 29.15%;
+  top: 32%;
   align-items: center;
   margin-top: 2.5%;
   margin-left: 0%;
-  height: 68.3%;
+  height: 65.5%;
   width: 95%;
-  font-size: 1.35vw;
+  font-size: 1.30vw;
   color: grey;
   z-index: 0;
 }
@@ -596,11 +597,11 @@ html, body {
   align-items: center;
   height: 15%;
   margin-bottom: 3.5%;
-  padding-top: 0px;
+  padding-top: 2%;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1vw;
+  line-height: 1.2vw;
 }
 
 .statsViz_right {
@@ -609,22 +610,22 @@ html, body {
   align-items: center;
   height: 15%;
   margin-bottom: 3.5%;
-  padding-top: 0px;
+  padding-top: 2%;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1vw;
+  line-height: 1.2vw;
 }
 
 #numberofwholebuildings {
   align-items: center;
   height: 15%;
   margin-bottom: 3.5%;
-  padding-top: 0px;
+  padding-top: 2%;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1vw;
+  line-height: 1.2vw;
    
 }
 
