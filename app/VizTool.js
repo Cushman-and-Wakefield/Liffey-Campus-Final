@@ -339,10 +339,10 @@ define([
                    // If the inner width of the window is greater then 768px
                    if (window.innerWidth > 1280) {
                      // Then log this message to the console
-                     chartstyle = "chartMaker.createChart"
+                     chartstyle = 'chartMaker.createChart'
                    }
                    else {
-                      chartstyle = "chartMaker.createChart_small"
+                      chartstyle = 'chartMaker.createChart_small'
                    }
                    return (chartstyle);
                  }
@@ -438,12 +438,12 @@ define([
                         function checkMediaQuery() {
                            var chartstyle = []
                            // If the inner width of the window is greater then 768px
-                           if (window.innerWidth > 768) {
+                           if (window.innerWidth > 1280) {
                              // Then log this message to the console
-                             chartstyle = "chartMaker.createChart";
+                             chartstyle = 'chartMaker.createChart';
                            }
                            else {
-                             chartstyle = "chartMaker.createChart_small";
+                             chartstyle = 'chartMaker.createChart_small';
                            }
                            return chartstyle;
                          }
