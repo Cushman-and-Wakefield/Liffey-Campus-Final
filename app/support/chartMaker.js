@@ -169,6 +169,31 @@ define([
                         "enabled": true
                     }
                 });
+             
+                // Responsive
+               chart.responsive.enabled = true;
+               chart.responsive.rules.push({
+                 relevant: function(target) {
+                   if (target.pixelWidth <= 350) {
+                     return true;
+                   }
+                   return false;
+                 },
+                 state: function(target, stateId) {
+                   if (target instanceof am4charts.PieSeries) {
+                     var state = target.states.create(stateId);
+
+                     var labelState = target.labels.template.states.create(stateId);
+                     labelState.properties.disabled = true;
+
+                     var tickState = target.ticks.template.states.create(stateId);
+                     tickState.properties.disabled = true;
+                     return state;
+                   }
+
+                   return null;
+                 }
+               });
 
                 callback("loaded");
 
