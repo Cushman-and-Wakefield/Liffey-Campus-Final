@@ -359,10 +359,28 @@ define([
                     settings.layer1.renderer = applyRenderer.createRenderer(settings.values_ten, settings.color, settings.tenancyname);
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
-
-                    chartMaker.createChart_ten(this.view, initCharts.tenancy, settings, "city", function (state) {
+                 
+                    function checkMediaQuery() {
+                    // If the inner width of the window is greater then 768px
+                    if (window.innerWidth > 1280) {
+                      // Then log this message to the console
+                      chartMaker.createChart_ten(this.view, initCharts.tenancy, settings, "city", function (state) {
                         this.menu.setLoadingState("loaded");
-                    }.bind(this));
+                      }.bind(this));
+                    }
+                    else {
+                        chartMaker.createChart_ten_small(this.view, initCharts.tenancy, settings, "city", function (state) {
+                            this.menu.setLoadingState("loaded");
+                        }.bind(this));
+                    }
+                  }
+
+                  // Add a listener for when the window resizes
+                  checkMediaQuery();
+
+                    /*chartMaker.createChart_ten(this.view, initCharts.tenancy, settings, "city", function (state) {
+                        this.menu.setLoadingState("loaded");
+                    }.bind(this));*/
                 }
                 if (vizName === "area") {
                     settings.layer1.renderer = applyRenderer.createRendererVV(initData, settings.areaname);
