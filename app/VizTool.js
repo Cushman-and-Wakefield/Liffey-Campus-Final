@@ -349,7 +349,7 @@ define([
 
                  // Add a listener for when the window resizes
                  //var chart = window.addEventListener('click', checkMediaQuery);
-                 var chart = checkMediaQuery;
+                 var chart = checkMediaQuery();
                  console.info(chart);
                  
                  chartMaker.chart(this.view, initCharts.usage, settings, "city", function (state) {
