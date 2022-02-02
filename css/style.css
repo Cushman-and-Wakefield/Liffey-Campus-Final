@@ -418,7 +418,7 @@ html, body {
     padding-bottom: 0px;
     padding-right: 2.5%;
     width: 95%;
-    height: 34.5%;
+    height: 38.5%;
   }
 
 .FilterLabel{
@@ -530,7 +530,7 @@ html, body {
   align-items: center;
   margin-top: 2.5%;
   margin-left: 0%;
-  height: 65%;
+  height: 55%;
   width: 95%;
   font-size: 1.35vw;
   color: grey;
@@ -584,7 +584,7 @@ html, body {
   align-items: center;
   margin-top: 2.5%;
   margin-left: 0%;
-  height: 65%;
+  height: 55%;
   width: 95%;
   font-size: 1vw;
   color: grey;
@@ -606,13 +606,13 @@ html, body {
   float: left;
   width: 45%;
   align-items: center;
-  height: 10%;
+  height: 15%;
   margin-bottom: 2%;
   padding: 0;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1vw;
+  line-height: 0.9vw;
   align-items: center;
 }
 
@@ -620,24 +620,24 @@ html, body {
   float: right;
   width: 45%;
   align-items: center;
-  height: 10%;
+  height: 15%;
   margin-bottom: 2%;
   padding: 0;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1vw;
+  line-height: 0.9vw;
   align-items: center;
 }
 
 #numberofwholebuildings {
-  height: 10%;
+  height: 15%;
   margin-bottom: 2%;
   padding: 0;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1vw;
+  line-height: 0.9vw;
   align-items: center;
    
 }
