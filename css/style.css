@@ -327,7 +327,7 @@ html, body {
 #reset{
   position: absolute;
   width: 12%;
-  top: 82%;
+  top: 78%;
   left: 2.5%;
   text-align: center;
   cursor: pointer;
@@ -385,6 +385,7 @@ html, body {
   font-size: 1.58vw;
   font-weight: bold;
   padding-bottom: 1.4%;
+  margin-top: 2.8%;
   margin-bottom: 2.8%;
   color: grey;
   border-bottom: 1px solid #FBE789;
@@ -392,14 +393,14 @@ html, body {
 
 #titleAreaMin{
     position: absolute;
-    top: 75%;
+    top: 70%;
     left: 5.%;
     font-size: 0.85vw;
 }
 
 #titleAreaMax{
     position: absolute;
-    top: 75%;
+    top: 70%;
     right: 1.6%;
     font-size: 0.85vw;
 }
@@ -425,14 +426,14 @@ html, body {
   border: none;
   color: grey;
   border-bottom: 1px solid #FBE789;
-  font-size: 0.8vw;
+  font-size: 0.82vw;
 }
 
 .filterDropdown{
   width: 100%;
   border: none;
   color: grey;
-  font-size: 0.8vw;
+  font-size: 0.82vw;
 }
 
 #AreaMin{
@@ -460,21 +461,21 @@ html, body {
 }
 
 #filter-floors {
-  top: 13%;
+  top: 15%;
 }
 
 #filter-usage {
-  top: 13%;
+  top: 15%;
   left: 35%
 }
 
 #filter-tenancy {
-  top: 13%;
+  top: 15%;
   left: 68%;
 }
 
 #filter-status {
-  top: 30%;
+  top: 32%;
 }
 
 #filter-leaseexpiry {
@@ -497,9 +498,9 @@ html, body {
 
 #filterAreaMin{
     position: absolute;
-    top: 50%;
+    top: 52%;
     width: 95%;
-    height: 30%;  
+    height: 25%;  
     left: 2.5%;
     padding-left: 0;
     color: #FBE789; 
@@ -547,11 +548,11 @@ html, body {
 
 #AreaMinText{
     position: absolute;
-    top: 30%;
+    top: 300%;
     left: 0px;
-    width: 20%;
-    height: 60%;
-    font-size: 4vw;
+    width: 15%;
+    height: 800%;
+    font-size: 1vw;
     border: none;
     color: grey;
     border-bottom: 1px solid #FBE789; 
@@ -559,11 +560,11 @@ html, body {
 
 #AreaMaxText{
     position: absolute;
-    top: 30%;
+    top: 300%;
     right: 0px;
     width: 20%;
-    height: 60%;
-    font-size: 4vw;
+    height: 800%;
+    font-size: 1vw;
     border: none;
     color: grey;
     border-bottom: 1px solid #FBE789;  
