@@ -386,30 +386,81 @@ define([
                     settings.layer1.renderer = applyRenderer.createRendererVV(initData, settings.areaname);
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
-
-                    barMaker.createChart(initData, initCharts.area, settings, "city", this.view, function (state) {
+                 
+                   function checkMediaQuery() {
+                    
+                   // If the inner width of the window is greater then 768px
+                   if (window.innerWidth > 1280) {
+                     // Then log this message to the console
+                     barMaker.createChart(initData, initCharts.area, settings, "city", this.view, function (state) {
                         this.menu.setLoadingState("loaded");
-                    }.bind(this));
+                     }.bind(this));
+                   }
+                   else {
+                      barMaker.createChart_small(initData, initCharts.area, settings, "city", this.view, function (state) {
+                        this.menu.setLoadingState("loaded");
+                      }.bind(this));
+                   }
+                 }
+                 checkMediaQuery();
+
+                    /*barMaker.createChart(initData, initCharts.area, settings, "city", this.view, function (state) {
+                        this.menu.setLoadingState("loaded");
+                    }.bind(this));*/
                 }
              
                 if (vizName === "leaseexpiry") {
                     settings.layer1.renderer = applyRenderer.createRendererVV_exp(initData, settings.leaseexpiryname);
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
-
-                    barMaker.createChart_exp(initData, initCharts.leaseexpiry, settings, "city", this.view, function (state) {
+                 
+                    function checkMediaQuery() {
+                    
+                   // If the inner width of the window is greater then 768px
+                   if (window.innerWidth > 1280) {
+                     // Then log this message to the console
+                     barMaker.createChart_exp(initData, initCharts.leaseexpiry, settings, "city", this.view, function (state) {
                         this.menu.setLoadingState("loaded");
-                    }.bind(this));
+                     }.bind(this));
+                   }
+                   else {
+                      barMaker.createChart_exp_small(initData, initCharts.leaseexpiry, settings, "city", this.view, function (state) {
+                        this.menu.setLoadingState("loaded");
+                      }.bind(this));
+                   }
+                 }
+                 checkMediaQuery();
+
+                    /*barMaker.createChart_exp(initData, initCharts.leaseexpiry, settings, "city", this.view, function (state) {
+                        this.menu.setLoadingState("loaded");
+                    }.bind(this));*/
                 }
                 
                 if (vizName === "reviewdate") {
                     settings.layer1.renderer = applyRenderer.createRendererVV_exp(initData, settings.reviewdatename);
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
-
-                    barMaker.createChart_rev(initData, initCharts.reviewdate, settings, "city", this.view, function (state) {
+                 
+                   function checkMediaQuery() {
+                    
+                   // If the inner width of the window is greater then 768px
+                   if (window.innerWidth > 1280) {
+                     // Then log this message to the console
+                     barMaker.createChart_rev(initData, initCharts.reviewdate, settings, "city", this.view, function (state) {
                         this.menu.setLoadingState("loaded");
                     }.bind(this));
+                   }
+                   else {
+                      barMaker.createChart_rev_small(initData, initCharts.reviewdate, settings, "city", this.view, function (state) {
+                        this.menu.setLoadingState("loaded");
+                    }.bind(this));
+                   }
+                 }
+                 checkMediaQuery();
+
+                    /*barMaker.createChart_rev(initData, initCharts.reviewdate, settings, "city", this.view, function (state) {
+                        this.menu.setLoadingState("loaded");
+                    }.bind(this));*/
                 }
             },
 
@@ -499,8 +550,6 @@ define([
                       }
                       checkMediaQuery();
    
-                     
-                     
                      /*chartMaker.createChart_ten(view, chartData, settings, "building", function (state) {
                             menu.setLoadingState(state);
                         });*/
@@ -516,9 +565,27 @@ define([
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
                         var barData = barMaker.createChartData(selection, settings, 10);
-                        barMaker.createChart(selection, barData, settings, "building", view, function (state) {
+                     
+                        function checkMediaQuery() {
+                    
+                        // If the inner width of the window is greater then 768px
+                        if (window.innerWidth > 1280) {
+                          // Then log this message to the console
+                          barMaker.createChart(selection, barData, settings, "building", view, function (state) {
                             menu.setLoadingState(state);
                         });
+                        }
+                        else {
+                           barMaker.createChart_small(selection, barData, settings, "building", view, function (state) {
+                            menu.setLoadingState(state);
+                        });
+                        }
+                      }
+                      checkMediaQuery();
+                     
+                        /*barMaker.createChart(selection, barData, settings, "building", view, function (state) {
+                            menu.setLoadingState(state);
+                        });*/
 
                         var data2 = statsMaker.createChartData(selection, settings);
                         statsMaker.createChart(data2, function (state) {
@@ -533,9 +600,27 @@ define([
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
                         var barData = barMaker.createChartData_exp(selection, settings, 6);
-                        barMaker.createChart_exp(selection, barData, settings, "building", view, function (state) {
+                      
+                        function checkMediaQuery() {
+                    
+                        // If the inner width of the window is greater then 768px
+                        if (window.innerWidth > 1280) {
+                          // Then log this message to the console
+                          barMaker.createChart_exp(selection, barData, settings, "building", view, function (state) {
                             menu.setLoadingState(state);
                         });
+                        }
+                        else {
+                           barMaker.createChart_exp_small(selection, barData, settings, "building", view, function (state) {
+                            menu.setLoadingState(state);
+                        });
+                        }
+                      }
+                      checkMediaQuery();
+                      
+                        /*barMaker.createChart_exp(selection, barData, settings, "building", view, function (state) {
+                            menu.setLoadingState(state);
+                        });*/
 
                         var data2 = statsMaker.createChartData(selection, settings);
                         statsMaker.createChart(data2, function (state) {
@@ -550,9 +635,27 @@ define([
                         domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
 
                         var barData = barMaker.createChartData_rev(selection, settings, 6);
-                        barMaker.createChart_rev(selection, barData, settings, "building", view, function (state) {
+                     
+                        function checkMediaQuery() {
+                    
+                        // If the inner width of the window is greater then 768px
+                        if (window.innerWidth > 1280) {
+                          // Then log this message to the console
+                          barMaker.createChart_rev(selection, barData, settings, "building", view, function (state) {
                             menu.setLoadingState(state);
                         });
+                        }
+                        else {
+                          barMaker.createChart_rev_small(selection, barData, settings, "building", view, function (state) {
+                            menu.setLoadingState(state);
+                        });
+                        }
+                      }
+                      checkMediaQuery();
+                     
+                        /*barMaker.createChart_rev(selection, barData, settings, "building", view, function (state) {
+                            menu.setLoadingState(state);
+                        });*/
 
                         var data2 = statsMaker.createChartData(selection, settings);
                         statsMaker.createChart(data2, function (state) {
