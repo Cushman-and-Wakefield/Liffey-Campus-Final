@@ -291,9 +291,9 @@ html, body {
   position: relative;
   font-size: 1.5vw;
   font-weight: bold;
-  padding-top: 3.5%;
-  padding-bottom: 0.8%;
-  margin-bottom: 1.7%;
+  padding-top: 3%;
+  padding-bottom: 0.5%;
+  margin-bottom: 1.5%;
   color: grey;
   border-bottom: 1px solid #FBE789;
 }
@@ -390,9 +390,9 @@ html, body {
 #titleFilter {
   font-size: 1.5vw;
   font-weight: bold;
-  padding-bottom: 1.4%;
-  margin-top: 3.7%;
-  margin-bottom: 2.5%;
+  padding-bottom: 0.5%;
+  margin-top: 3.5%;
+  margin-bottom: 2%;
   color: grey;
   border-bottom: 1px solid #FBE789;
 }
@@ -595,8 +595,8 @@ html, body {
   font-size: 1.5vw;
   font-weight: bold;
   padding-left: 0.9%;
-  padding-bottom: 0.9%;
-  margin-bottom: 3.5%;
+  padding-bottom: 0.5%;
+  margin-bottom: 3%;
   color: grey;
   border-bottom: 1px solid #FBE789;
   
