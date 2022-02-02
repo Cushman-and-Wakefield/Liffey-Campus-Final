@@ -333,8 +333,9 @@ define([
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
                    
-                   var chartstyle = []
+                   
                    function checkMediaQuery() {
+                    var chartstyle = []
                    // If the inner width of the window is greater then 768px
                    if (window.innerWidth > 1280) {
                      // Then log this message to the console
@@ -343,12 +344,13 @@ define([
                    else {
                       chartstyle = "createChart_small"
                    }
+                   return (chartsyle);
                  }
 
                  // Add a listener for when the window resizes
-                 window.addEventListener('click', checkMediaQuery);
+                 var chart = window.addEventListener('click', checkMediaQuery);
                  
-                 chartMaker.chartsyle(this.view, initCharts.usage, settings, "city", function (state) {
+                 chartMaker.chart(this.view, initCharts.usage, settings, "city", function (state) {
                          this.menu.setLoadingState("loaded");
                     }.bind(this));
 
@@ -440,13 +442,14 @@ define([
                            else {
                              chartsyle = "createChart_small";
                            }
+                           return chartsyle;
                          }
 
                          // Add a listener for when the window resizes
-                         window.addEventListener('click', checkMediaQuery);
-                         console.info(chartsyle);
+                         var chart = window.addEventListener('click', checkMediaQuery);
+                         console.info(chart);
                      
-                         chartMaker.chartsyle(view, chartData, settings, "building", function (state) {
+                         chartMaker.chart(view, chartData, settings, "building", function (state) {
                             menu.setLoadingState(state);
                             });
                      
