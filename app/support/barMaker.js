@@ -229,7 +229,7 @@ define([
                     "hideCredits":true,
                     "sequencedAnimation": false,
                     "dataProvider": data,
-                    "fontSize": 8,
+                    "fontSize": 7,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "valueAxes": [{
                         "gridColor": "#FFFFFF",
@@ -425,7 +425,7 @@ define([
                     "hideCredits":true,
                     "sequencedAnimation": false,
                     "dataProvider": data,
-                    "fontSize": 8,
+                    "fontSize": 7,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "valueAxes": [{
                         "gridColor": "#FFFFFF",
@@ -672,15 +672,15 @@ define([
                     "hideCredits":true,
                     "theme": "light",
                     "legend": {
-                        "horizontalGap": 8,
+                        "horizontalGap": 7,
                         "maxColumns": 1,
                         "position": "right",
                         "useGraphSettings": true,
-                        "markerSize": 8
+                        "markerSize": 7
                     },
                     "sequencedAnimation": false,
                     "dataProvider": data,
-                    "fontSize": 8,
+                    "fontSize": 7,
                     "fontFamily": "Avenir LT W01 65 Medium",
                     "valueAxes": [{
                         "stackType": "regular",
