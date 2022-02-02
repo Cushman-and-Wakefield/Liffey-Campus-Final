@@ -418,7 +418,7 @@ html, body {
     padding-bottom: 0px;
     padding-right: 2.5%;
     width: 95%;
-    max-height: 34.5%;
+    height: 34.5%;
   }
 
 .FilterLabel{
@@ -530,7 +530,7 @@ html, body {
   align-items: center;
   margin-top: 2.5%;
   margin-left: 0%;
-  max-height: 65%;
+  height: 65%;
   width: 95%;
   font-size: 1.35vw;
   color: grey;
@@ -583,7 +583,7 @@ html, body {
   align-items: center;
   margin-top: 2.5%;
   margin-left: 0%;
-  max-height: 65%;
+  height: 65%;
   width: 95%;
   font-size: 1.1vw;
   color: grey;
