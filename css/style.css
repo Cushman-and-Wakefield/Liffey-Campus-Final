@@ -42,10 +42,10 @@ html, body {
   }
 
 .button{ 
-  font-size: 0.9vw;
-  padding: 2%;
-  padding-left: 4%;
-  padding-right: 4%;
+  font-size: 0.8vw;
+  padding: 1.5%;
+  padding-left: 3%;
+  padding-right: 3%;
   border-radius: 8px;
 }
 
@@ -327,13 +327,13 @@ html, body {
 #reset{
   position: absolute;
   width: 12%;
-  top: 78%;
+  top: 80%;
   left: 2.5%;
   text-align: center;
   cursor: pointer;
   background: grey;
   color: white;
-  font-size: 0.9vw;
+  font-size: 0.8vw;
 }
 
 #reset:hover{
@@ -363,13 +363,13 @@ html, body {
 
 #viz-leaseexpiry {
   left: 3.5%;
-  top: 22%;
+  top: 24%;
   border-radius: 8px;
 }
 
 #viz-reviewdate {
   left: 28%;
-  top: 22%;
+  top: 24%;
   border-radius: 8px;
 }
 
@@ -385,7 +385,7 @@ html, body {
   font-size: 1.58vw;
   font-weight: bold;
   padding-bottom: 1.4%;
-  margin-top: 2.8%;
+  margin-top: 3.5%;
   margin-bottom: 2.8%;
   color: grey;
   border-bottom: 1px solid #FBE789;
@@ -412,7 +412,7 @@ html, body {
     padding-bottom: 0px;
     padding-right: 2.5%;
     width: 95%;
-    height: 38%;
+    height: 34.5%;
   }
 
 .FilterLabel{
@@ -498,7 +498,7 @@ html, body {
 
 #filterAreaMin{
     position: absolute;
-    top: 52%;
+    top: 55%;
     width: 95%;
     height: 25%;  
     left: 2.5%;
@@ -548,11 +548,11 @@ html, body {
 
 #AreaMinText{
     position: absolute;
-    top: 300%;
+    top: 250%;
     left: 0px;
     width: 15%;
-    height: 800%;
-    font-size: 1vw;
+    height: 600%;
+    font-size: 0.8vw;
     border: none;
     color: grey;
     border-bottom: 1px solid #FBE789; 
@@ -560,11 +560,11 @@ html, body {
 
 #AreaMaxText{
     position: absolute;
-    top: 300%;
+    top: 250%;
     right: 0px;
     width: 20%;
-    height: 800%;
-    font-size: 1vw;
+    height: 600%;
+    font-size: 0.8vw;
     border: none;
     color: grey;
     border-bottom: 1px solid #FBE789;  
