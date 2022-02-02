@@ -526,7 +526,7 @@ html, body {
 #chartDiv {
   position: absolute;
   background: white;
-  top: 30%;
+  top: 28%;
   align-items: center;
   margin-top: 2.5%;
   margin-left: 0%;
@@ -579,13 +579,14 @@ html, body {
 #statsDiv {
   position: absolute;
   background: white;
-  top: 30%;
+  top: 28%;
+  padding: 0;
   align-items: center;
   margin-top: 2.5%;
   margin-left: 0%;
   height: 65%;
   width: 95%;
-  font-size: 1.1vw;
+  font-size: 1vw;
   color: grey;
   z-index: 0;
 }
@@ -605,13 +606,13 @@ html, body {
   float: left;
   width: 45%;
   align-items: center;
-  height: 12%;
-  margin-bottom: 3%;
-  padding-top: 0;
+  height: 10%;
+  margin-bottom: 2%;
+  padding: 0;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1.15vw;
+  line-height: 1vw;
   align-items: center;
 }
 
@@ -619,25 +620,24 @@ html, body {
   float: right;
   width: 45%;
   align-items: center;
-  height: 12%;
-  margin-bottom: 3%;
-  padding-top: 0;
+  height: 10%;
+  margin-bottom: 2%;
+  padding: 0;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1.15vw;
+  line-height: 1vw;
   align-items: center;
 }
 
 #numberofwholebuildings {
-  align-items: center;
-  height: 12%;
-  margin-bottom: 3%;
-  padding-top: 0;
+  height: 10%;
+  margin-bottom: 2%;
+  padding: 0;
   border: 1px solid #FBE789;
   border-radius: 8px;
   text-align: center;
-  line-height: 1.15vw;
+  line-height: 1vw;
   align-items: center;
    
 }
