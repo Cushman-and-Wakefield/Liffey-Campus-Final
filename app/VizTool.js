@@ -339,10 +339,10 @@ define([
                    // If the inner width of the window is greater then 768px
                    if (window.innerWidth > 1280) {
                      // Then log this message to the console
-                     chartstyle = "createChart"
+                     chartstyle = "chartMaker.createChart"
                    }
                    else {
-                      chartstyle = "createChart_small"
+                      chartstyle = "chartMaker.createChart_small"
                    }
                    return (chartstyle);
                  }
@@ -352,7 +352,7 @@ define([
                  var chart = checkMediaQuery();
                  console.info(chart);
                  
-                 window["chartMaker.".concat(chart)](this.view, initCharts.usage, settings, "city", function (state) {
+                 window[chart](this.view, initCharts.usage, settings, "city", function (state) {
                          this.menu.setLoadingState("loaded");
                     }.bind(this));
 
@@ -440,10 +440,10 @@ define([
                            // If the inner width of the window is greater then 768px
                            if (window.innerWidth > 768) {
                              // Then log this message to the console
-                             chartstyle = "createChart";
+                             chartstyle = "chartMaker.createChart";
                            }
                            else {
-                             chartstyle = "createChart_small";
+                             chartstyle = "chartMaker.createChart_small";
                            }
                            return chartstyle;
                          }
@@ -453,7 +453,7 @@ define([
                          var chart = checkMediaQuery();
                          console.info(chart);
                      
-                         window["chartMaker.".concat(chart)](view, chartData, settings, "building", function (state) {
+                         window[chart](view, chartData, settings, "building", function (state) {
                             menu.setLoadingState(state);
                             });
                      
