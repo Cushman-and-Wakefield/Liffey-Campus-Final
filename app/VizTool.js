@@ -333,28 +333,22 @@ define([
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
                    
-                   var chartstyle = [];
                    function checkMediaQuery() {
                     
                    // If the inner width of the window is greater then 768px
                    if (window.innerWidth > 1280) {
                      // Then log this message to the console
-                     chartstyle = 'chartMaker.createChart'
-                   }
-                   else {
-                      chartstyle = 'chartMaker.createChart_small'
-                   }
-                   return (chartstyle);
-                 }
-
-                 // Add a listener for when the window resizes
-                 //var chart = window.addEventListener('click', checkMediaQuery);
-                 var chart = checkMediaQuery();
-                 console.info(chart);
-                 
-                 this[chart](this.view, initCharts.usage, settings, "city", function (state) {
+                     chartMaker.createChart(this.view, initCharts.usage, settings, "city", function (state) {
                          this.menu.setLoadingState("loaded");
                     }.bind(this));
+                   }
+                   else {
+                      chartMaker.createChart_small(this.view, initCharts.usage, settings, "city", function (state) {
+                         this.menu.setLoadingState("loaded");
+                    }.bind(this));
+                   }
+                 }
+                 checkMediaQuery();
 
                     /*chartMaker.createChart(this.view, initCharts.usage, settings, "city", function (state) {
                          this.menu.setLoadingState("loaded");
