@@ -268,7 +268,7 @@ define([
 
                     }.bind(this));
 
-                }.bind(this)).otherwise(function (err) {
+                }.bind(this)).catch(function (err) {
                     console.error(err);
                 });
             },
