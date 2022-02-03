@@ -30,6 +30,7 @@
  */
 
 define([
+    "esri/core/declare",
     "esri/core/Accessor",
     "esri/tasks/support/Query",
 
@@ -48,15 +49,13 @@ define([
     "c-through/support/queryTools"
 
 ], function (
-    Accessor, Query,
+    declare, Accessor, Query,
     domCtr, win, dom, domStyle, on,
     applyRenderer,
     chartMaker, barMaker, statsMaker,
     queryTools
 ) {
-        return Accessor.createSubclass({
-            declaredClass: "c-through.VizTool",
-
+        return declare(null, {
             constructor: function (params) {
 
                 this.container = params.container;
@@ -268,7 +267,7 @@ define([
 
                     }.bind(this));
 
-                }.bind(this)).catch(function (err) {
+                }.bind(this)).otherwise(function (err) {
                     console.error(err);
                 });
             },
@@ -318,7 +317,7 @@ define([
                 var settings = this.settings;
 
                 if (vizName === "white") {
-                    settings.layer1.renderer = applyRenderer.createSimpleRenderer();
+                    settings.layer1.renderer = null;
 
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 0 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 1 });
