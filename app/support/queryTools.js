@@ -21,11 +21,9 @@
    */
 
 define([
-    "esri/core/declare",
     "esri/tasks/support/Query"
 
 ], function (
-    declare,
     Query
 
 ) {
