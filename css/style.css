@@ -536,18 +536,18 @@ html, body {
 }
 
 #reload{
-  display:none;
+  /*display:none;*/
   position: absolute;
   top: 130px;
   right: 10px;
-  height: 25px;
-  width: 25px;
+  height: 5%;
+  width: 5%;
   z-index: 1;
   border: 0.5px solid grey;
 }
 
 .reload{
-  display: none;
+  /*display: none;*/
   position: relative;
   opacity: 0.4;
 }
