@@ -31,6 +31,7 @@
  */
 
 define([
+    "esri/core/declare",
     "esri/core/Accessor",
 
     "dojo/dom-construct",
@@ -42,13 +43,11 @@ define([
     "c-through/FilterTool"
 
 ], function (
-    Accessor,
+    declare, Accessor,
     domCtr, win, dom,
     HighlightTool, VizTool, FilterTool
 ) {
-        return Accessor.createSubclass({
-            declaredClass: "c-through.ToolsMenu",
-
+        return declare(null, {
             constructor: function (params) {
 
                 this.settings = params.config;
