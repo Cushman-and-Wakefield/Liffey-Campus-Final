@@ -387,7 +387,7 @@ define([
                     domStyle.set(dom.byId("chartDiv"), { "opacity": 1 });
                     domStyle.set(dom.byId("statsDiv"), { "opacity": 0 });
                  
-                   function checkMediaQuery() {
+                   /*function checkMediaQuery() {
                     
                    // If the inner width of the window is greater then 768px
                    if (window.innerWidth > 1280) {
@@ -402,11 +402,11 @@ define([
                       }.bind(this));
                    }
                  }
-                 checkMediaQuery();
+                 checkMediaQuery();*/
 
-                    /*barMaker.createChart(initData, initCharts.area, settings, "city", this.view, function (state) {
+                    barMaker.createChart(initData, initCharts.area, settings, "city", this.view, function (state) {
                         this.menu.setLoadingState("loaded");
-                    }.bind(this));*/
+                    }.bind(this));
                 }
              
                 if (vizName === "leaseexpiry") {
@@ -566,7 +566,7 @@ define([
 
                         var barData = barMaker.createChartData(selection, settings, 10);
                      
-                        function checkMediaQuery() {
+                        /*function checkMediaQuery() {
                     
                         // If the inner width of the window is greater then 768px
                         if (window.innerWidth > 1280) {
@@ -581,11 +581,11 @@ define([
                         });
                         }
                       }
-                      checkMediaQuery();
+                      checkMediaQuery();*/
                      
-                        /*barMaker.createChart(selection, barData, settings, "building", view, function (state) {
+                        barMaker.createChart(selection, barData, settings, "building", view, function (state) {
                             menu.setLoadingState(state);
-                        });*/
+                        });
 
                         var data2 = statsMaker.createChartData(selection, settings);
                         statsMaker.createChart(data2, function (state) {
