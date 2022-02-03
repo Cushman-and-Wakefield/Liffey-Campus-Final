@@ -428,7 +428,7 @@ define([
                    }
                  }
                  checkMediaQuery();
-                 this.menu.setLoadingState("loaded").bind(this);
+                 this.menu.setLoadingState("loaded");
 
                     /*barMaker.createChart_exp(initData, initCharts.leaseexpiry, settings, "city", this.view, function (state) {
                         this.menu.setLoadingState("loaded");
