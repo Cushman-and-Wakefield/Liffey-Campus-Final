@@ -21,6 +21,7 @@
    */
 
 define([
+    "esri/core/declare",
     "esri/tasks/support/Query",
 
     "dojo/dom-construct",
@@ -32,7 +33,7 @@ define([
     "c-through/support/queryTools"
 
 ], function (
-    Query,
+    declare, Query,
     domCtr, win, on, dom,
     applyRenderer, queryTools
 ) {
