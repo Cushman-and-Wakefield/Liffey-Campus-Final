@@ -540,6 +540,7 @@ html, body {
 }
 
 #reload{
+  display:none;
   position: absolute;
   top: 130px;
   right: 10px;
@@ -550,6 +551,7 @@ html, body {
 }
 
 .reload{
+  display: none;
   position: relative;
   opacity: 0.4;
 }
