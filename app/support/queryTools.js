@@ -21,9 +21,11 @@
    */
 
 define([
+    "esri/core/declare",
     "esri/tasks/support/Query"
 
 ], function (
+    declare,
     Query
 
 ) {
@@ -61,7 +63,7 @@ define([
 
                     callback(values);
 
-                }.bind(this)).catch(function (err) {
+                }.bind(this)).otherwise(function (err) {
                     console.error(err);
                 });
 
@@ -100,7 +102,7 @@ define([
 
                     callback(values_ten);
 
-                }.bind(this)).catch(function (err) {
+                }.bind(this)).otherwise(function (err) {
                     console.error(err);
                 });
 
@@ -132,7 +134,6 @@ define([
                     function onlyUnique(value, index, self) {
                          return self.indexOf(value) === index;
                     }
-                    console.info(values_exp);
                     values_exp = values_exp.filter(function(value, index, arr){ 
                        return value != null;
                     });
@@ -146,11 +147,10 @@ define([
                             values_exp.splice(j, 1);
                         }
                     }
-                    console.info(values_exp);
 
                     callback(values_exp);
 
-                }.bind(this)).catch(function (err) {
+                }.bind(this)).otherwise(function (err) {
                     console.error(err);
                 });
 
@@ -179,7 +179,7 @@ define([
                     else {
                         callback(currentResult, index);
                     }
-                }.bind(this)).catch(function(e){
+                }.bind(this)).otherwise(function(e){
                     console.error(e);
                 });
             }
