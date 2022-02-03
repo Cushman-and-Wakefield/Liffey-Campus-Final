@@ -37,7 +37,6 @@
 
 define([
     "esri/core/Accessor",
-    "esri/core/declare",
     "esri/config",
 
     "esri/WebScene",
@@ -61,7 +60,7 @@ define([
     "c-through/support/queryTools"
 
 ], function (
-    declare, Accessor, esriConfig,
+    Accessor, esriConfig,
     WebScene, SceneView, SceneLayer, Basemap,
     BasemapToggle, Home,
     dom, on, domCtr, win, domStyle,
@@ -108,7 +107,8 @@ define([
                 ]
         };
 
-        return declare(null, {
+        return Accessor.createSubclass({
+            declaredClass: "c-through.App",
 
             constructor: function () {
 
@@ -232,7 +232,7 @@ define([
                         distinctValues_ten.sort();
                         this.settings.values_ten = distinctValues_ten
                     }.bind(this));   
-                }.bind(this)).otherwise(function (err) {
+                }.bind(this)).catch(function (err) {
                     console.error(err);
                 });
 
