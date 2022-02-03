@@ -21,7 +21,6 @@
    */
 
 define([
-    "esri/core/declare",
  
     "dojo/dom-construct",
     "dojo/_base/window",
@@ -34,7 +33,6 @@ define([
     "esri/tasks/support/Query"
 
 ], function (
-    declare,
     domCtr, win, dom,
     applyRenderer,
     chartMaker,
