@@ -312,9 +312,7 @@ html, body {
 
 .labelViz {
   position: absolute;
-  padding-top: 0%;
-  padding-left: 0%;
-  padding-right: 0%;
+  padding: 0;
   width: 19.3%;
   height: 6.7%;
   background: #FBE789;
@@ -325,6 +323,8 @@ html, body {
   text-transform: uppercase;
   font-size: 0.75vw;
   align-items: center;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 
 #reset{
@@ -340,6 +340,8 @@ html, body {
   color: white;
   font-size: 0.75vw;
   align-items: center;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 
 #reset:hover{
