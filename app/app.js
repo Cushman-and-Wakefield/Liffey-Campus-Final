@@ -130,7 +130,7 @@ define([
                 esriConfig.portalUrl = this.settings.url;
 
                 // fix CORS issues by adding portal url to cors enabled servers list
-                esriConfig.request.corsEnabledServers.push("https://cwireland.maps.arcgis.com");
+                esriConfig.request.corsEnabledServers.push("http://zurich.maps.arcgis.com");
 
                 // load scene with portal ID
                 this.scene = new WebScene({
