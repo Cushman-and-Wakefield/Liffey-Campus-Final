@@ -44,7 +44,7 @@ define([
     "c-through/support/queryTools"
 
 ], function (
-    Query,
+    Accessor, Query,
     domCtr, win, dom, on,
     VizTool, FilterTool, queryTools
 ) {
