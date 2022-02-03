@@ -158,8 +158,7 @@ define([
                 });
                 this.view.ui.add(searchWidget, {
                     position: "top-right",
-                    index: 2,
-                    height: 5%
+                    index: 2
                 });
 
                 // create home button that leads back to welcome page
