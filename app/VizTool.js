@@ -30,7 +30,6 @@
  */
 
 define([
-    "esri/core/declare",
     "esri/core/Accessor",
     "esri/tasks/support/Query",
 
@@ -49,13 +48,15 @@ define([
     "c-through/support/queryTools"
 
 ], function (
-    declare, Accessor, Query,
+    Accessor, Query,
     domCtr, win, dom, domStyle, on,
     applyRenderer,
     chartMaker, barMaker, statsMaker,
     queryTools
 ) {
-        return declare(null, {
+        return Accessor.createSubclass({
+            declaredClass: "c-through.VizTool",
+
             constructor: function (params) {
 
                 this.container = params.container;
