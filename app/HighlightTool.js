@@ -120,7 +120,7 @@ define([
                     view.hitTest(event.screenPoint).then(function (response) {
                         var result = response.results[0];
 
-                        if (!result) {
+                        if (!result.graphic) {
                             this.menu.resetFilterUI("highlight");
                         }
                         else {
