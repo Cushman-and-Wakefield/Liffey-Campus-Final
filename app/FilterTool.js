@@ -31,7 +31,6 @@
  */
 
 define([
-    "esri/core/declare",
     "esri/core/Accessor",
     "esri/tasks/support/Query",
 
@@ -54,13 +53,15 @@ define([
 
 
 ], function (
-    declare, Accessor, Query,
+    Accessor, Query,
     domCtr, win, dom, domStyle, on,
     parser, registry, TextBox, Button, dijit,
     queryTools, applyRenderer,
     chartMaker, barMaker
 ) {
-        return declare(null, {
+        return Accessor.createSubclass({
+            declaredClass: "c-through.FilterTool",
+
             constructor: function (params) {
 
                 this.container = params.container;
