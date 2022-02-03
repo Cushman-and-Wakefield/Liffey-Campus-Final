@@ -163,7 +163,7 @@ define([
                             }
                         }
 
-                    }.bind(this)).otherwise(function (err) {
+                    }.bind(this)).catch(function (err) {
                         console.error(err);
                     });
                 }.bind(this));
@@ -189,7 +189,7 @@ define([
 
                     callback(buildingID);
 
-                }.bind(this)).otherwise(function (err) {
+                }.bind(this)).catch(function (err) {
                     console.error(err);
                 });
             }
