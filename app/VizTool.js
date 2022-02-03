@@ -430,6 +430,7 @@ define([
                    }
                  }
                  checkMediaQuery();
+                 this.menu.setLoadingState("loaded")
 
                     /*barMaker.createChart_exp(initData, initCharts.leaseexpiry, settings, "city", this.view, function (state) {
                         this.menu.setLoadingState("loaded");
@@ -617,6 +618,7 @@ define([
                         }
                       }
                       checkMediaQuery();
+                      menu.setLoadingState(state);
                       
                         /*barMaker.createChart_exp(selection, barData, settings, "building", view, function (state) {
                             menu.setLoadingState(state);
