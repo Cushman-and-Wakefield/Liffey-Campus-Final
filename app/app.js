@@ -37,6 +37,7 @@
 
 define([
     "esri/core/Accessor",
+    "esri/core/declare",
     "esri/config",
 
     "esri/WebScene",
@@ -60,7 +61,7 @@ define([
     "c-through/support/queryTools"
 
 ], function (
-    Accessor, esriConfig,
+    declare, Accessor, esriConfig,
     WebScene, SceneView, SceneLayer, Basemap,
     BasemapToggle, Home,
     dom, on, domCtr, win, domStyle,
@@ -107,8 +108,7 @@ define([
                 ]
         };
 
-        return Accessor.createSubclass({
-            declaredClass: "c-through.App",
+        return declare(null, {
 
             constructor: function () {
 
@@ -207,7 +207,7 @@ define([
                             view: this.view,
                             state: {
                                 highlight: {
-                                    name: "city",
+                                    name: "Liffey Valley Campus",
                                     features: undefined
                                 },
                                 viz: {
@@ -232,7 +232,7 @@ define([
                         distinctValues_ten.sort();
                         this.settings.values_ten = distinctValues_ten
                     }.bind(this));   
-                }.bind(this)).catch(function (err) {
+                }.bind(this)).otherwise(function (err) {
                     console.error(err);
                 });
 
