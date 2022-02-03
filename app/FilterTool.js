@@ -128,7 +128,7 @@ define([
 
             updateUI: function (state) {
 
-                /*if (state.name === "none") {
+                if (state.name === "none") {
                     domCtr.destroy(dom.byId("filter-floors"));
                     domCtr.destroy(dom.byId("filter-usage"));
                     domCtr.destroy(dom.byId("filterAreaMin"));
@@ -187,8 +187,8 @@ define([
                         this.createFilterUsageUI(this.container);
                     }
                 }
-            },*/
-                 if (state.name === "none") {
+            },
+                 /*if (state.name === "none") {
                     domCtr.destroy(dom.byId("filter-floors"));
                     domCtr.destroy(dom.byId("filter-usage"));
                     domCtr.destroy(dom.byId("filter-tenancy"));
@@ -316,7 +316,7 @@ define([
                     }
 
                 }
-            },
+            },*/
 
             setFilterState: function (state) {
                 this.state = state.filter;
