@@ -27,6 +27,7 @@
  * Description: changes renderer of the active layer
  * according to selection and filter. Shows statistics
  * and adjusts charts according to selection and filter.
+ * Trial 
  */
 
 define([
