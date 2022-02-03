@@ -61,7 +61,7 @@ define([
 
                     callback(values);
 
-                }.bind(this)).otherwise(function (err) {
+                }.bind(this)).catch(function (err) {
                     console.error(err);
                 });
 
@@ -100,7 +100,7 @@ define([
 
                     callback(values_ten);
 
-                }.bind(this)).otherwise(function (err) {
+                }.bind(this)).catch(function (err) {
                     console.error(err);
                 });
 
@@ -148,7 +148,7 @@ define([
 
                     callback(values_exp);
 
-                }.bind(this)).otherwise(function (err) {
+                }.bind(this)).catch(function (err) {
                     console.error(err);
                 });
 
@@ -177,7 +177,7 @@ define([
                     else {
                         callback(currentResult, index);
                     }
-                }.bind(this)).otherwise(function(e){
+                }.bind(this)).catch(function(e){
                     console.error(e);
                 });
             }
